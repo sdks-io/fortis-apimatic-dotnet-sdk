@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FortisAPI.Standard", "FortisAPI.Standard/FortisAPI.Standard.csproj", "{d2beaaa1-18a7-44ac-8375-48fc7215fa03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FortisAPI.Tests", "FortisAPI.Tests/FortisAPI.Tests.csproj", "{1b56460f-542e-4b5f-ad86-0dfc8340402a}"
+EndProject
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {d2beaaa1-18a7-44ac-8375-48fc7215fa03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {d2beaaa1-18a7-44ac-8375-48fc7215fa03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {d2beaaa1-18a7-44ac-8375-48fc7215fa03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {d2beaaa1-18a7-44ac-8375-48fc7215fa03}.Release|Any CPU.Build.0 = Release|Any CPU
+        {1b56460f-542e-4b5f-ad86-0dfc8340402a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {1b56460f-542e-4b5f-ad86-0dfc8340402a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {1b56460f-542e-4b5f-ad86-0dfc8340402a}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {1b56460f-542e-4b5f-ad86-0dfc8340402a}.Release|Any CPU.Build.0 = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+EndGlobal
