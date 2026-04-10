@@ -3,6 +3,8 @@
 
 Sms Blacklist Information on `expand`
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `SmsBlacklist`
@@ -15,6 +17,7 @@ Sms Blacklist Information on `expand`
 | `IsBlacklisted` | `bool?` | Optional | isBlacklisted |
 | `Detail` | `bool?` | Optional | Contact Id |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -23,7 +26,11 @@ Sms Blacklist Information on `expand`
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "isBlacklisted": true,
   "detail": true,
-  "created_ts": 1422040992
+  "created_ts": 1422040992,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

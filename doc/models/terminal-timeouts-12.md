@@ -5,6 +5,8 @@ The following options outlines some configurable timeout values that can be used
 
 > These timeouts are specific to Ingenico devices only.
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `TerminalTimeouts12`
@@ -22,6 +24,7 @@ The following options outlines some configurable timeout values that can be used
 | `StatusDisplayTime` | `int?` | Optional | How long the approve/decline status message stays on screen.<br><br>> Message on timeout:<br>> N/A - Not actually a "timeout".  This is a time to display the status on the screen.<br><br>**Constraints**: `>= 1`, `<= 30` |
 | `TipCashbackTimeout` | `int?` | Optional | How long to wait for input on a tip or cashback screen.<br><br>> Message on timeout:<br>> Tip/Cashback Timeout<br><br>**Constraints**: `>= 20`, `<= 50` |
 | `TransactionTimeout` | `int?` | Optional | How long to wait for response from the processor.<br><br>> Message on timeout:<br>> Transaction Timeout<br><br>**Constraints**: `>= 10`, `<= 20` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -35,7 +38,11 @@ The following options outlines some configurable timeout values that can be used
   "signature_submit_timeout": 38,
   "status_display_time": 12,
   "tip_cashback_timeout": 25,
-  "transaction_timeout": 17
+  "transaction_timeout": 17,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

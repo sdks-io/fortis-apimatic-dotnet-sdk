@@ -1,6 +1,8 @@
 
 # Conditions 181
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Conditions181`
@@ -9,15 +11,20 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Method` | [`Method53Enum?`](../../doc/models/method-53-enum.md) | Optional | - |
-| `Values` | [`Values51Enum?`](../../doc/models/values-51-enum.md) | Optional | - |
+| `Method` | [`Method53?`](../../doc/models/method-53.md) | Optional | - |
+| `Values` | [`Values51?`](../../doc/models/values-51.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
   "method": "and",
-  "values": "routing_number"
+  "values": "routing_number",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

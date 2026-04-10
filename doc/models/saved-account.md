@@ -3,6 +3,8 @@
 
 [object Object]
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `SavedAccount`
@@ -20,11 +22,11 @@
 | `TokenC1` | `string` | Optional | Custom field 1 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `TokenC2` | `string` | Optional | Custom field 2 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `TokenC3` | `string` | Optional | Custom field 3 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
-| `AchSecCode` | [`AchSecCode3Enum?`](../../doc/models/ach-sec-code-3-enum.md) | Optional | SEC code for the account |
-| `BillingAddress` | [`BillingAddress`](../../doc/models/billing-address.md) | Optional | Billing Address Object |
+| `AchSecCode` | `object` | Optional | - |
+| `BillingAddress` | [`BillingAddress7`](../../doc/models/billing-address-7.md) | Optional | - |
 | `ContactId` | `string` | Optional | Used to associate the Token with a Contact.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `CustomerId` | `string` | Optional | Used to store a customer identification number.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` |
-| `IdentityVerification` | [`IdentityVerification2`](../../doc/models/identity-verification-2.md) | Optional | Identity verification |
+| `IdentityVerification` | [`IdentityVerification5`](../../doc/models/identity-verification-5.md) | Optional | - |
 | `LocationId` | `string` | Optional | A valid Location Id associated with the Contact for this Token<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `PreviousAccountVaultApiId` | `string` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` |
 | `PreviousTokenApiId` | `string` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` |
@@ -46,7 +48,7 @@
 | `Id` | `string` | Optional | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `AccountType` | `string` | Optional | Account type<br><br>> For ACH, must be provided as either 'checking' or 'savings'. For CC, field is read only. System will identify card_type and generate a value for this field automatically. i.e. visa, mc, disc, amex, jcb, diners.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `32` |
 | `Active` | `bool?` | Optional | Register is Active |
-| `CauSummaryStatusId` | [`CauSummaryStatusIdEnum?`](../../doc/models/cau-summary-status-id-enum.md) | Optional | CAU Summary Status ID. |
+| `CauSummaryStatusId` | [`CauSummaryStatusId?`](../../doc/models/cau-summary-status-id.md) | Optional | - |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ESerialNumber` | `string` | Optional | E Serial Number<br><br>**Constraints**: *Maximum Length*: `36`, *Pattern*: `^[a-zA-Z0-9]*$` |
 | `ETrackData` | `string` | Optional | E Track Data |
@@ -58,13 +60,14 @@
 | `HasRecurring` | `bool?` | Optional | True indicates that this token is tied to a Recurring Payment |
 | `LastFour` | `string` | Optional | The last four numbers of an account number.  System will generate a value for this field automatically.<br><br>**Constraints**: *Maximum Length*: `4` |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
-| `PaymentMethod` | [`PaymentMethod16Enum?`](../../doc/models/payment-method-16-enum.md) | Optional | Must be provided as either 'cc' or 'ach'. |
+| `PaymentMethod` | [`PaymentMethod16?`](../../doc/models/payment-method-16.md) | Optional | - |
 | `Ticket` | `string` | Optional | A valid ticket that was created to store the token.<br><br>**Constraints**: *Maximum Length*: `36` |
 | `TrackData` | `string` | Optional | Track Data from a magnetic card swipe.<br><br>**Constraints**: *Maximum Length*: `256` |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `CauLastUpdatedTs` | `int?` | Optional | CAU Last Updated Timestamp |
 | `CardBin` | `string` | Optional | Card bin |
 | `RoutingNumber` | `string` | Optional | Required for ACH. The Routing Number for the bank account being used. |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -79,7 +82,6 @@
   "token_c1": "token custom 1",
   "token_c2": "token custom 2",
   "token_c3": "token custom 3",
-  "ach_sec_code": "WEB",
   "contact_id": "11e95f8ec39de8fbdb0a4f1a",
   "customer_id": "123456",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
@@ -101,7 +103,6 @@
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "account_type": "checking",
   "active": true,
-  "cau_summary_status_id": 1,
   "created_ts": 1422040992,
   "e_serial_number": "1234567890",
   "exp_date": "0722",
@@ -109,10 +110,13 @@
   "has_recurring": false,
   "last_four": "3657",
   "modified_ts": 1422040992,
-  "payment_method": "cc",
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "cau_last_updated_ts": 1422040992,
-  "routing_number": "051904524"
+  "routing_number": "051904524",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

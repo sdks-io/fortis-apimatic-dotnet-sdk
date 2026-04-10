@@ -1,6 +1,8 @@
 
 # Response Quick Invoice
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ResponseQuickInvoice`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type59Enum?`](../../doc/models/type-59-enum.md) | Optional | Resource Type<br><br>**Default**: `Type59Enum.QuickInvoice` |
+| `Type` | [`Type59?`](../../doc/models/type-59.md) | Optional | - |
 | `Data` | [`Data18`](../../doc/models/data-18.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -22,7 +25,15 @@
     "title": "title6",
     "cc_product_transaction_id": "cc_product_transaction_id2",
     "ach_product_transaction_id": "ach_product_transaction_id2",
-    "due_date": "due_date8"
+    "due_date": "due_date8",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

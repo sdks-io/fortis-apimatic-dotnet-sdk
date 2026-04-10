@@ -10,16 +10,16 @@ Level3DataController level3DataController = client.Level3DataController;
 
 ## Methods
 
-* [Create a New Level 3 Entry for a Master Card](../../doc/controllers/level-3-data.md#create-a-new-level-3-entry-for-a-master-card)
-* [Create a New Level 3 Entry for a Visa](../../doc/controllers/level-3-data.md#create-a-new-level-3-entry-for-a-visa)
-* [Delete a Single Level 3 Record](../../doc/controllers/level-3-data.md#delete-a-single-level-3-record)
-* [View Single Level 3 Record](../../doc/controllers/level-3-data.md#view-single-level-3-record)
+* [Createanew Level 3 Entryfora Master Card](../../doc/controllers/level-3-data.md#createanew-level-3-entryfora-master-card)
+* [Createanew Level 3 Entryfora Visa](../../doc/controllers/level-3-data.md#createanew-level-3-entryfora-visa)
+* [Deleteasinglelevel 3 Record](../../doc/controllers/level-3-data.md#deleteasinglelevel-3-record)
+* [Viewsinglelevel 3 Record](../../doc/controllers/level-3-data.md#viewsinglelevel-3-record)
 
 
-# Create a New Level 3 Entry for a Master Card
+# Createanew Level 3 Entryfora Master Card
 
 ```csharp
-CreateANewLevel3EntryForAMasterCardAsync(
+CreateanewLevel3EntryforaMasterCardAsync(
     string transactionId,
     Models.V1TransactionsLevel3MasterCardRequest body)
 ```
@@ -33,7 +33,7 @@ CreateANewLevel3EntryForAMasterCardAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionLevel3Master>`](../../doc/models/response-transaction-level-3-master.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionLevel3Master](../../doc/models/response-transaction-level-3-master.md).
 
 ## Example Usage
 
@@ -41,7 +41,7 @@ CreateANewLevel3EntryForAMasterCardAsync(
 string transactionId = "11e95f8ec39de8fbdb0a4f1a";
 V1TransactionsLevel3MasterCardRequest body = new V1TransactionsLevel3MasterCardRequest
 {
-    Level3Data = new Level3Data5
+    Level3Data = new Level3Data3
     {
         LineItems = new List<LineItem19>
         {
@@ -52,7 +52,6 @@ V1TransactionsLevel3MasterCardRequest body = new V1TransactionsLevel3MasterCardR
                 UnitCode = "gll",
                 UnitCost = 10,
                 AlternateTaxId = "1234",
-                DebitCredit = DebitCreditEnum.C,
                 DiscountAmount = 10,
                 DiscountRate = 11,
                 Quantity = 5,
@@ -70,13 +69,12 @@ V1TransactionsLevel3MasterCardRequest body = new V1TransactionsLevel3MasterCardR
         ShipfromZipCode = "AZ12345",
         ShiptoZipCode = "MI48335",
         TaxAmount = 0,
-        TaxExempt = TaxExemptEnum.Enum0,
     },
 };
 
 try
 {
-    ResponseTransactionLevel3Master result = await level3DataController.CreateANewLevel3EntryForAMasterCardAsync(
+    ApiResponse<ResponseTransactionLevel3Master> result = await level3DataController.CreateanewLevel3EntryforaMasterCardAsync(
         transactionId,
         body
     );
@@ -84,9 +82,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -147,14 +145,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Level 3 Entry for a Visa
+# Createanew Level 3 Entryfora Visa
 
 ```csharp
-CreateANewLevel3EntryForAVisaAsync(
+CreateanewLevel3EntryforaVisaAsync(
     string transactionId,
     Models.V1TransactionsLevel3VisaRequest body)
 ```
@@ -168,7 +166,7 @@ CreateANewLevel3EntryForAVisaAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionLevel3Visa>`](../../doc/models/response-transaction-level-3-visa.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionLevel3Visa](../../doc/models/response-transaction-level-3-visa.md).
 
 ## Example Usage
 
@@ -176,7 +174,7 @@ CreateANewLevel3EntryForAVisaAsync(
 string transactionId = "11e95f8ec39de8fbdb0a4f1a";
 V1TransactionsLevel3VisaRequest body = new V1TransactionsLevel3VisaRequest
 {
-    Level3Data = new Level3Data6
+    Level3Data = new Level3Data4
     {
         LineItems = new List<LineItem20>
         {
@@ -202,7 +200,6 @@ V1TransactionsLevel3VisaRequest body = new V1TransactionsLevel3VisaRequest
         ShipfromZipCode = "AZ1234",
         ShiptoZipCode = "FL1234",
         TaxAmount = 10,
-        TaxExempt = TaxExemptEnum.Enum0,
         CustomerVatRegistration = "12345678",
         MerchantVatRegistration = "123456",
         OrderDate = "171006",
@@ -214,7 +211,7 @@ V1TransactionsLevel3VisaRequest body = new V1TransactionsLevel3VisaRequest
 
 try
 {
-    ResponseTransactionLevel3Visa result = await level3DataController.CreateANewLevel3EntryForAVisaAsync(
+    ApiResponse<ResponseTransactionLevel3Visa> result = await level3DataController.CreateanewLevel3EntryforaVisaAsync(
         transactionId,
         body
     );
@@ -222,9 +219,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -285,14 +282,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete a Single Level 3 Record
+# Deleteasinglelevel 3 Record
 
 ```csharp
-DeleteASingleLevel3RecordAsync(
+Deleteasinglelevel3RecordAsync(
     string transactionId,
     string level3Id)
 ```
@@ -306,7 +303,7 @@ DeleteASingleLevel3RecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionLevel3>`](../../doc/models/response-transaction-level-3.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionLevel3](../../doc/models/response-transaction-level-3.md).
 
 ## Example Usage
 
@@ -315,7 +312,7 @@ string transactionId = "11e95f8ec39de8fbdb0a4f1a";
 string level3Id = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseTransactionLevel3 result = await level3DataController.DeleteASingleLevel3RecordAsync(
+    ApiResponse<ResponseTransactionLevel3> result = await level3DataController.Deleteasinglelevel3RecordAsync(
         transactionId,
         level3Id
     );
@@ -323,9 +320,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -382,13 +379,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Level 3 Record
+# Viewsinglelevel 3 Record
 
 ```csharp
-ViewSingleLevel3RecordAsync(
+Viewsinglelevel3RecordAsync(
     string transactionId,
     string level3Id)
 ```
@@ -402,7 +399,7 @@ ViewSingleLevel3RecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionLevel3>`](../../doc/models/response-transaction-level-3.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionLevel3](../../doc/models/response-transaction-level-3.md).
 
 ## Example Usage
 
@@ -411,7 +408,7 @@ string transactionId = "11e95f8ec39de8fbdb0a4f1a";
 string level3Id = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseTransactionLevel3 result = await level3DataController.ViewSingleLevel3RecordAsync(
+    ApiResponse<ResponseTransactionLevel3> result = await level3DataController.Viewsinglelevel3RecordAsync(
         transactionId,
         level3Id
     );
@@ -419,9 +416,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -478,5 +475,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

@@ -1,6 +1,8 @@
 
 # Data 28
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Data28`
@@ -23,6 +25,7 @@
 | `CardClass` | `string` | Optional | Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card. Assists the POS device with prompting decisions – to collect addenda or not.  Visa, MasterCard and Discover only.<br><br>**Constraints**: *Maximum Length*: `1` |
 | `TokenInd` | `string` | Optional | Token Indicator values:<br>Y = Token BIN<br>Default: Space filled<br>VISA, MC, and Discover Only<br><br>**Constraints**: *Maximum Length*: `1` |
 | `IssuingNetwork` | `string` | Optional | For Discover card types<br>00 - Discover<br>01 - Diners<br>02 - JCB (Japanese Credit Bank)<br>03 - CUP (China Union Pay)<br>04 PayPal<br><br>**Constraints**: *Maximum Length*: `2` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -37,7 +40,11 @@
   "product_id": "G",
   "regulator_indicator": "N",
   "account_fund_source": "C",
-  "card_class": "B"
+  "card_class": "B",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

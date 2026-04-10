@@ -1,6 +1,8 @@
 
 # Response Signatures Collection
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ResponseSignaturesCollection`
@@ -9,11 +11,12 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type73Enum?`](../../doc/models/type-73-enum.md) | Optional | Resource Type<br><br>**Default**: `Type73Enum.SignaturesCollection` |
+| `Type` | [`Type73?`](../../doc/models/type-73.md) | Optional | - |
 | `List` | [`List<List12>`](../../doc/models/list-12.md) | Optional | Resource Members |
-| `Links` | [`Links`](../../doc/models/links.md) | Optional | Pagination page links |
-| `Pagination` | [`Pagination`](../../doc/models/pagination.md) | Optional | Pagination info |
-| `Sort` | [`Sort`](../../doc/models/sort.md) | Optional | Sort information used on the results |
+| `Links` | [`Links1`](../../doc/models/links-1.md) | Optional | - |
+| `Pagination` | [`Pagination1`](../../doc/models/pagination-1.md) | Optional | - |
+| `Sort` | [`Sort1`](../../doc/models/sort-1.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,14 +29,22 @@
       "resource": "Recurring",
       "resource_id": "resource_id8",
       "id": "id2",
-      "created_ts": 56
+      "created_ts": 56,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     {
       "signature": "signature0",
       "resource": "Recurring",
       "resource_id": "resource_id8",
       "id": "id2",
-      "created_ts": 56
+      "created_ts": 56,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "links": {
@@ -41,31 +52,59 @@
     "first": "first0",
     "previous": "previous2",
     "next": "next2",
-    "last": "last4"
+    "last": "last4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "pagination": {
     "type": "Pagination",
     "total_count": 100,
     "page_count": 212,
     "page_number": 28,
-    "page_size": 6
+    "page_size": 6,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "sort": {
     "type": "Sorting",
     "fields": [
       {
         "field": "field2",
-        "order": "asc"
+        "order": "asc",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "field": "field2",
-        "order": "asc"
+        "order": "asc",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "field": "field2",
-        "order": "asc"
+        "order": "asc",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

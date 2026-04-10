@@ -3,6 +3,8 @@
 
 Transaction Level3 Information on `expand`
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `TransactionLevel3`
@@ -13,7 +15,8 @@ Transaction Level3 Information on `expand`
 |  --- | --- | --- | --- |
 | `Id` | `string` | Optional | Level 3 ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `TransactionId` | `string` | Optional | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `Level3Data` | [`Level3Data`](../../doc/models/level-3-data.md) | Optional | Level 3 data object |
+| `Level3Data` | [`Level3Data1`](../../doc/models/level-3-data-1.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -26,7 +29,15 @@ Transaction Level3 Information on `expand`
     "duty_amount": 182,
     "freight_amount": 60,
     "national_tax": 999999998900,
-    "sales_tax": 999999998900
+    "sales_tax": 999999998900,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

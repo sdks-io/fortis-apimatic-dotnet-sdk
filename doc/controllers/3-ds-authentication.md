@@ -1,12 +1,12 @@
 # 3 DS Authentication
 
 ```csharp
-M3DSAuthenticationController m3DSAuthenticationController = client.M3DSAuthenticationController;
+M3DsAuthenticationController m3DsAuthenticationController = client.M3DsAuthenticationController;
 ```
 
 ## Class Name
 
-`M3DSAuthenticationController`
+`M3DsAuthenticationController`
 
 
 # 3 DS Authentication Request
@@ -14,7 +14,7 @@ M3DSAuthenticationController m3DSAuthenticationController = client.M3DSAuthentic
 Makes a 3DS Authentication request to authenticate a card or begin the challenge flow.  If a challenge is required, a POST should be made to acs_url using the value of base64_encoded_challenge_request for the value of "creq" using x-www-form-urlencoded for the challenge request to the ACS.
 
 ```csharp
-M3DSAuthenticationRequestAsync(
+M3DsAuthenticationRequestAsync(
     Models.V1MerchantThreedsecureAuthenticationRequest body)
 ```
 
@@ -26,7 +26,7 @@ M3DSAuthenticationRequestAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseThreeDSAuthentication>`](../../doc/models/response-three-ds-authentication.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseThreeDsAuthentication](../../doc/models/response-three-ds-authentication.md).
 
 ## Example Usage
 
@@ -34,41 +34,40 @@ M3DSAuthenticationRequestAsync(
 V1MerchantThreedsecureAuthenticationRequest body = new V1MerchantThreedsecureAuthenticationRequest
 {
     ProductTransactionId = "11ee3860e2fc7f5ea67d36b3",
-    DeviceChannel = DeviceChannelEnum.Enum02,
-    MessageCategory = MessageCategoryEnum.Enum01,
-    ThreeDsRequestor = new ThreeDsRequestor
+    DeviceChannel = DeviceChannel.Enum02,
+    MessageCategory = MessageCategory.Enum82,
+    ThreeDsRequestor = new ThreeDsRequestor1
     {
-        ThreeDsRequestorAuthenticationInd = ThreeDsRequestorAuthenticationIndEnum.Enum01,
-        ThreeDsRequestorChallengeInd = new List<ThreeDsRequestorChallengeIndEnum>
+        ThreeDsRequestorAuthenticationInd = ThreeDsRequestorAuthenticationInd.Enum90,
+        ThreeDsRequestorChallengeInd = new List<ThreeDsRequestorChallengeInd>
         {
-            ThreeDsRequestorChallengeIndEnum.Enum03,
+            ThreeDsRequestorChallengeInd.Enum03,
         },
     },
-    CardholderAccount = new CardholderAccount
+    CardholderAccount = new CardholderAccount1
     {
         AccountNumber = "5454545454545454",
-        SchemeId = SchemeIdEnum.Visa,
+        SchemeId = SchemeId.Visa,
         ExpireDate = "2508",
     },
-    PreferredProtocolVersion = PreferredProtocolVersionEnum.Enum220,
     EnforcePreferredProtocolVersion = true,
     ThreeDsCompInd = "Y",
 };
 
 try
 {
-    ResponseThreeDSAuthentication result = await m3DSAuthenticationController.M3DSAuthenticationRequestAsync(body);
+    ApiResponse<ResponseThreeDsAuthentication> result = await m3DsAuthenticationController.M3DsAuthenticationRequestAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is ResponseErrorException)
+    if (e is V1MerchantThreedsecureAuthentication400ErrorException)
     {
-       // TODO: Handle ResponseErrorException exception here
+       // TODO: Handle V1MerchantThreedsecureAuthentication400ErrorException exception here
     }
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -100,7 +99,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | Bad Request | [`ResponseErrorException`](../../doc/models/response-error-exception.md) |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 400 | Bad Request | [`V1MerchantThreedsecureAuthentication400ErrorException`](../../doc/models/v1-merchant-threedsecure-authentication-400-error-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

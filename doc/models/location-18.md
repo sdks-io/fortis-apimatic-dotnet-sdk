@@ -1,6 +1,8 @@
 
 # Location 18
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Location18`
@@ -13,7 +15,7 @@
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `AccountNumber` | `string` | Optional | Account number<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-_]+$` |
-| `Address` | [`Address1`](../../doc/models/address-1.md) | Optional | Address |
+| `Address` | [`Address6`](../../doc/models/address-6.md) | Optional | - |
 | `BrandingDomainId` | `string` | Optional | GUID for Branding Domain<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ContactEmailTrxReceiptDefault` | `bool?` | Optional | If true, will email contact receipt for any transaction |
 | `DefaultAch` | `string` | Optional | GUID for Location's default ACH Product Transaction<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` |
@@ -33,10 +35,11 @@
 | `ShowContactNotes` | `bool?` | Optional | If set to true will show 'Notes' tab on Contact |
 | `ShowContactFiles` | `bool?` | Optional | If set to true will show 'Files' tab on Contact |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `LocationType` | [`LocationTypeEnum?`](../../doc/models/location-type-enum.md) | Optional | Location Type |
+| `LocationType` | `object` | Optional | - |
 | `ParentName` | `string` | Optional | Name of the parent location |
 | `TicketHashKey` | `string` | Optional | Ticket Hash Key<br><br>**Constraints**: *Maximum Length*: `36` |
 | `AdditionalAccess` | [`AdditionalAccess`](../../doc/models/additional-access.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -65,14 +68,24 @@
   "show_contact_notes": true,
   "show_contact_files": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_type": "merchant",
   "ticket_hash_key": "A5F443CADF4AE34BBCAADF4",
   "address": {
     "city": "city6",
     "state": "state2",
     "postal_code": "postal_code8",
-    "country": "US",
-    "street": "street6"
+    "country": {
+      "key1": "val1",
+      "key2": "val2"
+    },
+    "street": "street6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

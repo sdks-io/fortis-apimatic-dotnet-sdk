@@ -26,7 +26,7 @@ ApplePayValidateMerchantAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseApplePayValidateMerchant>`](../../doc/models/response-apple-pay-validate-merchant.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseApplePayValidateMerchant](../../doc/models/response-apple-pay-validate-merchant.md).
 
 ## Example Usage
 
@@ -41,14 +41,14 @@ V1WalletProviderApplePayValidateMerchantRequest body = new V1WalletProviderApple
 
 try
 {
-    ResponseApplePayValidateMerchant result = await applePayValidateMerchantController.ApplePayValidateMerchantAsync(body);
+    ApiResponse<ResponseApplePayValidateMerchant> result = await applePayValidateMerchantController.ApplePayValidateMerchantAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -72,6 +72,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

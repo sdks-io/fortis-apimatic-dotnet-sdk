@@ -1,12 +1,12 @@
 # Transactions-EBT Card
 
 ```csharp
-TransactionsEBTCardController transactionsEBTCardController = client.TransactionsEBTCardController;
+TransactionsEbtCardController transactionsEbtCardController = client.TransactionsEbtCardController;
 ```
 
 ## Class Name
 
-`TransactionsEBTCardController`
+`TransactionsEbtCardController`
 
 ## Methods
 
@@ -19,9 +19,9 @@ TransactionsEBTCardController transactionsEBTCardController = client.Transaction
 Create a new keyed EBT voucher clear refund transaction
 
 ```csharp
-EBTVoucherClearRefundAsync(
+EbtVoucherClearRefundAsync(
     Models.V1TransactionsEbtVoucherClearRefundKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -29,11 +29,11 @@ EBTVoucherClearRefundAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsEbtVoucherClearRefundKeyedRequest`](../../doc/models/v1-transactions-ebt-voucher-clear-refund-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -50,13 +50,11 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -91,7 +89,6 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -101,14 +98,12 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -116,14 +111,14 @@ V1TransactionsEbtVoucherClearRefundKeyedRequest body = new V1TransactionsEbtVouc
 
 try
 {
-    ResponseTransaction result = await transactionsEBTCardController.EBTVoucherClearRefundAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsEbtCardController.EbtVoucherClearRefundAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1183,7 +1178,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -1192,9 +1187,9 @@ catch (ApiException e)
 Create a new keyed EBT voucher clear sale transaction
 
 ```csharp
-EBTVoucherClearSaleAsync(
+EbtVoucherClearSaleAsync(
     Models.V1TransactionsEbtVoucherClearSaleKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -1202,11 +1197,11 @@ EBTVoucherClearSaleAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsEbtVoucherClearSaleKeyedRequest`](../../doc/models/v1-transactions-ebt-voucher-clear-sale-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1223,13 +1218,11 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -1264,7 +1257,6 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -1274,14 +1266,12 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -1289,14 +1279,14 @@ V1TransactionsEbtVoucherClearSaleKeyedRequest body = new V1TransactionsEbtVouche
 
 try
 {
-    ResponseTransaction result = await transactionsEBTCardController.EBTVoucherClearSaleAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsEbtCardController.EbtVoucherClearSaleAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2356,6 +2346,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

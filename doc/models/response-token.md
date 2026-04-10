@@ -1,6 +1,8 @@
 
 # Response Token
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ResponseToken`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type92Enum?`](../../doc/models/type-92-enum.md) | Optional | Resource Type<br><br>**Default**: `Type92Enum.Token` |
+| `Type` | [`Type92?`](../../doc/models/type-92.md) | Optional | - |
 | `Data` | [`Data25`](../../doc/models/data-25.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -22,7 +25,15 @@
     "account_vault_api_id": "account_vault_api_id4",
     "token_api_id": "token_api_id6",
     "accountvault_c1": "accountvault_c14",
-    "accountvault_c2": "accountvault_c28"
+    "accountvault_c2": "accountvault_c28",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

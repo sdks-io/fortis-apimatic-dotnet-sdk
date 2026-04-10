@@ -1,6 +1,8 @@
 
 # Field 18
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Field18`
@@ -17,6 +19,7 @@
 | `Readonly` | `bool?` | Optional | Read Only |
 | `Visible` | `bool?` | Optional | Visible |
 | `MValue` | `string` | Optional | Value |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -33,7 +36,11 @@
   ],
   "required": true,
   "readonly": true,
-  "visible": true
+  "visible": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

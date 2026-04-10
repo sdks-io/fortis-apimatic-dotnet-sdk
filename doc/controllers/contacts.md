@@ -13,8 +13,8 @@ ContactsController contactsController = client.ContactsController;
 ## Methods
 
 * [Contacts Search](../../doc/controllers/contacts.md#contacts-search)
-* [Create a New Contact](../../doc/controllers/contacts.md#create-a-new-contact)
-* [List All Contacts](../../doc/controllers/contacts.md#list-all-contacts)
+* [Createanew Contact](../../doc/controllers/contacts.md#createanew-contact)
+* [Listall Contacts](../../doc/controllers/contacts.md#listall-contacts)
 * [Delete Contact](../../doc/controllers/contacts.md#delete-contact)
 * [View Single Contact](../../doc/controllers/contacts.md#view-single-contact)
 * [Update Contact](../../doc/controllers/contacts.md#update-contact)
@@ -25,7 +25,7 @@ ContactsController contactsController = client.ContactsController;
 ```csharp
 ContactsSearchAsync(
     string locationId,
-    Models.Page page = null,
+    Models.Page1 page = null,
     string keyword = null,
     bool? active = null)
 ```
@@ -35,19 +35,19 @@ ContactsSearchAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `locationId` | `string` | Query, Required | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `keyword` | `string` | Query, Optional | You can use any value to search on specific fields of this endpoint results. You can not specify the fields that are used. |
 | `active` | `bool?` | Query, Optional | Active |
 
 ## Response Type
 
-[`Task<Models.ResponseContactSearchsCollection>`](../../doc/models/response-contact-searchs-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseContactSearchsCollection](../../doc/models/response-contact-searchs-collection.md).
 
 ## Example Usage
 
 ```csharp
 string locationId = "11e95f8ec39de8fbdb0a4f1a";
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -55,7 +55,7 @@ Page page = new Page
 
 try
 {
-    ResponseContactSearchsCollection result = await contactsController.ContactsSearchAsync(
+    ApiResponse<ResponseContactSearchsCollection> result = await contactsController.ContactsSearchAsync(
         locationId,
         page
     );
@@ -63,9 +63,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -475,15 +475,15 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Create a New Contact
+# Createanew Contact
 
 ```csharp
-CreateANewContactAsync(
+CreateanewContactAsync(
     Models.V1ContactsRequest body,
-    List<Models.Expand1Enum> expand = null)
+    List<Models.Expand1> expand = null)
 ```
 
 ## Parameters
@@ -491,11 +491,11 @@ CreateANewContactAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1ContactsRequest`](../../doc/models/v1-contacts-request.md) | Body, Required | - |
-| `expand` | [`List<Expand1Enum>`](../../doc/models/expand-1-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand1>`](../../doc/models/expand-1.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseContact>`](../../doc/models/response-contact.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseContact](../../doc/models/response-contact.md).
 
 ## Example Usage
 
@@ -520,7 +520,6 @@ V1ContactsRequest body = new V1ContactsRequest
     OfficePhoneCountryCode = "+1",
     CellPhoneCountryCode = "+1",
     HeaderMessageType = 0,
-    UpdateIfExists = UpdateIfExistsEnum.Enum1,
     ContactC1 = "any",
     ContactC2 = "anything",
     ContactC3 = "something",
@@ -531,14 +530,14 @@ V1ContactsRequest body = new V1ContactsRequest
 
 try
 {
-    ResponseContact result = await contactsController.CreateANewContactAsync(body);
+    ApiResponse<ResponseContact> result = await contactsController.CreateanewContactAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -927,43 +926,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Contacts
+# Listall Contacts
 
 ```csharp
-ListAllContactsAsync(
-    Models.Page page = null,
+ListallContactsAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand1Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand1> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field28Enum> fields = null)
+    List<Models.Field28> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand1Enum>`](../../doc/models/expand-1-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand1>`](../../doc/models/expand-1.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field28Enum>`](../../doc/models/field-28-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field28>`](../../doc/models/field-28.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseContactsCollection>`](../../doc/models/response-contacts-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseContactsCollection](../../doc/models/response-contacts-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -974,7 +973,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -983,7 +982,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -992,7 +991,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseContactsCollection result = await contactsController.ListAllContactsAsync(
+    ApiResponse<ResponseContactsCollection> result = await contactsController.ListallContactsAsync(
         page,
         order,
         filterBy
@@ -1001,9 +1000,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1413,7 +1412,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Delete Contact
@@ -1431,7 +1430,7 @@ DeleteContactAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseContact>`](../../doc/models/response-contact.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseContact](../../doc/models/response-contact.md).
 
 ## Example Usage
 
@@ -1439,14 +1438,14 @@ DeleteContactAsync(
 string contactId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseContact result = await contactsController.DeleteContactAsync(contactId);
+    ApiResponse<ResponseContact> result = await contactsController.DeleteContactAsync(contactId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1831,7 +1830,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # View Single Contact
@@ -1839,8 +1838,8 @@ catch (ApiException e)
 ```csharp
 ViewSingleContactAsync(
     string contactId,
-    List<Models.Expand1Enum> expand = null,
-    List<Models.Field28Enum> fields = null)
+    List<Models.Expand1> expand = null,
+    List<Models.Field28> fields = null)
 ```
 
 ## Parameters
@@ -1848,12 +1847,12 @@ ViewSingleContactAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `contactId` | `string` | Template, Required | Contact ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand1Enum>`](../../doc/models/expand-1-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field28Enum>`](../../doc/models/field-28-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand1>`](../../doc/models/expand-1.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field28>`](../../doc/models/field-28.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseContact>`](../../doc/models/response-contact.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseContact](../../doc/models/response-contact.md).
 
 ## Example Usage
 
@@ -1861,14 +1860,14 @@ ViewSingleContactAsync(
 string contactId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseContact result = await contactsController.ViewSingleContactAsync(contactId);
+    ApiResponse<ResponseContact> result = await contactsController.ViewSingleContactAsync(contactId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -2253,7 +2252,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Update Contact
@@ -2262,7 +2261,7 @@ catch (ApiException e)
 UpdateContactAsync(
     string contactId,
     Models.V1ContactsRequest1 body,
-    List<Models.Expand1Enum> expand = null)
+    List<Models.Expand1> expand = null)
 ```
 
 ## Parameters
@@ -2271,11 +2270,11 @@ UpdateContactAsync(
 |  --- | --- | --- | --- |
 | `contactId` | `string` | Template, Required | Contact ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1ContactsRequest1`](../../doc/models/v1-contacts-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand1Enum>`](../../doc/models/expand-1-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand1>`](../../doc/models/expand-1.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseContact>`](../../doc/models/response-contact.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseContact](../../doc/models/response-contact.md).
 
 ## Example Usage
 
@@ -2301,7 +2300,6 @@ V1ContactsRequest1 body = new V1ContactsRequest1
     OfficePhoneCountryCode = "+1",
     CellPhoneCountryCode = "+1",
     HeaderMessageType = 0,
-    UpdateIfExists = UpdateIfExistsEnum.Enum1,
     ContactC1 = "any",
     ContactC2 = "anything",
     ContactC3 = "something",
@@ -2312,7 +2310,7 @@ V1ContactsRequest1 body = new V1ContactsRequest1
 
 try
 {
-    ResponseContact result = await contactsController.UpdateContactAsync(
+    ApiResponse<ResponseContact> result = await contactsController.UpdateContactAsync(
         contactId,
         body
     );
@@ -2320,9 +2318,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2711,6 +2709,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

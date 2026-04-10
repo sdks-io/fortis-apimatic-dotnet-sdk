@@ -1,6 +1,8 @@
 
 # Quick Invoice View
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `QuickInvoiceView`
@@ -13,6 +15,7 @@
 | `QuickInvoiceId` | `string` | Optional | Quick Invoice ID<br><br>**Constraints**: *Maximum Length*: `24` |
 | `RemoteIp` | `string` | Optional | Remote Ip<br><br>**Constraints**: *Maximum Length*: `45` |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -21,7 +24,11 @@
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "quick_invoice_id": "Quick Invoice ID",
   "created_ts": 1422040992,
-  "remote_ip": "remote_ip8"
+  "remote_ip": "remote_ip8",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

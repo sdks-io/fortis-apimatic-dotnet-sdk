@@ -5,9 +5,10 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| Environment | [`Environment`](../README.md#environments) | The API environment. <br> **Default: `Environment.Sandbox`** |
+| Environment | [`Environment`](../README.md#environments) | The API environment. <br> **Default: `Environment.Production`** |
 | Timeout | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
 | HttpClientConfiguration | [`Action<HttpClientConfiguration.Builder>`](../doc/http-client-configuration-builder.md) | Action delegate that configures the HTTP client by using the HttpClientConfiguration.Builder for customizing API call settings.<br>*Default*: `new HttpClient()` |
+| LogBuilder | [`LogBuilder`](../doc/log-builder.md) | Represents the logging configuration builder for API calls |
 | UserIdCredentials | [`UserIdCredentials`](auth/custom-header-signature.md) | The Credentials Setter for Custom Header Signature |
 | UserApiKeyCredentials | [`UserApiKeyCredentials`](auth/custom-header-signature-1.md) | The Credentials Setter for Custom Header Signature |
 | DeveloperIdCredentials | [`DeveloperIdCredentials`](auth/custom-header-signature-2.md) | The Credentials Setter for Custom Header Signature |
@@ -18,12 +19,13 @@ The API client can be initialized as follows:
 ## Code-Based Initialization
 
 ```csharp
-using FortisAPI.Standard;
-using FortisAPI.Standard.Authentication;
+using FortisApi.Standard;
+using FortisApi.Standard.Authentication;
+using Microsoft.Extensions.Logging;
 
 namespace ConsoleApp;
 
-FortisAPIClient client = new FortisAPIClient.Builder()
+FortisApiClient client = new FortisApiClient.Builder()
     .UserIdCredentials(
         new UserIdModel.Builder(
             "user-id"
@@ -46,14 +48,19 @@ FortisAPIClient client = new FortisAPIClient.Builder()
         .Build())
     .HttpClientConfig(httpClientConfig =>
         httpClientConfig.Timeout(TimeSpan.FromSeconds(100)))
-    .Environment(FortisAPI.Standard.Environment.Sandbox)
+    .Environment(FortisApi.Standard.Environment.Production)
+    .LoggingConfig(config => config
+        .LogLevel(LogLevel.Information)
+        .RequestConfig(reqConfig => reqConfig.Body(true))
+        .ResponseConfig(respConfig => respConfig.Headers(true))
+    )
     .Build();
 ```
 
 ## Configuration-Based Initialization
 
 ```csharp
-using FortisAPI.Standard;
+using FortisApi.Standard;
 using Microsoft.Extensions.Configuration;
 
 namespace ConsoleApp;
@@ -65,8 +72,8 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 // Instantiate your SDK and configure it from IConfiguration
-var client = FortisAPIClient
-    .FromConfiguration(configuration.GetSection("FortisAPI"));
+var client = FortisApiClient
+    .FromConfiguration(configuration.GetSection("FortisApi"));
 ```
 
 See the [Configuration-Based Initialization](../doc/configuration-based-initialization.md) section for details.
@@ -87,8 +94,8 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 | ElementsController | Gets ElementsController controller. |
 | FullBoardingController | Gets FullBoardingController controller. |
 | LocationsController | Gets LocationsController controller. |
-| M3DSAuthenticationController | Gets M3DSAuthenticationController controller. |
-| M3DSTransactionsController | Gets M3DSTransactionsController controller. |
+| M3DsAuthenticationController | Gets M3DsAuthenticationController controller. |
+| M3DsTransactionsController | Gets M3DsTransactionsController controller. |
 | MerchantDepositsController | Gets MerchantDepositsController controller. |
 | OnBoardingController | Gets OnBoardingController controller. |
 | PaylinksController | Gets PaylinksController controller. |
@@ -100,11 +107,11 @@ The gateway for the SDK. This class acts as a factory for the Controllers and al
 | TerminalsController | Gets TerminalsController controller. |
 | TicketsController | Gets TicketsController controller. |
 | TokensController | Gets TokensController controller. |
-| TransactionACHRetriesController | Gets TransactionACHRetriesController controller. |
-| TransactionsACHController | Gets TransactionsACHController controller. |
+| TransactionAchRetriesController | Gets TransactionAchRetriesController controller. |
+| TransactionsAchController | Gets TransactionsAchController controller. |
 | TransactionsCashController | Gets TransactionsCashController controller. |
 | TransactionsCreditCardController | Gets TransactionsCreditCardController controller. |
-| TransactionsEBTCardController | Gets TransactionsEBTCardController controller. |
+| TransactionsEbtCardController | Gets TransactionsEbtCardController controller. |
 | TransactionsReadController | Gets TransactionsReadController controller. |
 | Level3DataController | Gets Level3DataController controller. |
 | TransactionsUpdatesController | Gets TransactionsUpdatesController controller. |

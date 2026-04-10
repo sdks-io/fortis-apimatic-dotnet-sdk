@@ -1,6 +1,8 @@
 
 # Data 11
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Data11`
@@ -13,7 +15,7 @@
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `AccountNumber` | `string` | Optional | Account number<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-_]+$` |
-| `Address` | [`Address1`](../../doc/models/address-1.md) | Optional | Address |
+| `Address` | [`Address6`](../../doc/models/address-6.md) | Optional | - |
 | `BrandingDomainId` | `string` | Optional | GUID for Branding Domain<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ContactEmailTrxReceiptDefault` | `bool?` | Optional | If true, will email contact receipt for any transaction |
 | `DefaultAch` | `string` | Optional | GUID for Location's default ACH Product Transaction<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` |
@@ -33,17 +35,18 @@
 | `ShowContactNotes` | `bool?` | Optional | If set to true will show 'Notes' tab on Contact |
 | `ShowContactFiles` | `bool?` | Optional | If set to true will show 'Files' tab on Contact |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `LocationType` | [`LocationTypeEnum?`](../../doc/models/location-type-enum.md) | Optional | Location Type |
+| `LocationType` | `object` | Optional | - |
 | `BrandingDomainUrl` | `string` | Optional | Branding domain URL |
-| `BrandingDomain` | [`BrandingDomain`](../../doc/models/branding-domain.md) | Optional | Branding domain array |
+| `BrandingDomain` | [`BrandingDomain2`](../../doc/models/branding-domain-2.md) | Optional | - |
 | `ProductTransactions` | [`List<ProductTransaction1>`](../../doc/models/product-transaction-1.md) | Optional | Product Transactions array |
-| `ProductFile` | [`ProductFile`](../../doc/models/product-file.md) | Optional | Product file array |
-| `ProductAccountvault` | [`ProductAccountvault`](../../doc/models/product-accountvault.md) | Optional | Product Token array (legacy) |
-| `ProductToken` | [`ProductToken`](../../doc/models/product-token.md) | Optional | Product Token array |
-| `ProductRecurring` | [`ProductRecurring`](../../doc/models/product-recurring.md) | Optional | Product recurring array |
+| `ProductFile` | [`ProductFile1`](../../doc/models/product-file-1.md) | Optional | - |
+| `ProductAccountvault` | [`ProductAccountvault1`](../../doc/models/product-accountvault-1.md) | Optional | - |
+| `ProductToken` | [`ProductToken1`](../../doc/models/product-token-1.md) | Optional | - |
+| `ProductRecurring` | [`ProductRecurring1`](../../doc/models/product-recurring-1.md) | Optional | - |
 | `Tags` | [`List<Tag>`](../../doc/models/tag.md) | Optional | Tags array |
 | `Terminals` | [`List<Terminal2>`](../../doc/models/terminal-2.md) | Optional | Terminals array |
 | `AdditionalAccess` | [`AdditionalAccess`](../../doc/models/additional-access.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -72,14 +75,24 @@
   "show_contact_notes": true,
   "show_contact_files": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_type": "merchant",
   "branding_domain_url": "subdomain.sandbox.domain.com",
   "address": {
     "city": "city6",
     "state": "state2",
     "postal_code": "postal_code8",
-    "country": "US",
-    "street": "street6"
+    "country": {
+      "key1": "val1",
+      "key2": "val2"
+    },
+    "street": "street6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

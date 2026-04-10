@@ -1,6 +1,8 @@
 
 # V1 Webhooks Batch Request
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `V1WebhooksBatchRequest`
@@ -13,7 +15,7 @@
 | `BasicAuthUsername` | `string` | Optional | The Basic authorization username for the URL, if not supplied, the postback will be submitted without Basic authorization headers<br><br>> This is only expandable for response but settable in the POST/PUT request<br><br>**Constraints**: *Maximum Length*: `512` |
 | `BasicAuthPassword` | `string` | Optional | The basic authorization password<br><br>> This is only expandable for response but settable in the POST/PUT request<br><br>**Constraints**: *Maximum Length*: `512` |
 | `Expands` | `string` | Optional | An option list of expanded data to send with base data. (i.e. set this field to “contact,account_vault” to get the contact an accountvault used to run a transaction.)<br><br>**Constraints**: *Maximum Length*: `512` |
-| `Format` | [`FormatEnum?`](../../doc/models/format-enum.md) | Optional | Options include: api-default |
+| `Format` | `object` | Optional | - |
 | `IsActive` | `bool` | Required | Flag to indicate whether configuration is active (in effect). |
 | `LocationId` | `string` | Required | The location identifier of the resource you want to recieve postbacks from.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `LocationApiId` | `string` | Optional | Location Api ID |
@@ -23,9 +25,10 @@
 | `Legacy` | `bool?` | Optional | Prefer the legacy api format.<br><br>**Default**: `true` |
 | `PostbackConfigId` | `string` | Optional | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ProductTransactionId` | `string` | Required | Required when using 'transaction' or 'transactionbatch' resource<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `Resource` | [`Resource12Enum?`](../../doc/models/resource-12-enum.md) | Optional | The resource you want to subscribe the postbacks to.<br><br>> Possible values include: 'contact', 'transaction', 'transactionbatch'<br><br>**Constraints**: *Maximum Length*: `128` |
+| `Resource` | `object` | Optional | - |
 | `NumberOfAttempts` | `int` | Required | Maximum number of attempts on failure<br><br>**Constraints**: `>= 1`, `<= 5` |
 | `Url` | `string` | Required | The URL where the postback will be submitted<br><br>**Constraints**: *Maximum Length*: `512` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -35,7 +38,6 @@
   "basic_auth_username": "tester",
   "basic_auth_password": "Test@522",
   "expands": "changelogs,tags",
-  "format": "api-default",
   "is_active": true,
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
   "on_create": true,
@@ -44,9 +46,16 @@
   "legacy": true,
   "postback_config_id": "11e95f8ec39de8fbdb0a4f1a",
   "product_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
-  "resource": "contact",
   "number_of_attempts": 1,
-  "url": "https://127.0.0.1/receiver"
+  "url": "https://127.0.0.1/receiver",
+  "format": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

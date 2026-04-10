@@ -10,23 +10,23 @@ QuickInvoicesController quickInvoicesController = client.QuickInvoicesController
 
 ## Methods
 
-* [Create a New Quick Invoice](../../doc/controllers/quick-invoices.md#create-a-new-quick-invoice)
-* [List All Quick Invoices Related](../../doc/controllers/quick-invoices.md#list-all-quick-invoices-related)
+* [Createanewquickinvoice](../../doc/controllers/quick-invoices.md#createanewquickinvoice)
+* [Listallquickinvoicesrelated](../../doc/controllers/quick-invoices.md#listallquickinvoicesrelated)
 * [Resend](../../doc/controllers/quick-invoices.md#resend)
-* [Associate Transaction with Ouick Invoice](../../doc/controllers/quick-invoices.md#associate-transaction-with-ouick-invoice)
-* [Remove Transaction from Quick Invoice](../../doc/controllers/quick-invoices.md#remove-transaction-from-quick-invoice)
-* [Delete Quick Invoice](../../doc/controllers/quick-invoices.md#delete-quick-invoice)
-* [View Single Quick Invoice Record](../../doc/controllers/quick-invoices.md#view-single-quick-invoice-record)
-* [Update Quick Invoice](../../doc/controllers/quick-invoices.md#update-quick-invoice)
-* [Reopen Quick Invoice](../../doc/controllers/quick-invoices.md#reopen-quick-invoice)
+* [Associate Transactionwith Ouick Invoice](../../doc/controllers/quick-invoices.md#associate-transactionwith-ouick-invoice)
+* [Removetransactionfrom Quick Invoice](../../doc/controllers/quick-invoices.md#removetransactionfrom-quick-invoice)
+* [Deletequick Invoice](../../doc/controllers/quick-invoices.md#deletequick-invoice)
+* [Viewsinglequickinvoicerecord](../../doc/controllers/quick-invoices.md#viewsinglequickinvoicerecord)
+* [Updatequickinvoice](../../doc/controllers/quick-invoices.md#updatequickinvoice)
+* [Reopenquickinvoice](../../doc/controllers/quick-invoices.md#reopenquickinvoice)
 
 
-# Create a New Quick Invoice
+# Createanewquickinvoice
 
 ```csharp
-CreateANewQuickInvoiceAsync(
+CreateanewquickinvoiceAsync(
     Models.V1QuickInvoicesRequest body,
-    List<Models.Expand17Enum> expand = null)
+    List<Models.Expand17> expand = null)
 ```
 
 ## Parameters
@@ -34,11 +34,11 @@ CreateANewQuickInvoiceAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1QuickInvoicesRequest`](../../doc/models/v1-quick-invoices-request.md) | Body, Required | - |
-| `expand` | [`List<Expand17Enum>`](../../doc/models/expand-17-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand17>`](../../doc/models/expand-17.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -93,14 +93,14 @@ V1QuickInvoicesRequest body = new V1QuickInvoicesRequest
 
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.CreateANewQuickInvoiceAsync(body);
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.CreateanewquickinvoiceAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -861,43 +861,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Quick Invoices Related
+# Listallquickinvoicesrelated
 
 ```csharp
-ListAllQuickInvoicesRelatedAsync(
-    Models.Page page = null,
+ListallquickinvoicesrelatedAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand17Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand17> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field41Enum> fields = null)
+    List<Models.Field41> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand17Enum>`](../../doc/models/expand-17-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand17>`](../../doc/models/expand-17.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field41Enum>`](../../doc/models/field-41-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field41>`](../../doc/models/field-41.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoicesCollection>`](../../doc/models/response-quick-invoices-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoicesCollection](../../doc/models/response-quick-invoices-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -908,7 +908,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -917,7 +917,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -926,7 +926,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseQuickInvoicesCollection result = await quickInvoicesController.ListAllQuickInvoicesRelatedAsync(
+    ApiResponse<ResponseQuickInvoicesCollection> result = await quickInvoicesController.ListallquickinvoicesrelatedAsync(
         page,
         order,
         filterBy
@@ -935,9 +935,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1719,7 +1719,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Resend
@@ -1728,8 +1728,8 @@ catch (ApiException e)
 ResendAsync(
     string quickInvoiceId,
     List<string> expand = null,
-    Models.EmailEnum? email = null,
-    Models.SmsEnum? sms = null)
+    Models.Email? email = null,
+    Models.Sms? sms = null)
 ```
 
 ## Parameters
@@ -1738,12 +1738,12 @@ ResendAsync(
 |  --- | --- | --- | --- |
 | `quickInvoiceId` | `string` | Template, Required | Quick Invoice ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `expand` | `List<string>` | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `email` | [`EmailEnum?`](../../doc/models/email-enum.md) | Query, Optional | Resend Email |
-| `sms` | [`SmsEnum?`](../../doc/models/sms-enum.md) | Query, Optional | Resend SMS |
+| `email` | [`Email?`](../../doc/models/email.md) | Query, Optional | Resend Email |
+| `sms` | [`Sms?`](../../doc/models/sms.md) | Query, Optional | Resend SMS |
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoiceResend>`](../../doc/models/response-quick-invoice-resend.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoiceResend](../../doc/models/response-quick-invoice-resend.md).
 
 ## Example Usage
 
@@ -1751,14 +1751,14 @@ ResendAsync(
 string quickInvoiceId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseQuickInvoiceResend result = await quickInvoicesController.ResendAsync(quickInvoiceId);
+    ApiResponse<ResponseQuickInvoiceResend> result = await quickInvoicesController.ResendAsync(quickInvoiceId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1783,13 +1783,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Associate Transaction with Ouick Invoice
+# Associate Transactionwith Ouick Invoice
 
 ```csharp
-AssociateTransactionWithOuickInvoiceAsync(
+AssociateTransactionwithOuickInvoiceAsync(
     string quickInvoiceId,
     Models.V1QuickInvoicesTransactionRequest body)
 ```
@@ -1803,7 +1803,7 @@ AssociateTransactionWithOuickInvoiceAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -1816,7 +1816,7 @@ V1QuickInvoicesTransactionRequest body = new V1QuickInvoicesTransactionRequest
 
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.AssociateTransactionWithOuickInvoiceAsync(
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.AssociateTransactionwithOuickInvoiceAsync(
         quickInvoiceId,
         body
     );
@@ -1824,9 +1824,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2587,14 +2587,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Remove Transaction from Quick Invoice
+# Removetransactionfrom Quick Invoice
 
 ```csharp
-RemoveTransactionFromQuickInvoiceAsync(
+RemovetransactionfromQuickInvoiceAsync(
     string quickInvoiceId,
     Models.V1QuickInvoicesTransactionRequest body)
 ```
@@ -2608,7 +2608,7 @@ RemoveTransactionFromQuickInvoiceAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -2621,7 +2621,7 @@ V1QuickInvoicesTransactionRequest body = new V1QuickInvoicesTransactionRequest
 
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.RemoveTransactionFromQuickInvoiceAsync(
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.RemovetransactionfromQuickInvoiceAsync(
         quickInvoiceId,
         body
     );
@@ -2629,9 +2629,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -3392,14 +3392,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete Quick Invoice
+# Deletequick Invoice
 
 ```csharp
-DeleteQuickInvoiceAsync(
+DeletequickInvoiceAsync(
     string quickInvoiceId)
 ```
 
@@ -3411,7 +3411,7 @@ DeleteQuickInvoiceAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -3419,14 +3419,14 @@ DeleteQuickInvoiceAsync(
 string quickInvoiceId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.DeleteQuickInvoiceAsync(quickInvoiceId);
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.DeletequickInvoiceAsync(quickInvoiceId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -4183,16 +4183,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Quick Invoice Record
+# Viewsinglequickinvoicerecord
 
 ```csharp
-ViewSingleQuickInvoiceRecordAsync(
+ViewsinglequickinvoicerecordAsync(
     string quickInvoiceId,
-    List<Models.Expand17Enum> expand = null,
-    List<Models.Field41Enum> fields = null)
+    List<Models.Expand17> expand = null,
+    List<Models.Field41> fields = null)
 ```
 
 ## Parameters
@@ -4200,12 +4200,12 @@ ViewSingleQuickInvoiceRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `quickInvoiceId` | `string` | Template, Required | Quick Invoice ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand17Enum>`](../../doc/models/expand-17-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field41Enum>`](../../doc/models/field-41-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand17>`](../../doc/models/expand-17.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field41>`](../../doc/models/field-41.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -4213,14 +4213,14 @@ ViewSingleQuickInvoiceRecordAsync(
 string quickInvoiceId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.ViewSingleQuickInvoiceRecordAsync(quickInvoiceId);
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.ViewsinglequickinvoicerecordAsync(quickInvoiceId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -4977,19 +4977,19 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Quick Invoice
+# Updatequickinvoice
 
 NOTE: A quick invoice can not be updated if it is already closed.
 Once a partial payment is made, the item list should not be editable.
 
 ```csharp
-UpdateQuickInvoiceAsync(
+UpdatequickinvoiceAsync(
     string quickInvoiceId,
     Models.V1QuickInvoicesRequest1 body,
-    List<Models.Expand17Enum> expand = null)
+    List<Models.Expand17> expand = null)
 ```
 
 ## Parameters
@@ -4998,11 +4998,11 @@ UpdateQuickInvoiceAsync(
 |  --- | --- | --- | --- |
 | `quickInvoiceId` | `string` | Template, Required | Quick Invoice ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1QuickInvoicesRequest1`](../../doc/models/v1-quick-invoices-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand17Enum>`](../../doc/models/expand-17-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand17>`](../../doc/models/expand-17.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -5050,7 +5050,7 @@ V1QuickInvoicesRequest1 body = new V1QuickInvoicesRequest1
 
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.UpdateQuickInvoiceAsync(
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.UpdatequickinvoiceAsync(
         quickInvoiceId,
         body
     );
@@ -5058,9 +5058,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -5821,14 +5821,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Reopen Quick Invoice
+# Reopenquickinvoice
 
 ```csharp
-ReopenQuickInvoiceAsync(
+ReopenquickinvoiceAsync(
     string quickInvoiceId)
 ```
 
@@ -5840,7 +5840,7 @@ ReopenQuickInvoiceAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseQuickInvoice>`](../../doc/models/response-quick-invoice.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseQuickInvoice](../../doc/models/response-quick-invoice.md).
 
 ## Example Usage
 
@@ -5848,14 +5848,14 @@ ReopenQuickInvoiceAsync(
 string quickInvoiceId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseQuickInvoice result = await quickInvoicesController.ReopenQuickInvoiceAsync(quickInvoiceId);
+    ApiResponse<ResponseQuickInvoice> result = await quickInvoicesController.ReopenquickinvoiceAsync(quickInvoiceId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -6612,5 +6612,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

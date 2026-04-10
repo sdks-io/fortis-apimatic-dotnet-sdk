@@ -1,6 +1,8 @@
 
 # Response Ticket
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ResponseTicket`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type87Enum?`](../../doc/models/type-87-enum.md) | Optional | Resource Type<br><br>**Default**: `Type87Enum.Ticket` |
+| `Type` | [`Type87?`](../../doc/models/type-87.md) | Optional | - |
 | `Data` | [`Data24`](../../doc/models/data-24.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -24,8 +27,20 @@
     "account_number": "account_number0",
     "billing_address": {
       "postal_code": "postal_code0",
-      "street": "street8"
+      "street": "street8",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
     }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

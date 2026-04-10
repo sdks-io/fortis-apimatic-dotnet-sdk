@@ -1,6 +1,8 @@
 
 # Auth Role
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `AuthRole`
@@ -16,6 +18,7 @@
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `CreatedUserId` | `string` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ModifiedUserId` | `string` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -27,7 +30,11 @@
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "modified_user_id": "11e95f8ec39de8fbdb0a4f1a"
+  "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

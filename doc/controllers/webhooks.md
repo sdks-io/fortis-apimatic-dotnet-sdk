@@ -10,21 +10,21 @@ WebhooksController webhooksController = client.WebhooksController;
 
 ## Methods
 
-* [Create a New Transaction Batch Postback Config](../../doc/controllers/webhooks.md#create-a-new-transaction-batch-postback-config)
-* [Create a New Contact Postback Config](../../doc/controllers/webhooks.md#create-a-new-contact-postback-config)
-* [Create a New Transaction Postback Config](../../doc/controllers/webhooks.md#create-a-new-transaction-postback-config)
-* [Delete a Postback Config](../../doc/controllers/webhooks.md#delete-a-postback-config)
-* [Update Transaction Batch Postback Config](../../doc/controllers/webhooks.md#update-transaction-batch-postback-config)
-* [Update Contact Postback Config](../../doc/controllers/webhooks.md#update-contact-postback-config)
-* [Update Transaction Postback Config](../../doc/controllers/webhooks.md#update-transaction-postback-config)
+* [Createanewtransactionbatchpostbackconfig](../../doc/controllers/webhooks.md#createanewtransactionbatchpostbackconfig)
+* [Createanewcontactpostbackconfig](../../doc/controllers/webhooks.md#createanewcontactpostbackconfig)
+* [Createanewtransactionpostbackconfig](../../doc/controllers/webhooks.md#createanewtransactionpostbackconfig)
+* [Deleteapostbackconfig](../../doc/controllers/webhooks.md#deleteapostbackconfig)
+* [Updatetransactionbatchpostbackconfig](../../doc/controllers/webhooks.md#updatetransactionbatchpostbackconfig)
+* [Updatecontactpostbackconfig](../../doc/controllers/webhooks.md#updatecontactpostbackconfig)
+* [Updatetransactionpostbackconfig](../../doc/controllers/webhooks.md#updatetransactionpostbackconfig)
 
 
-# Create a New Transaction Batch Postback Config
+# Createanewtransactionbatchpostbackconfig
 
 ```csharp
-CreateANewTransactionBatchPostbackConfigAsync(
+CreateanewtransactionbatchpostbackconfigAsync(
     Models.V1WebhooksBatchRequest body,
-    List<Models.Expand123Enum> expand = null)
+    List<Models.Expand123> expand = null)
 ```
 
 ## Parameters
@@ -32,11 +32,11 @@ CreateANewTransactionBatchPostbackConfigAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1WebhooksBatchRequest`](../../doc/models/v1-webhooks-batch-request.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -55,22 +55,20 @@ V1WebhooksBatchRequest body = new V1WebhooksBatchRequest
     BasicAuthUsername = "tester",
     BasicAuthPassword = "Test@522",
     Expands = "changelogs,tags",
-    Format = FormatEnum.Apidefault,
     Legacy = true,
     PostbackConfigId = "11e95f8ec39de8fbdb0a4f1a",
-    Resource = Resource12Enum.Contact,
 };
 
 try
 {
-    ResponseWebhook result = await webhooksController.CreateANewTransactionBatchPostbackConfigAsync(body);
+    ApiResponse<ResponseWebhook> result = await webhooksController.CreateanewtransactionbatchpostbackconfigAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -120,16 +118,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Contact Postback Config
+# Createanewcontactpostbackconfig
 
 ```csharp
-CreateANewContactPostbackConfigAsync(
+CreateanewcontactpostbackconfigAsync(
     Models.V1WebhooksContactRequest body,
-    List<Models.Expand123Enum> expand = null)
+    List<Models.Expand123> expand = null)
 ```
 
 ## Parameters
@@ -137,11 +135,11 @@ CreateANewContactPostbackConfigAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1WebhooksContactRequest`](../../doc/models/v1-webhooks-contact-request.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -159,23 +157,21 @@ V1WebhooksContactRequest body = new V1WebhooksContactRequest
     BasicAuthUsername = "tester",
     BasicAuthPassword = "Test@522",
     Expands = "changelogs,tags",
-    Format = FormatEnum.Apidefault,
     Legacy = true,
     PostbackConfigId = "11e95f8ec39de8fbdb0a4f1a",
     ProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
-    Resource = Resource12Enum.Contact,
 };
 
 try
 {
-    ResponseWebhook result = await webhooksController.CreateANewContactPostbackConfigAsync(body);
+    ApiResponse<ResponseWebhook> result = await webhooksController.CreateanewcontactpostbackconfigAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -225,16 +221,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Transaction Postback Config
+# Createanewtransactionpostbackconfig
 
 ```csharp
-CreateANewTransactionPostbackConfigAsync(
+CreateanewtransactionpostbackconfigAsync(
     Models.V1WebhooksTransactionRequest body,
-    List<Models.Expand123Enum> expand = null)
+    List<Models.Expand123> expand = null)
 ```
 
 ## Parameters
@@ -242,11 +238,11 @@ CreateANewTransactionPostbackConfigAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1WebhooksTransactionRequest`](../../doc/models/v1-webhooks-transaction-request.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -265,22 +261,20 @@ V1WebhooksTransactionRequest body = new V1WebhooksTransactionRequest
     BasicAuthUsername = "tester",
     BasicAuthPassword = "Test@522",
     Expands = "changelogs,tags",
-    Format = FormatEnum.Apidefault,
     Legacy = true,
     PostbackConfigId = "11e95f8ec39de8fbdb0a4f1a",
-    Resource = Resource12Enum.Contact,
 };
 
 try
 {
-    ResponseWebhook result = await webhooksController.CreateANewTransactionPostbackConfigAsync(body);
+    ApiResponse<ResponseWebhook> result = await webhooksController.CreateanewtransactionpostbackconfigAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -330,14 +324,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete a Postback Config
+# Deleteapostbackconfig
 
 ```csharp
-DeleteAPostbackConfigAsync(
+DeleteapostbackconfigAsync(
     string webhookId)
 ```
 
@@ -349,7 +343,7 @@ DeleteAPostbackConfigAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -357,14 +351,14 @@ DeleteAPostbackConfigAsync(
 string webhookId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseWebhook result = await webhooksController.DeleteAPostbackConfigAsync(webhookId);
+    ApiResponse<ResponseWebhook> result = await webhooksController.DeleteapostbackconfigAsync(webhookId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -410,16 +404,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Transaction Batch Postback Config
+# Updatetransactionbatchpostbackconfig
 
 ```csharp
-UpdateTransactionBatchPostbackConfigAsync(
+UpdatetransactionbatchpostbackconfigAsync(
     string webhookId,
     Models.V1WebhooksBatchRequest1 body,
-    List<Models.Expand123Enum> expand = null)
+    List<Models.Expand123> expand = null)
 ```
 
 ## Parameters
@@ -428,11 +422,11 @@ UpdateTransactionBatchPostbackConfigAsync(
 |  --- | --- | --- | --- |
 | `webhookId` | `string` | Template, Required | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1WebhooksBatchRequest1`](../../doc/models/v1-webhooks-batch-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -444,7 +438,6 @@ V1WebhooksBatchRequest1 body = new V1WebhooksBatchRequest1
     BasicAuthUsername = "tester",
     BasicAuthPassword = "Test@522",
     Expands = "changelogs,tags",
-    Format = FormatEnum.Apidefault,
     IsActive = true,
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     OnCreate = true,
@@ -453,14 +446,13 @@ V1WebhooksBatchRequest1 body = new V1WebhooksBatchRequest1
     Legacy = true,
     PostbackConfigId = "11e95f8ec39de8fbdb0a4f1a",
     ProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
-    Resource = Resource12Enum.Contact,
     NumberOfAttempts = 1,
     Url = "https://127.0.0.1/receiver",
 };
 
 try
 {
-    ResponseWebhook result = await webhooksController.UpdateTransactionBatchPostbackConfigAsync(
+    ApiResponse<ResponseWebhook> result = await webhooksController.UpdatetransactionbatchpostbackconfigAsync(
         webhookId,
         body
     );
@@ -468,9 +460,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -520,17 +512,17 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Update Contact Postback Config
+# Updatecontactpostbackconfig
 
 ```csharp
-UpdateContactPostbackConfigAsync(
+UpdatecontactpostbackconfigAsync(
     string webhookId,
     Models.V1WebhooksContactRequest1 body,
-    List<Models.Expand123Enum> expand = null)
+    List<Models.Expand123> expand = null)
 ```
 
 ## Parameters
@@ -539,11 +531,11 @@ UpdateContactPostbackConfigAsync(
 |  --- | --- | --- | --- |
 | `webhookId` | `string` | Template, Required | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1WebhooksContactRequest1`](../../doc/models/v1-webhooks-contact-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -555,7 +547,6 @@ V1WebhooksContactRequest1 body = new V1WebhooksContactRequest1
     BasicAuthUsername = "tester",
     BasicAuthPassword = "Test@522",
     Expands = "changelogs,tags",
-    Format = FormatEnum.Apidefault,
     IsActive = true,
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     OnCreate = true,
@@ -564,14 +555,13 @@ V1WebhooksContactRequest1 body = new V1WebhooksContactRequest1
     Legacy = true,
     PostbackConfigId = "11e95f8ec39de8fbdb0a4f1a",
     ProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
-    Resource = Resource12Enum.Contact,
     NumberOfAttempts = 1,
     Url = "https://127.0.0.1/receiver",
 };
 
 try
 {
-    ResponseWebhook result = await webhooksController.UpdateContactPostbackConfigAsync(
+    ApiResponse<ResponseWebhook> result = await webhooksController.UpdatecontactpostbackconfigAsync(
         webhookId,
         body
     );
@@ -579,9 +569,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -631,17 +621,17 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Update Transaction Postback Config
+# Updatetransactionpostbackconfig
 
 ```csharp
-UpdateTransactionPostbackConfigAsync(
+UpdatetransactionpostbackconfigAsync(
     string webhookId,
     Models.V1WebhooksTransactionRequest1 body,
-    List<Models.Expand123Enum> expand = null)
+    List<Models.Expand123> expand = null)
 ```
 
 ## Parameters
@@ -650,11 +640,11 @@ UpdateTransactionPostbackConfigAsync(
 |  --- | --- | --- | --- |
 | `webhookId` | `string` | Template, Required | Postback Config ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1WebhooksTransactionRequest1`](../../doc/models/v1-webhooks-transaction-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand123Enum>`](../../doc/models/expand-123-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand123>`](../../doc/models/expand-123.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseWebhook>`](../../doc/models/response-webhook.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseWebhook](../../doc/models/response-webhook.md).
 
 ## Example Usage
 
@@ -666,7 +656,6 @@ V1WebhooksTransactionRequest1 body = new V1WebhooksTransactionRequest1
     BasicAuthUsername = "tester",
     BasicAuthPassword = "Test@522",
     Expands = "changelogs,tags",
-    Format = FormatEnum.Apidefault,
     IsActive = true,
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     OnCreate = true,
@@ -675,14 +664,13 @@ V1WebhooksTransactionRequest1 body = new V1WebhooksTransactionRequest1
     Legacy = true,
     PostbackConfigId = "11e95f8ec39de8fbdb0a4f1a",
     ProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
-    Resource = Resource12Enum.Contact,
     NumberOfAttempts = 1,
     Url = "https://127.0.0.1/receiver",
 };
 
 try
 {
-    ResponseWebhook result = await webhooksController.UpdateTransactionPostbackConfigAsync(
+    ApiResponse<ResponseWebhook> result = await webhooksController.UpdatetransactionpostbackconfigAsync(
         webhookId,
         body
     );
@@ -690,9 +678,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -742,6 +730,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

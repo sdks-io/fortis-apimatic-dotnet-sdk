@@ -1,6 +1,8 @@
 
 # Data 34
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Data34`
@@ -28,20 +30,20 @@
 | `RequiresNewPassword` | `string` | Optional | Requires New Password<br><br>**Constraints**: *Maximum Length*: `1` |
 | `TermsConditionCode` | `string` | Optional | Terms Condition (This field is required when updating your own password). |
 | `Tz` | `string` | Optional | Time zone<br><br>**Constraints**: *Maximum Length*: `30` |
-| `UiPrefs` | [`UiPrefs`](../../doc/models/ui-prefs.md) | Optional | Ui Prefs |
+| `UiPrefs` | [`UiPrefs1`](../../doc/models/ui-prefs-1.md) | Optional | - |
 | `Username` | `string` | Optional | Username<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `64` |
 | `UserApiKey` | `string` | Optional | User Api Key<br><br>**Constraints**: *Minimum Length*: `16`, *Maximum Length*: `64` |
 | `UserHashKey` | `string` | Optional | User Hash Key<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` |
-| `UserTypeCode` | [`UserTypeCodeEnum?`](../../doc/models/user-type-code-enum.md) | Optional | User Type |
+| `UserTypeCode` | [`UserTypeCode?`](../../doc/models/user-type-code.md) | Optional | - |
 | `Password` | `string` | Optional | Password<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `128`, *Pattern*: ``^(?=.*[`!@#$%^&*()_+\-=\[\]{};':"\\\|,.<>\/?~])(?=.*[0-9])(?=.*[a-zA-Z]).*$`` |
 | `Zip` | `string` | Optional | Zip<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `10`, *Pattern*: `^[a-zA-Z0-9\-\s]+$` |
 | `LocationId` | `string` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ContactApiId` | `string` | Optional | ContactApi Id |
 | `PrimaryLocationApiId` | `string` | Optional | Primary LocationApi ID |
-| `StatusCode` | [`StatusCodeEnum?`](../../doc/models/status-code-enum.md) | Optional | Status Code |
+| `StatusCode` | `object` | Optional | - |
 | `ApiOnly` | `bool?` | Optional | API Only |
 | `IsInvitation` | `bool?` | Optional | Is Invitation |
-| `Address` | [`Address2`](../../doc/models/address-2.md) | Optional | Address |
+| `Address` | [`Address3`](../../doc/models/address-3.md) | Optional | - |
 | `Id` | `string` | Optional | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `Status` | `bool?` | Optional | Status |
 | `LoginAttempts` | `int?` | Optional | Login Attempts |
@@ -57,20 +59,21 @@
 | `SftpAccess` | `bool?` | Optional | SFTP Access |
 | `LogApiResponseBodyTs` | `int?` | Optional | Log Api Response Body |
 | `Locations` | [`List<Location18>`](../../doc/models/location-18.md) | Optional | Location Information on `expand` |
-| `PrimaryLocation` | [`PrimaryLocation`](../../doc/models/primary-location.md) | Optional | Primary Location Information on `expand` |
+| `PrimaryLocation` | [`AccountVaultCauProductTransaction`](../../doc/models/account-vault-cau-product-transaction.md) | Optional | - |
 | `ReceivedEmails` | [`List<ReceivedEmail>`](../../doc/models/received-email.md) | Optional | Received Email Information on `expand` |
-| `Contact` | [`Contact1`](../../doc/models/contact-1.md) | Optional | Contact Information on `expand` |
+| `Contact` | [`Contact3`](../../doc/models/contact-3.md) | Optional | - |
 | `IsDeletable` | `bool?` | Optional | Is Deletable Information on `expand` |
 | `ActiveNotificationAlerts` | [`List<ActiveNotificationAlert>`](../../doc/models/active-notification-alert.md) | Optional | Active Notification Alert Information on `expand` |
 | `LocationUsers` | [`List<LocationUser>`](../../doc/models/location-user.md) | Optional | Location User Information on `expand` |
 | `AuthRoles` | [`List<AuthRole>`](../../doc/models/auth-role.md) | Optional | Auth Role Information on `expand` |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` |
-| `Resources` | [`Resources`](../../doc/models/resources.md) | Optional | Resource Information on `expand` |
-| `Domain` | [`Domain`](../../doc/models/domain.md) | Optional | Domain Information on `expand` |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` |
+| `Resources` | [`Resources1`](../../doc/models/resources-1.md) | Optional | - |
+| `Domain` | [`Domain1`](../../doc/models/domain-1.md) | Optional | - |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
 | `LocationMarketplaces` | [`List<Locationmarketplace>`](../../doc/models/locationmarketplace.md) | Optional | Locationmarketplaces Information on `expand` |
-| `EmailBlacklist` | [`EmailBlacklist`](../../doc/models/email-blacklist.md) | Optional | Email Blacklist Information on `expand` |
-| `Helppage` | [`Helppage2`](../../doc/models/helppage-2.md) | Optional | Helppage Information on `expand` |
+| `EmailBlacklist` | [`EmailBlacklist1`](../../doc/models/email-blacklist-1.md) | Optional | - |
+| `Helppage` | [`Helppage`](../../doc/models/helppage.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -96,10 +99,8 @@
   "tz": "America/New_York",
   "username": "{user_name}",
   "user_api_key": "234bas8dfn8238f923w2",
-  "user_type_code": 100,
   "zip": "48375",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
-  "status_code": 1,
   "api_only": false,
   "is_invitation": false,
   "id": "11e95f8ec39de8fbdb0a4f1a",
@@ -113,7 +114,11 @@
   "terms_agree_ip": "192.168.0.10",
   "current_login": 1422040992,
   "log_api_response_body_ts": 1422040992,
-  "isDeletable": true
+  "isDeletable": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

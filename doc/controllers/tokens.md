@@ -14,26 +14,26 @@ TokensController tokensController = client.TokensController;
 
 ## Methods
 
-* [Create a New ACH Token](../../doc/controllers/tokens.md#create-a-new-ach-token)
-* [Create a New Credit Card Token](../../doc/controllers/tokens.md#create-a-new-credit-card-token)
-* [Create a New Previous Transaction Token](../../doc/controllers/tokens.md#create-a-new-previous-transaction-token)
-* [Create a New Terminal Token with Async Method](../../doc/controllers/tokens.md#create-a-new-terminal-token-with-async-method)
-* [Create a New Terminal Token](../../doc/controllers/tokens.md#create-a-new-terminal-token)
-* [Create a New Ticket Token](../../doc/controllers/tokens.md#create-a-new-ticket-token)
-* [Create a New Wallet Token](../../doc/controllers/tokens.md#create-a-new-wallet-token)
-* [Delete a Single Token Record](../../doc/controllers/tokens.md#delete-a-single-token-record)
-* [View Single Token Record](../../doc/controllers/tokens.md#view-single-token-record)
-* [List All Tokens Related](../../doc/controllers/tokens.md#list-all-tokens-related)
+* [Createanew ACH Token](../../doc/controllers/tokens.md#createanew-ach-token)
+* [Createanew Credit Card Token](../../doc/controllers/tokens.md#createanew-credit-card-token)
+* [Createanew Previous Transaction Token](../../doc/controllers/tokens.md#createanew-previous-transaction-token)
+* [Createanew Terminal Tokenwith Asyncmethod](../../doc/controllers/tokens.md#createanew-terminal-tokenwith-asyncmethod)
+* [Createanew Terminal Token](../../doc/controllers/tokens.md#createanew-terminal-token)
+* [Createanew Ticket Token](../../doc/controllers/tokens.md#createanew-ticket-token)
+* [Createanew Wallet Token](../../doc/controllers/tokens.md#createanew-wallet-token)
+* [Deleteasingletokenrecord](../../doc/controllers/tokens.md#deleteasingletokenrecord)
+* [Viewsingletokenrecord](../../doc/controllers/tokens.md#viewsingletokenrecord)
+* [Listalltokensrelated](../../doc/controllers/tokens.md#listalltokensrelated)
 * [Update ACH Token](../../doc/controllers/tokens.md#update-ach-token)
 * [Update CC Token](../../doc/controllers/tokens.md#update-cc-token)
 
 
-# Create a New ACH Token
+# Createanew ACH Token
 
 ```csharp
-CreateANewACHTokenAsync(
+CreateanewAchTokenAsync(
     Models.V1TokensAchRequest body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -41,11 +41,11 @@ CreateANewACHTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensAchRequest`](../../doc/models/v1-tokens-ach-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -63,7 +63,6 @@ V1TokensAchRequest body = new V1TokensAchRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -80,21 +79,20 @@ V1TokensAchRequest body = new V1TokensAchRequest
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     AcsTransactionId = "13c701a3-5a88-4c45-89e9-ef65e50a8bf9",
-    AccountType = AccountType13Enum.Savings,
     IsCompany = false,
     RoutingNumber = "100020200",
 };
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewACHTokenAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewAchTokenAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -567,16 +565,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Credit Card Token
+# Createanew Credit Card Token
 
 ```csharp
-CreateANewCreditCardTokenAsync(
+CreateanewCreditCardTokenAsync(
     Models.V1TokensCcRequest body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -584,11 +582,11 @@ CreateANewCreditCardTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensCcRequest`](../../doc/models/v1-tokens-cc-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -606,7 +604,6 @@ V1TokensCcRequest body = new V1TokensCcRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -635,14 +632,14 @@ V1TokensCcRequest body = new V1TokensCcRequest
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewCreditCardTokenAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewCreditCardTokenAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1115,16 +1112,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Previous Transaction Token
+# Createanew Previous Transaction Token
 
 ```csharp
-CreateANewPreviousTransactionTokenAsync(
+CreateanewPreviousTransactionTokenAsync(
     Models.V1TokensPreviousTransactionRequest body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -1132,11 +1129,11 @@ CreateANewPreviousTransactionTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensPreviousTransactionRequest`](../../doc/models/v1-tokens-previous-transaction-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -1154,7 +1151,6 @@ V1TokensPreviousTransactionRequest body = new V1TokensPreviousTransactionRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -1175,14 +1171,14 @@ V1TokensPreviousTransactionRequest body = new V1TokensPreviousTransactionRequest
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewPreviousTransactionTokenAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewPreviousTransactionTokenAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1655,14 +1651,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Terminal Token with Async Method
+# Createanew Terminal Tokenwith Asyncmethod
 
 ```csharp
-CreateANewTerminalTokenWithAsyncMethodAsync(
+CreateanewTerminalTokenwithAsyncmethodAsync(
     Models.V1TokensTerminalAsyncRequest body)
 ```
 
@@ -1674,7 +1670,7 @@ CreateANewTerminalTokenWithAsyncMethodAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -1693,7 +1689,6 @@ V1TokensTerminalAsyncRequest body = new V1TokensTerminalAsyncRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -1715,14 +1710,14 @@ V1TokensTerminalAsyncRequest body = new V1TokensTerminalAsyncRequest
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewTerminalTokenWithAsyncMethodAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewTerminalTokenwithAsyncmethodAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1749,16 +1744,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Terminal Token
+# Createanew Terminal Token
 
 ```csharp
-CreateANewTerminalTokenAsync(
+CreateanewTerminalTokenAsync(
     Models.V1TokensTerminalRequest body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -1766,11 +1761,11 @@ CreateANewTerminalTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensTerminalRequest`](../../doc/models/v1-tokens-terminal-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -1789,7 +1784,6 @@ V1TokensTerminalRequest body = new V1TokensTerminalRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -1811,14 +1805,14 @@ V1TokensTerminalRequest body = new V1TokensTerminalRequest
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewTerminalTokenAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewTerminalTokenAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2291,16 +2285,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Ticket Token
+# Createanew Ticket Token
 
 ```csharp
-CreateANewTicketTokenAsync(
+CreateanewTicketTokenAsync(
     Models.V1TokensTicketRequest body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -2308,11 +2302,11 @@ CreateANewTicketTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensTicketRequest`](../../doc/models/v1-tokens-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -2330,7 +2324,6 @@ V1TokensTicketRequest body = new V1TokensTicketRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -2352,14 +2345,14 @@ V1TokensTicketRequest body = new V1TokensTicketRequest
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewTicketTokenAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewTicketTokenAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2832,16 +2825,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Create a New Wallet Token
+# Createanew Wallet Token
 
 ```csharp
-CreateANewWalletTokenAsync(
+CreateanewWalletTokenAsync(
     Models.V1TokensWalletRequest body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -2849,11 +2842,11 @@ CreateANewWalletTokenAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TokensWalletRequest`](../../doc/models/v1-tokens-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -2862,7 +2855,7 @@ V1TokensWalletRequest body = new V1TokensWalletRequest
 {
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     AccountHolderName = "John Smith",
     AccountVaultApiId = "accountvaultabcd",
     TokenApiId = "tokenabcd",
@@ -2872,7 +2865,6 @@ V1TokensWalletRequest body = new V1TokensWalletRequest
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     PreviousAccountVaultApiId = "previousaccountvault123456",
@@ -2895,14 +2887,14 @@ V1TokensWalletRequest body = new V1TokensWalletRequest
 
 try
 {
-    ResponseToken result = await tokensController.CreateANewWalletTokenAsync(body);
+    ApiResponse<ResponseToken> result = await tokensController.CreateanewWalletTokenAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -3375,14 +3367,14 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Delete a Single Token Record
+# Deleteasingletokenrecord
 
 ```csharp
-DeleteASingleTokenRecordAsync(
+DeleteasingletokenrecordAsync(
     string tokenId)
 ```
 
@@ -3394,7 +3386,7 @@ DeleteASingleTokenRecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -3402,14 +3394,14 @@ DeleteASingleTokenRecordAsync(
 string tokenId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseToken result = await tokensController.DeleteASingleTokenRecordAsync(tokenId);
+    ApiResponse<ResponseToken> result = await tokensController.DeleteasingletokenrecordAsync(tokenId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -3878,16 +3870,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Token Record
+# Viewsingletokenrecord
 
 ```csharp
-ViewSingleTokenRecordAsync(
+ViewsingletokenrecordAsync(
     string tokenId,
-    List<Models.Expand47Enum> expand = null,
-    List<Models.Field53Enum> fields = null)
+    List<Models.Expand47> expand = null,
+    List<Models.Field53> fields = null)
 ```
 
 ## Parameters
@@ -3895,12 +3887,12 @@ ViewSingleTokenRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `tokenId` | `string` | Template, Required | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field53Enum>`](../../doc/models/field-53-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field53>`](../../doc/models/field-53.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -3908,14 +3900,14 @@ ViewSingleTokenRecordAsync(
 string tokenId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseToken result = await tokensController.ViewSingleTokenRecordAsync(tokenId);
+    ApiResponse<ResponseToken> result = await tokensController.ViewsingletokenrecordAsync(tokenId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -4384,42 +4376,42 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# List All Tokens Related
+# Listalltokensrelated
 
 ```csharp
-ListAllTokensRelatedAsync(
-    Models.Page page = null,
+ListalltokensrelatedAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand47Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand47> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field53Enum> fields = null)
+    List<Models.Field53> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field53Enum>`](../../doc/models/field-53-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field53>`](../../doc/models/field-53.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseTokensCollection>`](../../doc/models/response-tokens-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTokensCollection](../../doc/models/response-tokens-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -4430,7 +4422,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -4439,7 +4431,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -4448,7 +4440,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseTokensCollection result = await tokensController.ListAllTokensRelatedAsync(
+    ApiResponse<ResponseTokensCollection> result = await tokensController.ListalltokensrelatedAsync(
         page,
         order,
         filterBy
@@ -4457,9 +4449,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -4953,16 +4945,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
 # Update ACH Token
 
 ```csharp
-UpdateACHTokenAsync(
+UpdateAchTokenAsync(
     string tokenId,
     Models.V1TokensAchRequest1 body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -4971,11 +4963,11 @@ UpdateACHTokenAsync(
 |  --- | --- | --- | --- |
 | `tokenId` | `string` | Template, Required | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TokensAchRequest1`](../../doc/models/v1-tokens-ach-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -4992,7 +4984,6 @@ V1TokensAchRequest1 body = new V1TokensAchRequest1
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
@@ -5011,12 +5002,11 @@ V1TokensAchRequest1 body = new V1TokensAchRequest1
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     AcsTransactionId = "13c701a3-5a88-4c45-89e9-ef65e50a8bf9",
-    AccountType = AccountType13Enum.Savings,
 };
 
 try
 {
-    ResponseToken result = await tokensController.UpdateACHTokenAsync(
+    ApiResponse<ResponseToken> result = await tokensController.UpdateAchTokenAsync(
         tokenId,
         body
     );
@@ -5024,9 +5014,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -5499,17 +5489,17 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
 # Update CC Token
 
 ```csharp
-UpdateCCTokenAsync(
+UpdateCcTokenAsync(
     string tokenId,
     Models.V1TokensCcRequest1 body,
-    List<Models.Expand47Enum> expand = null)
+    List<Models.Expand47> expand = null)
 ```
 
 ## Parameters
@@ -5518,11 +5508,11 @@ UpdateCCTokenAsync(
 |  --- | --- | --- | --- |
 | `tokenId` | `string` | Template, Required | A unique, system-generated identifier for the Token.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TokensCcRequest1`](../../doc/models/v1-tokens-cc-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand47Enum>`](../../doc/models/expand-47-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand47>`](../../doc/models/expand-47.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseToken>`](../../doc/models/response-token.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseToken](../../doc/models/response-token.md).
 
 ## Example Usage
 
@@ -5539,7 +5529,6 @@ V1TokensCcRequest1 body = new V1TokensCcRequest1
     TokenC1 = "token custom 1",
     TokenC2 = "token custom 2",
     TokenC3 = "token custom 3",
-    AchSecCode = AchSecCode3Enum.WEB,
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
     CustomerId = "123456",
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
@@ -5563,7 +5552,7 @@ V1TokensCcRequest1 body = new V1TokensCcRequest1
 
 try
 {
-    ResponseToken result = await tokensController.UpdateCCTokenAsync(
+    ApiResponse<ResponseToken> result = await tokensController.UpdateCcTokenAsync(
         tokenId,
         body
     );
@@ -5571,9 +5560,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -6046,6 +6035,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

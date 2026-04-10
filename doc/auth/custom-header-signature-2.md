@@ -22,12 +22,12 @@ Documentation for accessing and setting credentials for developer-id.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```csharp
-using FortisAPI.Standard;
-using FortisAPI.Standard.Authentication;
+using FortisApi.Standard;
+using FortisApi.Standard.Authentication;
 
 namespace ConsoleApp;
 
-FortisAPIClient client = new FortisAPIClient.Builder()
+FortisApiClient client = new FortisApiClient.Builder()
     .DeveloperIdCredentials(
         new DeveloperIdModel.Builder(
             "developer-id"

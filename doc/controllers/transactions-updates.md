@@ -11,7 +11,7 @@ TransactionsUpdatesController transactionsUpdatesController = client.Transaction
 ## Methods
 
 * [Void](../../doc/controllers/transactions-updates.md#void)
-* [Void 1](../../doc/controllers/transactions-updates.md#void-1)
+* [Patch Void](../../doc/controllers/transactions-updates.md#patch-void)
 * [Auth Complete](../../doc/controllers/transactions-updates.md#auth-complete)
 * [Auth Increment](../../doc/controllers/transactions-updates.md#auth-increment)
 * [Partial Reversal](../../doc/controllers/transactions-updates.md#partial-reversal)
@@ -26,7 +26,7 @@ Void a transaction
 ```csharp
 VoidAsync(
     string transactionId,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -34,11 +34,11 @@ VoidAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -46,14 +46,14 @@ VoidAsync(
 string transactionId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.VoidAsync(transactionId);
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.VoidAsync(transactionId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1109,18 +1109,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Void 1
+# Patch Void
 
 Void a transaction
 
 ```csharp
-Void1Async(
+PatchVoidAsync(
     string transactionId,
     Models.V1TransactionsVoidRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -1129,11 +1129,11 @@ Void1Async(
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsVoidRequest`](../../doc/models/v1-transactions-void-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1146,7 +1146,7 @@ V1TransactionsVoidRequest body = new V1TransactionsVoidRequest
 
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.Void1Async(
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.PatchVoidAsync(
         transactionId,
         body
     );
@@ -1154,9 +1154,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2216,7 +2216,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -2228,7 +2228,7 @@ Perform an auth complete transaction
 AuthCompleteAsync(
     string transactionId,
     Models.V1TransactionsAuthCompleteRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -2237,11 +2237,11 @@ AuthCompleteAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsAuthCompleteRequest`](../../doc/models/v1-transactions-auth-complete-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -2256,13 +2256,11 @@ V1TransactionsAuthCompleteRequest body = new V1TransactionsAuthCompleteRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -2297,13 +2295,12 @@ V1TransactionsAuthCompleteRequest body = new V1TransactionsAuthCompleteRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     DeferredAuth = true,
 };
 
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.AuthCompleteAsync(
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.AuthCompleteAsync(
         transactionId,
         body
     );
@@ -2311,9 +2308,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -3373,7 +3370,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -3385,7 +3382,7 @@ Perform an auth increment transaction
 AuthIncrementAsync(
     string transactionId,
     Models.V1TransactionsAuthIncrementRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -3394,11 +3391,11 @@ AuthIncrementAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsAuthIncrementRequest`](../../doc/models/v1-transactions-auth-increment-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -3414,13 +3411,11 @@ V1TransactionsAuthIncrementRequest body = new V1TransactionsAuthIncrementRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -3454,13 +3449,12 @@ V1TransactionsAuthIncrementRequest body = new V1TransactionsAuthIncrementRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     DeferredAuth = true,
 };
 
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.AuthIncrementAsync(
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.AuthIncrementAsync(
         transactionId,
         body
     );
@@ -3468,9 +3462,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -4530,7 +4524,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -4542,7 +4536,7 @@ Perform a partial reversal
 PartialReversalAsync(
     string transactionId,
     Models.V1TransactionsPartialReversalRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -4551,11 +4545,11 @@ PartialReversalAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsPartialReversalRequest`](../../doc/models/v1-transactions-partial-reversal-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -4571,13 +4565,11 @@ V1TransactionsPartialReversalRequest body = new V1TransactionsPartialReversalReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -4611,12 +4603,11 @@ V1TransactionsPartialReversalRequest body = new V1TransactionsPartialReversalReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
 };
 
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.PartialReversalAsync(
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.PartialReversalAsync(
         transactionId,
         body
     );
@@ -4624,9 +4615,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -5686,7 +5677,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -5698,7 +5689,7 @@ Perform a refund transaction
 RefundTransactionAsync(
     string transactionId,
     Models.V1TransactionsRefundRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -5707,11 +5698,11 @@ RefundTransactionAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsRefundRequest`](../../doc/models/v1-transactions-refund-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -5726,13 +5717,11 @@ V1TransactionsRefundRequest body = new V1TransactionsRefundRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -5767,12 +5756,11 @@ V1TransactionsRefundRequest body = new V1TransactionsRefundRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
 };
 
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.RefundTransactionAsync(
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.RefundTransactionAsync(
         transactionId,
         body
     );
@@ -5780,9 +5768,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -6842,7 +6830,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -6854,7 +6842,7 @@ Increment the authorized transaction amount to include a tip
 TipAdjustmentAsync(
     string transactionId,
     Models.V1TransactionsTipAdjustRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -6863,11 +6851,11 @@ TipAdjustmentAsync(
 |  --- | --- | --- | --- |
 | `transactionId` | `string` | Template, Required | Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TransactionsTipAdjustRequest`](../../doc/models/v1-transactions-tip-adjust-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -6884,13 +6872,11 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -6923,7 +6909,6 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -6933,7 +6918,6 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -6943,7 +6927,7 @@ V1TransactionsTipAdjustRequest body = new V1TransactionsTipAdjustRequest
 
 try
 {
-    ResponseTransaction result = await transactionsUpdatesController.TipAdjustmentAsync(
+    ApiResponse<ResponseTransaction> result = await transactionsUpdatesController.TipAdjustmentAsync(
         transactionId,
         body
     );
@@ -6951,9 +6935,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -8013,6 +7997,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

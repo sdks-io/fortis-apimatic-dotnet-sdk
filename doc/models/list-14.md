@@ -1,6 +1,8 @@
 
 # List 14
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `List14`
@@ -13,15 +15,15 @@
 | `DefaultProductTransactionId` | `string` | Optional | Product Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `TerminalApplicationId` | `string` | Optional | Terminal Application ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `TerminalCvmId` | `string` | Optional | Terminal CVM ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `TerminalManufacturerCode` | [`TerminalManufacturerCodeEnum?`](../../doc/models/terminal-manufacturer-code-enum.md) | Optional | Terminal Manufacturer Code |
+| `TerminalManufacturerCode` | [`TerminalManufacturerCode?`](../../doc/models/terminal-manufacturer-code.md) | Optional | - |
 | `Title` | `string` | Optional | Terminal Name<br><br>**Constraints**: *Maximum Length*: `64` |
 | `MacAddress` | `string` | Optional | Terminal MAC Address<br><br>**Constraints**: *Pattern*: `^([0-9a-fA-F]{2}[:-]?){5}([0-9a-fA-F]{2})$` |
 | `LocalIpAddress` | `string` | Optional | Terminal Local IP Address |
 | `Port` | `int?` | Optional | Terminal Port<br><br>**Default**: `10009`<br><br>**Constraints**: `>= 0`, `<= 65535` |
 | `SerialNumber` | `string` | Optional | Terminal Serial Number<br><br>**Constraints**: *Maximum Length*: `24`, *Pattern*: `^[a-zA-Z0-9]*$` |
 | `TerminalNumber` | `string` | Optional | Terminal Number<br><br>**Constraints**: *Minimum Length*: `15`, *Maximum Length*: `15` |
-| `TerminalTimeouts` | [`TerminalTimeouts`](../../doc/models/terminal-timeouts.md) | Optional | The following options outlines some configurable timeout values that can be used to customize the experience at the terminal for the cardholder.<br><br>> These timeouts are specific to Ingenico devices only.<br>> <br>> These timeouts are specific to Ingenico devices only. |
-| `TipPercents` | [`TipPercents`](../../doc/models/tip-percents.md) | Optional | A JSON of tip percents the JSON MUST contain only these three fields: percent_1, percent_2, percent_3 |
+| `TerminalTimeouts` | [`TerminalTimeouts1`](../../doc/models/terminal-timeouts-1.md) | Optional | - |
+| `TipPercents` | [`TipPercents1`](../../doc/models/tip-percents-1.md) | Optional | - |
 | `LocationApiId` | `string` | Optional | Location Api ID<br><br>**Constraints**: *Maximum Length*: `64` |
 | `TerminalApiId` | `string` | Optional | Terminal Api ID<br><br>**Constraints**: *Maximum Length*: `64` |
 | `HeaderLine1` | `string` | Optional | Header Line 1<br><br>**Constraints**: *Maximum Length*: `32` |
@@ -46,7 +48,7 @@
 | `IsProvisioned` | `bool?` | Optional | Is Provisioned |
 | `TipEnable` | `bool?` | Optional | Tip Enable |
 | `ValidatedDecryption` | `bool?` | Optional | Validated Decryption |
-| `CommunicationType` | [`CommunicationTypeEnum?`](../../doc/models/communication-type-enum.md) | Optional | Communication Type |
+| `CommunicationType` | `object` | Optional | - |
 | `Active` | `bool?` | Optional | Active |
 | `Id` | `string` | Optional | Terminal ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
@@ -54,14 +56,15 @@
 | `LastRegistrationTs` | `int?` | Optional | Modified Time Stamp |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ModifiedUserId` | `string` | Optional | Last User ID that updated the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` |
-| `TerminalApplication` | [`TerminalApplication`](../../doc/models/terminal-application.md) | Optional | Terminal Application Information on `expand` |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
+| `TerminalApplication` | [`TerminalApplication1`](../../doc/models/terminal-application-1.md) | Optional | - |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` |
 | `TerminalRouters` | [`List<TerminalRouter>`](../../doc/models/terminal-router.md) | Optional | Terminal Router Information on `expand` |
 | `HasTerminalRouters` | `bool?` | Optional | Has Terminal Router Information on `expand` |
-| `TerminalCvm` | [`TerminalCvm`](../../doc/models/terminal-cvm.md) | Optional | Terminal Cvm Information on `expand` |
-| `TerminalManufacturer` | [`TerminalManufacturer`](../../doc/models/terminal-manufacturer.md) | Optional | Terminal Manufacturer Information on `expand` |
+| `TerminalCvm` | [`TerminalCvm1`](../../doc/models/terminal-cvm-1.md) | Optional | - |
+| `TerminalManufacturer` | [`TerminalManufacturer1`](../../doc/models/terminal-manufacturer-1.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -71,7 +74,6 @@
   "default_product_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
   "terminal_application_id": "11e95f8ec39de8fbdb0a4f1a",
   "terminal_cvm_id": "11e95f8ec39de8fbdb0a4f1a",
-  "terminal_manufacturer_code": "1",
   "title": "My terminal",
   "mac_address": "3D:F2:C9:A6:B3:4F",
   "local_ip_address": "192.168.0.10",
@@ -100,7 +102,6 @@
   "is_provisioned": false,
   "tip_enable": false,
   "validated_decryption": false,
-  "communication_type": "http",
   "active": true,
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "created_ts": 1422040992,
@@ -108,7 +109,12 @@
   "last_registration_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "has_terminal_routers": true
+  "has_terminal_routers": true,
+  "terminal_manufacturer_code": "4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

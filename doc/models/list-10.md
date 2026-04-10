@@ -1,6 +1,8 @@
 
 # List 10
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `List10`
@@ -31,8 +33,8 @@
 | `ItemFooter` | `string` | Optional | Item footer<br><br>**Constraints**: *Maximum Length*: `250` |
 | `AmountDue` | `double?` | Optional | Amount Due |
 | `NotificationEmail` | `string` | Optional | Notification email<br><br>**Constraints**: *Maximum Length*: `640` |
-| `StatusId` | [`StatusIdEnum?`](../../doc/models/status-id-enum.md) | Optional | (DEPRECATED) Status Id |
-| `StatusCode` | [`StatusCode14Enum?`](../../doc/models/status-code-14-enum.md) | Optional | Status Code |
+| `StatusId` | `object` | Optional | - |
+| `StatusCode` | `object` | Optional | - |
 | `Note` | `string` | Optional | Note<br><br>**Constraints**: *Maximum Length*: `200` |
 | `NotificationDaysBeforeDueDate` | `int?` | Optional | Notification days before due date<br><br>**Constraints**: `>= 0`, `<= 99` |
 | `NotificationDaysAfterDueDate` | `int?` | Optional | Notification days after due date<br><br>**Constraints**: `>= 0`, `<= 99` |
@@ -56,21 +58,22 @@
 | `Active` | `bool?` | Optional | Active status |
 | `PaymentStatusId` | `int?` | Optional | Payment Status Id<br><br>**Constraints**: `>= 1`, `<= 3` |
 | `IsActive` | `bool?` | Optional | Register is active |
-| `QuickInvoiceSetting` | [`QuickInvoiceSetting`](../../doc/models/quick-invoice-setting.md) | Optional | Quick Invoice Setting Information on `expand` |
+| `QuickInvoiceSetting` | [`QuickInvoiceSetting1`](../../doc/models/quick-invoice-setting-1.md) | Optional | - |
 | `QuickInvoiceViews` | [`List<QuickInvoiceView>`](../../doc/models/quick-invoice-view.md) | Optional | Quick Invoice View Information on `expand` |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` |
-| `ModifiedUser` | [`ModifiedUser`](../../doc/models/modified-user.md) | Optional | Modified User Information on `expand` |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
+| `ModifiedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` |
-| `Contact` | [`Contact1`](../../doc/models/contact-1.md) | Optional | Contact Information on `expand` |
+| `Contact` | [`Contact3`](../../doc/models/contact-3.md) | Optional | - |
 | `LogEmails` | [`List<LogEmail>`](../../doc/models/log-email.md) | Optional | Log Email Information on `expand` |
-| `LogSms` | [`LogSms`](../../doc/models/log-sms.md) | Optional | Log Sms Information on `expand` |
+| `LogSms` | [`LogSms1`](../../doc/models/log-sms-1.md) | Optional | - |
 | `Transactions` | [`List<Transaction>`](../../doc/models/transaction.md) | Optional | Transaction Information on `expand` |
-| `CcProductTransaction` | [`CcProductTransaction`](../../doc/models/cc-product-transaction.md) | Optional | Cc Product Transaction Information on `expand` |
-| `AchProductTransaction` | [`AchProductTransaction`](../../doc/models/ach-product-transaction.md) | Optional | Ach Product Transaction Information on `expand` |
-| `EmailBlacklist` | [`EmailBlacklist`](../../doc/models/email-blacklist.md) | Optional | Email Blacklist Information on `expand` |
-| `SmsBlacklist` | [`SmsBlacklist`](../../doc/models/sms-blacklist.md) | Optional | Sms Blacklist Information on `expand` |
+| `CcProductTransaction` | [`ProductTransaction1`](../../doc/models/product-transaction-1.md) | Optional | - |
+| `AchProductTransaction` | [`ProductTransaction1`](../../doc/models/product-transaction-1.md) | Optional | - |
+| `EmailBlacklist` | [`EmailBlacklist1`](../../doc/models/email-blacklist-1.md) | Optional | - |
+| `SmsBlacklist` | [`SmsBlacklist1`](../../doc/models/sms-blacklist-1.md) | Optional | - |
 | `PaymentUrl` | `string` | Optional | Payment Url Information on `expand` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -97,8 +100,6 @@
   "item_footer": "Thank you",
   "amount_due": 245.36,
   "notification_email": "email@domain.com",
-  "status_id": 1,
-  "status_code": 1,
   "note": "some note",
   "notification_days_before_due_date": 3,
   "notification_days_after_due_date": 7,
@@ -119,7 +120,11 @@
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "active": true,
   "payment_status_id": 1,
-  "is_active": true
+  "is_active": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

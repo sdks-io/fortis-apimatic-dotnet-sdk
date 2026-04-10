@@ -10,19 +10,19 @@ DeclinedRecurringTransactionsController declinedRecurringTransactionsController 
 
 ## Methods
 
-* [Get One Declined Recurring Transaction](../../doc/controllers/declined-recurring-transactions.md#get-one-declined-recurring-transaction)
-* [List All Declined Recurring Transactions](../../doc/controllers/declined-recurring-transactions.md#list-all-declined-recurring-transactions)
-* [Create a Payment](../../doc/controllers/declined-recurring-transactions.md#create-a-payment)
-* [Rerun the Transaction](../../doc/controllers/declined-recurring-transactions.md#rerun-the-transaction)
-* [Resend the Transaction](../../doc/controllers/declined-recurring-transactions.md#resend-the-transaction)
+* [Getone Declined Recurring Transaction](../../doc/controllers/declined-recurring-transactions.md#getone-declined-recurring-transaction)
+* [Listall Declined Recurring Transactions](../../doc/controllers/declined-recurring-transactions.md#listall-declined-recurring-transactions)
+* [Createapayment](../../doc/controllers/declined-recurring-transactions.md#createapayment)
+* [Rerunthetransaction](../../doc/controllers/declined-recurring-transactions.md#rerunthetransaction)
+* [Resendthetransaction](../../doc/controllers/declined-recurring-transactions.md#resendthetransaction)
 
 
-# Get One Declined Recurring Transaction
+# Getone Declined Recurring Transaction
 
 ```csharp
-GetOneDeclinedRecurringTransactionAsync(
+GetoneDeclinedRecurringTransactionAsync(
     string declinedRecurringTransactionId,
-    List<Models.Expand5Enum> expand = null)
+    List<Models.Expand5> expand = null)
 ```
 
 ## Parameters
@@ -30,11 +30,11 @@ GetOneDeclinedRecurringTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `declinedRecurringTransactionId` | `string` | Template, Required | Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand5Enum>`](../../doc/models/expand-5-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand5>`](../../doc/models/expand-5.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseDeclinedRecurringTransaction>`](../../doc/models/response-declined-recurring-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeclinedRecurringTransaction](../../doc/models/response-declined-recurring-transaction.md).
 
 ## Example Usage
 
@@ -42,14 +42,14 @@ GetOneDeclinedRecurringTransactionAsync(
 string declinedRecurringTransactionId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseDeclinedRecurringTransaction result = await declinedRecurringTransactionsController.GetOneDeclinedRecurringTransactionAsync(declinedRecurringTransactionId);
+    ApiResponse<ResponseDeclinedRecurringTransaction> result = await declinedRecurringTransactionsController.GetoneDeclinedRecurringTransactionAsync(declinedRecurringTransactionId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -75,42 +75,42 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# List All Declined Recurring Transactions
+# Listall Declined Recurring Transactions
 
 ```csharp
-ListAllDeclinedRecurringTransactionsAsync(
-    Models.Page page = null,
+ListallDeclinedRecurringTransactionsAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand5Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand5> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field30Enum> fields = null)
+    List<Models.Field30> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand5Enum>`](../../doc/models/expand-5-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand5>`](../../doc/models/expand-5.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field30Enum>`](../../doc/models/field-30-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field30>`](../../doc/models/field-30.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseDeclinedRecurringTransactionsCollection>`](../../doc/models/response-declined-recurring-transactions-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeclinedRecurringTransactionsCollection](../../doc/models/response-declined-recurring-transactions-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -121,7 +121,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -130,7 +130,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -139,7 +139,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseDeclinedRecurringTransactionsCollection result = await declinedRecurringTransactionsController.ListAllDeclinedRecurringTransactionsAsync(
+    ApiResponse<ResponseDeclinedRecurringTransactionsCollection> result = await declinedRecurringTransactionsController.ListallDeclinedRecurringTransactionsAsync(
         page,
         order,
         filterBy
@@ -148,9 +148,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -201,13 +201,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Create a Payment
+# Createapayment
 
 ```csharp
-CreateAPaymentAsync(
+CreateapaymentAsync(
     Models.V1DeclinedRecurringTransactionPaymentsRequest body)
 ```
 
@@ -219,7 +219,7 @@ CreateAPaymentAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseDeclinedRecurringTransactionPayment>`](../../doc/models/response-declined-recurring-transaction-payment.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeclinedRecurringTransactionPayment](../../doc/models/response-declined-recurring-transaction-payment.md).
 
 ## Example Usage
 
@@ -239,14 +239,14 @@ V1DeclinedRecurringTransactionPaymentsRequest body = new V1DeclinedRecurringTran
 
 try
 {
-    ResponseDeclinedRecurringTransactionPayment result = await declinedRecurringTransactionsController.CreateAPaymentAsync(body);
+    ApiResponse<ResponseDeclinedRecurringTransactionPayment> result = await declinedRecurringTransactionsController.CreateapaymentAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -292,16 +292,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Rerun the Transaction
+# Rerunthetransaction
 
 ```csharp
-RerunTheTransactionAsync(
+RerunthetransactionAsync(
     string declinedRecurringTransactionId,
-    List<Models.Expand5Enum> expand = null)
+    List<Models.Expand5> expand = null)
 ```
 
 ## Parameters
@@ -309,11 +309,11 @@ RerunTheTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `declinedRecurringTransactionId` | `string` | Template, Required | Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand5Enum>`](../../doc/models/expand-5-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand5>`](../../doc/models/expand-5.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseDeclinedRecurringTransaction>`](../../doc/models/response-declined-recurring-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeclinedRecurringTransaction](../../doc/models/response-declined-recurring-transaction.md).
 
 ## Example Usage
 
@@ -321,14 +321,14 @@ RerunTheTransactionAsync(
 string declinedRecurringTransactionId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseDeclinedRecurringTransaction result = await declinedRecurringTransactionsController.RerunTheTransactionAsync(declinedRecurringTransactionId);
+    ApiResponse<ResponseDeclinedRecurringTransaction> result = await declinedRecurringTransactionsController.RerunthetransactionAsync(declinedRecurringTransactionId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -354,13 +354,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Resend the Transaction
+# Resendthetransaction
 
 ```csharp
-ResendTheTransactionAsync(
+ResendthetransactionAsync(
     string declinedRecurringTransactionId)
 ```
 
@@ -372,7 +372,7 @@ ResendTheTransactionAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseDeclinedRecurringTransactionResend>`](../../doc/models/response-declined-recurring-transaction-resend.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeclinedRecurringTransactionResend](../../doc/models/response-declined-recurring-transaction-resend.md).
 
 ## Example Usage
 
@@ -380,14 +380,14 @@ ResendTheTransactionAsync(
 string declinedRecurringTransactionId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseDeclinedRecurringTransactionResend result = await declinedRecurringTransactionsController.ResendTheTransactionAsync(declinedRecurringTransactionId);
+    ApiResponse<ResponseDeclinedRecurringTransactionResend> result = await declinedRecurringTransactionsController.ResendthetransactionAsync(declinedRecurringTransactionId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -409,5 +409,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

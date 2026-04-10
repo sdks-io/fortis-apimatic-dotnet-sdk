@@ -1,12 +1,12 @@
 # 3 DS Transactions
 
 ```csharp
-M3DSTransactionsController m3DSTransactionsController = client.M3DSTransactionsController;
+M3DsTransactionsController m3DsTransactionsController = client.M3DsTransactionsController;
 ```
 
 ## Class Name
 
-`M3DSTransactionsController`
+`M3DsTransactionsController`
 
 
 # 3 DS Transactions Request
@@ -14,7 +14,7 @@ M3DSTransactionsController m3DSTransactionsController = client.M3DSTransactionsC
 For getting results of successful 3DS authentication attempts
 
 ```csharp
-M3DSTransactionsRequestAsync(
+M3DsTransactionsRequestAsync(
     string threeDsServerTransId,
     string productTransactionId)
 ```
@@ -28,7 +28,7 @@ M3DSTransactionsRequestAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseThreeDSTransaction>`](../../doc/models/response-three-ds-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseThreeDsTransaction](../../doc/models/response-three-ds-transaction.md).
 
 ## Example Usage
 
@@ -37,7 +37,7 @@ string threeDsServerTransId = "516ef0bf-e510-4895-b0a8-c889f2eaf471";
 string productTransactionId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseThreeDSTransaction result = await m3DSTransactionsController.M3DSTransactionsRequestAsync(
+    ApiResponse<ResponseThreeDsTransaction> result = await m3DsTransactionsController.M3DsTransactionsRequestAsync(
         threeDsServerTransId,
         productTransactionId
     );
@@ -45,9 +45,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -73,5 +73,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

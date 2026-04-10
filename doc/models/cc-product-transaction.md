@@ -3,6 +3,8 @@
 
 Cc Product Transaction Information on `expand`
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `CcProductTransaction`
@@ -12,14 +14,14 @@ Cc Product Transaction Information on `expand`
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `ProcessorVersion` | `string` | Optional | Processor Version |
-| `IndustryType` | [`IndustryTypeEnum?`](../../doc/models/industry-type-enum.md) | Optional | Industry Type<br><br>**Constraints**: *Maximum Length*: `45` |
+| `IndustryType` | `object` | Optional | - |
 | `Title` | `string` | Optional | Title<br><br>**Constraints**: *Maximum Length*: `64` |
-| `PaymentMethod` | [`PaymentMethodEnum?`](../../doc/models/payment-method-enum.md) | Optional | Payment method |
-| `Processor` | [`ProcessorEnum?`](../../doc/models/processor-enum.md) | Optional | Processor |
+| `PaymentMethod` | [`PaymentMethod?`](../../doc/models/payment-method.md) | Optional | - |
+| `Processor` | `object` | Optional | - |
 | `Mcc` | `string` | Optional | MCC<br><br>**Constraints**: *Maximum Length*: `4`, *Pattern*: `^\d+$` |
-| `TaxSurchargeConfig` | [`TaxSurchargeConfigEnum?`](../../doc/models/tax-surcharge-config-enum.md) | Optional | Tax Surcharge Config<br><br>**Default**: `TaxSurchargeConfigEnum.Enum_2` |
+| `TaxSurchargeConfig` | `object` | Optional | - |
 | `TerminalId` | `string` | Optional | Terminal ID<br><br>**Constraints**: *Maximum Length*: `24` |
-| `Partner` | [`PartnerEnum?`](../../doc/models/partner-enum.md) | Optional | Partner<br><br>**Constraints**: *Maximum Length*: `24` |
+| `Partner` | `object` | Optional | - |
 | `ProductAchPvStoreId` | `string` | Optional | Product Ach Pv Store ID |
 | `InvoiceAdjustmentTitle` | `string` | Optional | Invoice Adjustment Title |
 | `LocationId` | `string` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
@@ -72,7 +74,7 @@ Cc Product Transaction Information on `expand`
 | `ReceiptAddAccountAboveSignature` | `string` | Optional | Receipt Add Account Above Signature<br><br>**Constraints**: *Maximum Length*: `1032` |
 | `ReceiptAddRecurringAboveSignature` | `string` | Optional | Receipt Add Recurring Above Signature<br><br>**Constraints**: *Maximum Length*: `1032` |
 | `ReceiptVtAboveSignature` | `string` | Optional | Receipt VT Above Signature<br><br>**Constraints**: *Maximum Length*: `1032` |
-| `DefaultTransactionType` | [`DefaultTransactionTypeEnum?`](../../doc/models/default-transaction-type-enum.md) | Optional | Default Transaction Type |
+| `DefaultTransactionType` | `object` | Optional | - |
 | `Username` | `string` | Optional | Username<br><br>**Constraints**: *Maximum Length*: `512` |
 | `Password` | `string` | Optional | Passowrd<br><br>**Constraints**: *Maximum Length*: `512` |
 | `CurrentBatch` | `double?` | Optional | Current Batch<br><br>**Default**: `1`<br><br>**Constraints**: `>= 1`, `<= 9999` |
@@ -82,14 +84,14 @@ Cc Product Transaction Information on `expand`
 | `QuickInvoiceAllow` | `bool?` | Optional | Quick Invoice Allow |
 | `Level3Allow` | `bool?` | Optional | Level3 Allow |
 | `PayfacEnable` | `bool?` | Optional | Payfac Enable |
-| `Enable3ds` | `bool?` | Optional | Enable 3DS |
+| `Enable3Ds` | `bool?` | Optional | Enable 3DS |
 | `SalesOfficeId` | `string` | Optional | Sales Office ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `HostedPaymentPageMaxAllowed` | `double?` | Optional | Hosted Payment Page Max Allowed<br><br>**Default**: `5`<br><br>**Constraints**: `>= 1`, `<= 999` |
 | `HostedPaymentPageAllow` | `bool?` | Optional | Hosted Payment Page Allow |
 | `SurchargeId` | `string` | Optional | Surcharge ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `AllowBigCommerce` | `bool?` | Optional | Allow Big Commerce |
-| `Level3Default` | [`Level3Default`](../../doc/models/level-3-default.md) | Optional | Level3 Default |
-| `CauSubscribeTypeId` | [`CauSubscribeTypeIdEnum?`](../../doc/models/cau-subscribe-type-id-enum.md) | Optional | Cau Subscribe Type ID |
+| `Level3Default` | [`Level3Default1`](../../doc/models/level-3-default-1.md) | Optional | - |
+| `CauSubscribeTypeId` | `object` | Optional | - |
 | `CauAccountNumber` | `string` | Optional | Cau Account Number<br><br>**Constraints**: *Minimum Length*: `32`, *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-]+$` |
 | `LocationBillingAccountId` | `string` | Optional | Location Billing Account ID |
 | `ProductBillingGroupId` | `string` | Optional | Product Billing Group ID |
@@ -112,7 +114,7 @@ Cc Product Transaction Information on `expand`
 | `AllowSecondaryAmount` | `bool?` | Optional | Allow Retained Amount |
 | `ShowGooglePay` | `bool?` | Optional | Vt Require Street |
 | `ShowApplePay` | `bool?` | Optional | Vt Require Street |
-| `BatchRiskConfig` | [`BatchRiskConfig`](../../doc/models/batch-risk-config.md) | Optional | Batch Risk Config |
+| `BatchRiskConfig` | [`BatchRiskConfig1`](../../doc/models/batch-risk-config-1.md) | Optional | - |
 | `CurrencyCode` | `double?` | Optional | Currency Code |
 | `EnableAchValidation` | `bool?` | Optional | Enable ACH Validation |
 | `EnableAchRetry` | `bool?` | Optional | Enable ACH Retry |
@@ -131,8 +133,9 @@ Cc Product Transaction Information on `expand`
 | `IsSecondaryAmountAllowed` | `bool?` | Optional | Allow Retained Amount |
 | `FortisId` | `string` | Optional | - |
 | `ProductBillingGroupCode` | `string` | Optional | Product Billing Group Code |
-| `CauSubscribeTypeCode` | [`CauSubscribeTypeCodeEnum?`](../../doc/models/cau-subscribe-type-code-enum.md) | Optional | Cau Subscribe Type Code |
+| `CauSubscribeTypeCode` | `object` | Optional | - |
 | `MerchantCode` | `string` | Optional | Merchant Code<br><br>**Constraints**: *Maximum Length*: `24` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -140,11 +143,7 @@ Cc Product Transaction Information on `expand`
 {
   "processor_version": "1_0_0",
   "title": "My terminal",
-  "payment_method": "cc",
-  "processor": "zgate",
   "mcc": "1111",
-  "tax_surcharge_config": 2,
-  "partner": "standalone",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
   "vt_clerk_number": true,
   "vt_billing_phone": true,
@@ -193,7 +192,6 @@ Cc Product Transaction Information on `expand`
   "hosted_payment_page_allow": false,
   "surcharge_id": "11e95f8ec39de8fbdb0a4f1a",
   "allow_big_commerce": false,
-  "cau_subscribe_type_id": 0,
   "location_billing_account_id": "11eb88b873980c64a21e5fd2",
   "product_billing_group_id": "nofees",
   "account_number": "12345678",
@@ -229,8 +227,19 @@ Cc Product Transaction Information on `expand`
   "is_secondary_amount_allowed": false,
   "fortis_id": "8149742",
   "product_billing_group_code": "nofees",
-  "cau_subscribe_type_code": 0,
-  "industry_type": "lodging"
+  "industry_type": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "payment_method": "ach",
+  "processor": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

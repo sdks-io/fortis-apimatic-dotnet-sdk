@@ -1,6 +1,8 @@
 
 # File
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `File`
@@ -11,7 +13,7 @@
 |  --- | --- | --- | --- |
 | `File` | `object` | Optional | File Object |
 | `ResourceId` | `string` | Optional | Resource Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `Resource` | [`Resource2Enum?`](../../doc/models/resource-2-enum.md) | Optional | Resource |
+| `Resource` | [`Resource2?`](../../doc/models/resource-2.md) | Optional | - |
 | `ProductFileId` | `string` | Optional | Product File Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `FileCategoryId` | `string` | Optional | File Category Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `VisibilityGroupId` | `string` | Optional | Visibility Group Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
@@ -23,13 +25,13 @@
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
   "resource_id": "11e95f8ec39de8fbdb0a4f1a",
-  "resource": "Contact",
   "product_file_id": "11e95f8ec39de8fbdb0a4f1a",
   "file_category_id": "11e95f8ec39de8fbdb0a4f1a",
   "visibility_group_id": "11e95f8ec39de8fbdb0a4f1a",
@@ -38,6 +40,11 @@
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "file": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "resource": "Location",
+  "exampleAdditionalProperty": {
     "key1": "val1",
     "key2": "val2"
   }

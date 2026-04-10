@@ -3,6 +3,8 @@
 
 Level3 Default
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Level3Default`
@@ -19,7 +21,7 @@ Level3 Default
 | `ShipfromZipCode` | `string` | Optional | Postal/ZIP code of the address from where the purchased goods are being shipped.<br><br>**Constraints**: *Maximum Length*: `10` |
 | `ShiptoZipCode` | `string` | Optional | Postal/ZIP code of the address where purchased goods will be delivered.<br><br>**Constraints**: *Maximum Length*: `10` |
 | `TaxAmount` | `int?` | Optional | Amount of any value added taxes ,Can accept Two (2) decimal places.<br><br>**Constraints**: `>= 0`, `<= 99999999900` |
-| `TaxExempt` | [`TaxExemptEnum?`](../../doc/models/tax-exempt-enum.md) | Optional | Sales Tax Exempt. Allowed values: “1”, “0”. |
+| `TaxExempt` | `object` | Optional | - |
 | `CustomerVatRegistration` | `string` | Optional | Customer VAT Registration<br><br>**Constraints**: *Maximum Length*: `13` |
 | `MerchantVatRegistration` | `string` | Optional | Merchant VAT Registration<br><br>**Constraints**: *Maximum Length*: `20` |
 | `OrderDate` | `string` | Optional | Order Date<br><br>**Constraints**: *Minimum Length*: `6`, *Maximum Length*: `6` |
@@ -27,6 +29,7 @@ Level3 Default
 | `TaxRate` | `int?` | Optional | Tax rate used to calculate the sales tax amount, can accept 2 decimal places.<br><br>**Constraints**: `<= 999999` |
 | `UniqueVatRefNumber` | `string` | Optional | Unique VAT Reference Number<br><br>**Constraints**: *Maximum Length*: `15` |
 | `LineItems` | [`List<LineItem>`](../../doc/models/line-item.md) | Optional | Array of line items in transaction |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -40,13 +43,16 @@ Level3 Default
   "shipfrom_zip_code": "AZ12345",
   "shipto_zip_code": "MI48335",
   "tax_amount": 0,
-  "tax_exempt": "0",
   "customer_vat_registration": "12345678",
   "merchant_vat_registration": "123456",
   "order_date": "171006",
   "summary_commodity_code": "C1K2",
   "tax_rate": 0,
-  "unique_vat_ref_number": "vat1234"
+  "unique_vat_ref_number": "vat1234",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

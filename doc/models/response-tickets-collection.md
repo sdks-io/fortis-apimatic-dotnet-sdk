@@ -1,6 +1,8 @@
 
 # Response Tickets Collection
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ResponseTicketsCollection`
@@ -9,11 +11,12 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type88Enum?`](../../doc/models/type-88-enum.md) | Optional | Resource Type<br><br>**Default**: `Type88Enum.TicketsCollection` |
+| `Type` | [`Type88?`](../../doc/models/type-88.md) | Optional | - |
 | `List` | [`List<List15>`](../../doc/models/list-15.md) | Optional | Resource Members |
-| `Links` | [`Links`](../../doc/models/links.md) | Optional | Pagination page links |
-| `Pagination` | [`Pagination`](../../doc/models/pagination.md) | Optional | Pagination info |
-| `Sort` | [`Sort`](../../doc/models/sort.md) | Optional | Sort information used on the results |
+| `Links` | [`Links1`](../../doc/models/links-1.md) | Optional | - |
+| `Pagination` | [`Pagination1`](../../doc/models/pagination-1.md) | Optional | - |
+| `Sort` | [`Sort1`](../../doc/models/sort-1.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -28,7 +31,15 @@
       "account_number": "account_number2",
       "billing_address": {
         "postal_code": "postal_code0",
-        "street": "street8"
+        "street": "street8",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     },
     {
@@ -38,7 +49,15 @@
       "account_number": "account_number2",
       "billing_address": {
         "postal_code": "postal_code0",
-        "street": "street8"
+        "street": "street8",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     },
     {
@@ -48,7 +67,15 @@
       "account_number": "account_number2",
       "billing_address": {
         "postal_code": "postal_code0",
-        "street": "street8"
+        "street": "street8",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
+      },
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
       }
     }
   ],
@@ -57,31 +84,59 @@
     "first": "first0",
     "previous": "previous2",
     "next": "next2",
-    "last": "last4"
+    "last": "last4",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "pagination": {
     "type": "Pagination",
     "total_count": 100,
     "page_count": 212,
     "page_number": 28,
-    "page_size": 6
+    "page_size": 6,
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "sort": {
     "type": "Sorting",
     "fields": [
       {
         "field": "field2",
-        "order": "asc"
+        "order": "asc",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "field": "field2",
-        "order": "asc"
+        "order": "asc",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "field": "field2",
-        "order": "asc"
+        "order": "asc",
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

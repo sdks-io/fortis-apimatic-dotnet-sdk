@@ -1,6 +1,8 @@
 
 # List 8
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `List8`
@@ -13,7 +15,7 @@
 | `CompanyId` | `string` | Optional | Company Id |
 | `MerchantId` | `string` | Optional | Merchant Id |
 | `Service` | `string` | Optional | Service |
-| `DepositTypes` | [`List<DepositTypeEnum>`](../../doc/models/deposit-type-enum.md) | Optional | - |
+| `DepositTypes` | [`List<DepositType>`](../../doc/models/deposit-type.md) | Optional | - |
 | `DepositAmount` | `double?` | Optional | Deposit Amount |
 | `BatchAmount` | `double?` | Optional | Batch Amount |
 | `AdjustmentAmount` | `double?` | Optional | Adjustment Amount |
@@ -28,6 +30,7 @@
 | `TransactionDate` | `string` | Optional | Transaction Date<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
 | `DepositAccount` | `string` | Optional | Deposit Account |
 | `Details` | [`List<Detail2>`](../../doc/models/detail-2.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -52,7 +55,11 @@
   "deposit_types": [
     "fee",
     "deposit"
-  ]
+  ],
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

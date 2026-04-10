@@ -1,6 +1,8 @@
 
 # V1 Transactions Cash Refund Request
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `V1TransactionsCashRefundRequest`
@@ -10,7 +12,7 @@
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `AdditionalAmounts` | [`List<AdditionalAmount>`](../../doc/models/additional-amount.md) | Optional | Additional amounts |
-| `BillingAddress` | [`BillingAddress1`](../../doc/models/billing-address-1.md) | Optional | Billing Address Object |
+| `BillingAddress` | [`BillingAddress2`](../../doc/models/billing-address-2.md) | Optional | - |
 | `CheckinDate` | `string` | Optional | Checkin Date - The time difference between checkin_date and checkout_date must be less than or equal to 99 days. NOTE: if checkin_date is in the future, set the advance_deposit to 1<br><br>> Required if merchant industry type is lodging.<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
 | `CheckoutDate` | `string` | Optional | Checkout Date - The time difference between checkin_date and checkout_date must be less than or equal to 99 days.<br><br>> Required if merchant industry type is lodging.<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
 | `ClerkNumber` | `string` | Optional | Clerk or Employee Identifier<br><br>**Constraints**: *Maximum Length*: `16` |
@@ -19,14 +21,14 @@
 | `CustomData` | `object` | Optional | A field that allows custom JSON to be entered to store extra data. |
 | `CustomerId` | `string` | Optional | Can be used by Merchants to identify Contacts in our system by an ID from another system.<br><br>**Constraints**: *Maximum Length*: `64` |
 | `Description` | `string` | Optional | Description<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `64` |
-| `IdentityVerification` | [`IdentityVerification`](../../doc/models/identity-verification.md) | Optional | Identity Verification |
-| `IiasInd` | [`IiasIndEnum?`](../../doc/models/iias-ind-enum.md) | Optional | Possible values are '0', '1','2' |
+| `IdentityVerification` | [`IdentityVerification1`](../../doc/models/identity-verification-1.md) | Optional | - |
+| `IiasInd` | `object` | Optional | - |
 | `ImageFront` | `string` | Optional | A base64 encoded string for the image.  Used with Check21 ACH transactions. |
 | `ImageBack` | `string` | Optional | A base64 encoded string for the image.  Used with Check21 ACH transactions. |
 | `Installment` | `bool?` | Optional | Flag that is allowed to be passed on card not present industries to signify the transaction is a fixed installment plan transaction. |
 | `InstallmentNumber` | `int?` | Optional | If this is a fixed installment plan and installment field is being passed as 1, then this field must have a vlue of 1-999 specifying the current installment number that is running.<br><br>**Constraints**: `>= 1`, `<= 999` |
 | `InstallmentCount` | `int?` | Optional | If this is a fixed installment plan and installment field is being passed as 1, then this field must have a vlue of 1-999 specifying the total number of installments on the plan. This number must be grater than or equal to installment_number.<br><br>**Constraints**: `>= 1`, `<= 999` |
-| `RecurringFlag` | [`RecurringFlagEnum?`](../../doc/models/recurring-flag-enum.md) | Optional | Recurring Flag |
+| `RecurringFlag` | `object` | Optional | - |
 | `InstallmentCounter` | `int?` | Optional | Installment Counter<br><br>**Constraints**: `>= 1`, `<= 999` |
 | `InstallmentTotal` | `int?` | Optional | Installment Total<br><br>**Constraints**: `>= 1`, `<= 999` |
 | `Subscription` | `bool?` | Optional | Subscription |
@@ -62,10 +64,11 @@
 | `AutoDeclineCvvOverride` | `bool?` | Optional | Auto Decline CVV Override |
 | `AutoDeclineStreetOverride` | `bool?` | Optional | Auto Decline Street Override |
 | `AutoDeclineZipOverride` | `bool?` | Optional | Auto Decline Zip Override |
-| `EbtType` | [`EbtTypeEnum?`](../../doc/models/ebt-type-enum.md) | Optional | EBT Type |
+| `EbtType` | `object` | Optional | - |
 | `PreviousTransactionId` | `string` | Optional | previous_transaction_id is used as token to run transaction. Account details OR previous_transaction_id should be passed to run transaction.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `AccountHolderName` | `string` | Optional | For CC, this is the 'Name (as it appears) on Card'. For ACH, this is the 'Name on Account'.<br><br>> Required for ACH transactions if account_vault_id is not provided. For CC transactions that are run through a terminal, this field may be overwritten by data acquired from the credit card track data.<br><br>**Constraints**: *Maximum Length*: `32` |
 | `ResponseMessage` | `string` | Optional | Response Message<br><br>**Constraints**: *Maximum Length*: `255` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -81,13 +84,11 @@
   },
   "customer_id": "customerid",
   "description": "some description",
-  "iias_ind": 1,
   "image_front": "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
   "image_back": "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
   "installment": true,
   "installment_number": 1,
   "installment_count": 1,
-  "recurring_flag": "yes",
   "installment_counter": 1,
   "installment_total": 1,
   "subscription": false,
@@ -122,15 +123,40 @@
   "auto_decline_cvv_override": false,
   "auto_decline_street_override": false,
   "auto_decline_zip_override": false,
-  "ebt_type": "food_stamp",
   "previous_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
   "account_holder_name": "smith",
   "additional_amounts": [
     {
-      "type": "cashback",
+      "type": {
+        "key1": "val1",
+        "key2": "val2"
+      },
       "amount": 6,
-      "account_type": "cash_benefit",
-      "currency": 154.64
+      "account_type": {
+        "key1": "val1",
+        "key2": "val2"
+      },
+      "currency": 154.64,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
+    },
+    {
+      "type": {
+        "key1": "val1",
+        "key2": "val2"
+      },
+      "amount": 6,
+      "account_type": {
+        "key1": "val1",
+        "key2": "val2"
+      },
+      "currency": 154.64,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     }
   ],
   "billing_address": {
@@ -138,7 +164,15 @@
     "state": "state6",
     "postal_code": "postal_code0",
     "street": "street8",
-    "phone": "phone2"
+    "phone": "phone2",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

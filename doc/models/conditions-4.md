@@ -1,6 +1,8 @@
 
 # Conditions 4
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Conditions4`
@@ -9,15 +11,20 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Method` | [`Method5Enum?`](../../doc/models/method-5-enum.md) | Optional | - |
-| `Values` | [`Values4Enum?`](../../doc/models/values-4-enum.md) | Optional | - |
+| `Method` | [`Method5?`](../../doc/models/method-5.md) | Optional | - |
+| `Values` | [`Values4?`](../../doc/models/values-4.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
   "method": "oxor",
-  "values": "token_api_id"
+  "values": "token_api_id",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

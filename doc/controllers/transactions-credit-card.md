@@ -11,49 +11,49 @@ TransactionsCreditCardController transactionsCreditCardController = client.Trans
 ## Methods
 
 * [CC Auth Only](../../doc/controllers/transactions-credit-card.md#cc-auth-only)
-* [CC Auth Only - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-auth-only---previous-transaction)
-* [CC Auth Only - Swiped](../../doc/controllers/transactions-credit-card.md#cc-auth-only---swiped)
-* [CC Auth Only - Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-auth-only---tap-to-pay)
-* [CC Auth Only - Terminal](../../doc/controllers/transactions-credit-card.md#cc-auth-only---terminal)
-* [CC Auth Only - Ticket](../../doc/controllers/transactions-credit-card.md#cc-auth-only---ticket)
-* [CC Auth Only - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-auth-only---tokenized)
-* [CC Auth Only - Wallet](../../doc/controllers/transactions-credit-card.md#cc-auth-only---wallet)
-* [CC AVS](../../doc/controllers/transactions-credit-card.md#cc-avs)
-* [CC AVS - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-avs---previous-transaction)
-* [CC AVS - Swiped](../../doc/controllers/transactions-credit-card.md#cc-avs---swiped)
-* [CC AVS - Terminal](../../doc/controllers/transactions-credit-card.md#cc-avs---terminal)
-* [CC AVS - Ticket](../../doc/controllers/transactions-credit-card.md#cc-avs---ticket)
-* [CC AVS - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-avs---tokenized)
-* [CC AVS - Wallet](../../doc/controllers/transactions-credit-card.md#cc-avs---wallet)
+* [CC Auth Only-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-auth-only-previous-transaction)
+* [CC Auth Only-Swiped](../../doc/controllers/transactions-credit-card.md#cc-auth-only-swiped)
+* [CC Auth Only-Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-auth-only-tap-to-pay)
+* [CC Auth Only-Terminal](../../doc/controllers/transactions-credit-card.md#cc-auth-only-terminal)
+* [CC Auth Only-Ticket](../../doc/controllers/transactions-credit-card.md#cc-auth-only-ticket)
+* [CC Auth Only-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-auth-only-tokenized)
+* [CC Auth Only-Wallet](../../doc/controllers/transactions-credit-card.md#cc-auth-only-wallet)
+* [CCAVS](../../doc/controllers/transactions-credit-card.md#ccavs)
+* [CCAVS-Previous Transaction](../../doc/controllers/transactions-credit-card.md#ccavs-previous-transaction)
+* [CCAVS-Swiped](../../doc/controllers/transactions-credit-card.md#ccavs-swiped)
+* [CCAVS-Terminal](../../doc/controllers/transactions-credit-card.md#ccavs-terminal)
+* [CCAVS-Ticket](../../doc/controllers/transactions-credit-card.md#ccavs-ticket)
+* [CCAVS-Tokenized](../../doc/controllers/transactions-credit-card.md#ccavs-tokenized)
+* [CCAVS-Wallet](../../doc/controllers/transactions-credit-card.md#ccavs-wallet)
 * [CC Balance Inquiry](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry)
-* [CC Balance Inquiry - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---previous-transaction)
-* [CC Balance Inquiry - Swiped](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---swiped)
-* [CC Balance Inquiry - Terminal](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---terminal)
-* [CC Balance Inquiry - Ticket](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---ticket)
-* [CC Balance Inquiry - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---tokenized)
-* [CC Balance Inquiry - Wallet](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry---wallet)
+* [CC Balance Inquiry-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-previous-transaction)
+* [CC Balance Inquiry-Swiped](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-swiped)
+* [CC Balance Inquiry-Terminal](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-terminal)
+* [CC Balance Inquiry-Ticket](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-ticket)
+* [CC Balance Inquiry-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-tokenized)
+* [CC Balance Inquiry-Wallet](../../doc/controllers/transactions-credit-card.md#cc-balance-inquiry-wallet)
 * [CC Force](../../doc/controllers/transactions-credit-card.md#cc-force)
-* [CC Force - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-force---previous-transaction)
-* [CC Force - Swiped](../../doc/controllers/transactions-credit-card.md#cc-force---swiped)
-* [CC Force - Ticket](../../doc/controllers/transactions-credit-card.md#cc-force---ticket)
-* [CC Force - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-force---tokenized)
-* [CC Force - Wallet](../../doc/controllers/transactions-credit-card.md#cc-force---wallet)
+* [CC Force-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-force-previous-transaction)
+* [CC Force-Swiped](../../doc/controllers/transactions-credit-card.md#cc-force-swiped)
+* [CC Force-Ticket](../../doc/controllers/transactions-credit-card.md#cc-force-ticket)
+* [CC Force-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-force-tokenized)
+* [CC Force-Wallet](../../doc/controllers/transactions-credit-card.md#cc-force-wallet)
 * [CC Refund](../../doc/controllers/transactions-credit-card.md#cc-refund)
-* [CC Refund - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-refund---previous-transaction)
-* [CC Refund - Swiped](../../doc/controllers/transactions-credit-card.md#cc-refund---swiped)
-* [CC Refund - Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-refund---tap-to-pay)
-* [CC Refund - Terminal](../../doc/controllers/transactions-credit-card.md#cc-refund---terminal)
-* [CC Refund - Ticket](../../doc/controllers/transactions-credit-card.md#cc-refund---ticket)
-* [CC Refund - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-refund---tokenized)
-* [CC Refund - Wallet](../../doc/controllers/transactions-credit-card.md#cc-refund---wallet)
+* [CC Refund-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-refund-previous-transaction)
+* [CC Refund-Swiped](../../doc/controllers/transactions-credit-card.md#cc-refund-swiped)
+* [CC Refund-Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-refund-tap-to-pay)
+* [CC Refund-Terminal](../../doc/controllers/transactions-credit-card.md#cc-refund-terminal)
+* [CC Refund-Ticket](../../doc/controllers/transactions-credit-card.md#cc-refund-ticket)
+* [CC Refund-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-refund-tokenized)
+* [CC Refund-Wallet](../../doc/controllers/transactions-credit-card.md#cc-refund-wallet)
 * [CC Sale](../../doc/controllers/transactions-credit-card.md#cc-sale)
-* [CC Sale - Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-sale---previous-transaction)
-* [CC Sale - Swiped](../../doc/controllers/transactions-credit-card.md#cc-sale---swiped)
-* [CC Sale - Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-sale---tap-to-pay)
-* [CC Sale - Terminal](../../doc/controllers/transactions-credit-card.md#cc-sale---terminal)
-* [CC Sale - Ticket](../../doc/controllers/transactions-credit-card.md#cc-sale---ticket)
-* [CC Sale - Tokenized](../../doc/controllers/transactions-credit-card.md#cc-sale---tokenized)
-* [CC Sale - Wallet](../../doc/controllers/transactions-credit-card.md#cc-sale---wallet)
+* [CC Sale-Previous Transaction](../../doc/controllers/transactions-credit-card.md#cc-sale-previous-transaction)
+* [CC Sale-Swiped](../../doc/controllers/transactions-credit-card.md#cc-sale-swiped)
+* [CC Sale-Tap to Pay](../../doc/controllers/transactions-credit-card.md#cc-sale-tap-to-pay)
+* [CC Sale-Terminal](../../doc/controllers/transactions-credit-card.md#cc-sale-terminal)
+* [CC Sale-Ticket](../../doc/controllers/transactions-credit-card.md#cc-sale-ticket)
+* [CC Sale-Tokenized](../../doc/controllers/transactions-credit-card.md#cc-sale-tokenized)
+* [CC Sale-Wallet](../../doc/controllers/transactions-credit-card.md#cc-sale-wallet)
 
 
 # CC Auth Only
@@ -61,9 +61,9 @@ TransactionsCreditCardController transactionsCreditCardController = client.Trans
 Create a new keyed Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlyAsync(
+CcAuthOnlyAsync(
     Models.V1TransactionsCcAuthOnlyKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -71,11 +71,11 @@ CCAuthOnlyAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyKeyedRequest`](../../doc/models/v1-transactions-cc-auth-only-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -92,13 +92,11 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -132,7 +130,6 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -142,14 +139,12 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -157,14 +152,14 @@ V1TransactionsCcAuthOnlyKeyedRequest body = new V1TransactionsCcAuthOnlyKeyedReq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlyAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlyAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1224,18 +1219,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Previous Transaction
+# CC Auth Only-Previous Transaction
 
 Create a new Credit Card authorization only transaction using previous transaction id
 
 ```csharp
-CCAuthOnlyPreviousTransactionAsync(
+CcAuthOnlyPreviousTransactionAsync(
     Models.V1TransactionsCcAuthOnlyPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -1243,11 +1238,11 @@ CCAuthOnlyPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyPrevTrxnRequest`](../../doc/models/v1-transactions-cc-auth-only-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1261,13 +1256,11 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -1302,7 +1295,6 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -1312,7 +1304,6 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -1324,14 +1315,14 @@ V1TransactionsCcAuthOnlyPrevTrxnRequest body = new V1TransactionsCcAuthOnlyPrevT
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlyPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlyPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2391,18 +2382,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Swiped
+# CC Auth Only-Swiped
 
 Create a new swiped Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlySwipedAsync(
+CcAuthOnlySwipedAsync(
     Models.V1TransactionsCcAuthOnlySwipedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -2410,11 +2401,11 @@ CCAuthOnlySwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlySwipedRequest`](../../doc/models/v1-transactions-cc-auth-only-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -2430,13 +2421,11 @@ V1TransactionsCcAuthOnlySwipedRequest body = new V1TransactionsCcAuthOnlySwipedR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -2470,7 +2459,6 @@ V1TransactionsCcAuthOnlySwipedRequest body = new V1TransactionsCcAuthOnlySwipedR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -2480,26 +2468,24 @@ V1TransactionsCcAuthOnlySwipedRequest body = new V1TransactionsCcAuthOnlySwipedR
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EntryModeId = EntryModeIdEnum.K,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlySwipedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlySwipedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -3559,18 +3545,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Tap to Pay
+# CC Auth Only-Tap to Pay
 
 Create a new Tap To Pay Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlyTapToPayAsync(
+CcAuthOnlyTapToPayAsync(
     Models.V1TransactionsCcAuthOnlyTaptopayRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -3578,11 +3564,11 @@ CCAuthOnlyTapToPayAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyTaptopayRequest`](../../doc/models/v1-transactions-cc-auth-only-taptopay-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -3598,13 +3584,11 @@ V1TransactionsCcAuthOnlyTaptopayRequest body = new V1TransactionsCcAuthOnlyTapto
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -3639,13 +3623,11 @@ V1TransactionsCcAuthOnlyTaptopayRequest body = new V1TransactionsCcAuthOnlyTapto
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
     SecureDirectoryServerTransactionId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     TerminalSerialNumber = "1234567890",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -3655,14 +3637,14 @@ V1TransactionsCcAuthOnlyTaptopayRequest body = new V1TransactionsCcAuthOnlyTapto
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlyTapToPayAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlyTapToPayAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -4722,16 +4704,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Terminal
+# CC Auth Only-Terminal
 
 Create a new terminal Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlyTerminalAsync(
+CcAuthOnlyTerminalAsync(
     Models.V1TransactionsCcAuthOnlyTerminalRequest body)
 ```
 
@@ -4743,7 +4725,7 @@ CCAuthOnlyTerminalAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionProcessing>`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionProcessing](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -4760,13 +4742,11 @@ V1TransactionsCcAuthOnlyTerminalRequest body = new V1TransactionsCcAuthOnlyTermi
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -4798,7 +4778,6 @@ V1TransactionsCcAuthOnlyTerminalRequest body = new V1TransactionsCcAuthOnlyTermi
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -4808,25 +4787,23 @@ V1TransactionsCcAuthOnlyTerminalRequest body = new V1TransactionsCcAuthOnlyTermi
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EFormat = EFormatEnum.Magnesafe,
 };
 
 try
 {
-    ResponseTransactionProcessing result = await transactionsCreditCardController.CCAuthOnlyTerminalAsync(body);
+    ApiResponse<ResponseTransactionProcessing> result = await transactionsCreditCardController.CcAuthOnlyTerminalAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -4853,18 +4830,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Ticket
+# CC Auth Only-Ticket
 
 Create a new ticket Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlyTicketAsync(
+CcAuthOnlyTicketAsync(
     Models.V1TransactionsCcAuthOnlyTicketRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -4872,11 +4849,11 @@ CCAuthOnlyTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyTicketRequest`](../../doc/models/v1-transactions-cc-auth-only-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -4892,13 +4869,11 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -4932,7 +4907,6 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -4942,7 +4916,6 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -4953,14 +4926,14 @@ V1TransactionsCcAuthOnlyTicketRequest body = new V1TransactionsCcAuthOnlyTicketR
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlyTicketAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlyTicketAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -6020,18 +5993,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Tokenized
+# CC Auth Only-Tokenized
 
 Create a new tokenized Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlyTokenizedAsync(
+CcAuthOnlyTokenizedAsync(
     Models.V1TransactionsCcAuthOnlyTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -6039,11 +6012,11 @@ CCAuthOnlyTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyTokenRequest`](../../doc/models/v1-transactions-cc-auth-only-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -6058,13 +6031,11 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -6098,7 +6069,6 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -6108,7 +6078,6 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -6120,14 +6089,14 @@ V1TransactionsCcAuthOnlyTokenRequest body = new V1TransactionsCcAuthOnlyTokenReq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlyTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlyTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -7187,18 +7156,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Auth Only - Wallet
+# CC Auth Only-Wallet
 
 Create a new Wallet Credit Card authorization only transaction
 
 ```csharp
-CCAuthOnlyWalletAsync(
+CcAuthOnlyWalletAsync(
     Models.V1TransactionsCcAuthOnlyWalletRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -7206,11 +7175,11 @@ CCAuthOnlyWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAuthOnlyWalletRequest`](../../doc/models/v1-transactions-cc-auth-only-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -7219,7 +7188,7 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
 {
     TransactionAmount = 1,
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
     ClerkNumber = "AE1234",
@@ -7227,13 +7196,11 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -7267,7 +7234,6 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -7277,7 +7243,6 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -7289,14 +7254,14 @@ V1TransactionsCcAuthOnlyWalletRequest body = new V1TransactionsCcAuthOnlyWalletR
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAuthOnlyWalletAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcAuthOnlyWalletAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -8356,18 +8321,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS
+# CCAVS
 
 Create a new keyed Credit Card AVS only transaction
 
 ```csharp
-CCAVSAsync(
+CcavsAsync(
     Models.V1TransactionsCcAvsOnlyKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -8375,11 +8340,11 @@ CCAVSAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyKeyedRequest`](../../doc/models/v1-transactions-cc-avs-only-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -8395,13 +8360,11 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -8436,7 +8399,6 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -8446,14 +8408,12 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -8461,14 +8421,14 @@ V1TransactionsCcAvsOnlyKeyedRequest body = new V1TransactionsCcAvsOnlyKeyedReque
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAVSAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcavsAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -9528,18 +9488,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Previous Transaction
+# CCAVS-Previous Transaction
 
 Create a new Credit Card AVS only transaction using previous transaction id
 
 ```csharp
-CCAVSPreviousTransactionAsync(
+CcavsPreviousTransactionAsync(
     Models.V1TransactionsCcAvsOnlyPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -9547,11 +9507,11 @@ CCAVSPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyPrevTrxnRequest`](../../doc/models/v1-transactions-cc-avs-only-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -9565,13 +9525,11 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -9606,7 +9564,6 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -9616,7 +9573,6 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -9628,14 +9584,14 @@ V1TransactionsCcAvsOnlyPrevTrxnRequest body = new V1TransactionsCcAvsOnlyPrevTrx
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAVSPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcavsPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -10695,18 +10651,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Swiped
+# CCAVS-Swiped
 
 Create a new swiped Credit Card AVS only transaction
 
 ```csharp
-CCAVSSwipedAsync(
+CcavsSwipedAsync(
     Models.V1TransactionsCcAvsOnlySwipedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -10714,11 +10670,11 @@ CCAVSSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlySwipedRequest`](../../doc/models/v1-transactions-cc-avs-only-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -10733,13 +10689,11 @@ V1TransactionsCcAvsOnlySwipedRequest body = new V1TransactionsCcAvsOnlySwipedReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -10774,7 +10728,6 @@ V1TransactionsCcAvsOnlySwipedRequest body = new V1TransactionsCcAvsOnlySwipedReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -10784,26 +10737,24 @@ V1TransactionsCcAvsOnlySwipedRequest body = new V1TransactionsCcAvsOnlySwipedReq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EntryModeId = EntryModeIdEnum.K,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAVSSwipedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcavsSwipedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -11863,16 +11814,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Terminal
+# CCAVS-Terminal
 
 Create a new terminal Credit Card AVS only transaction
 
 ```csharp
-CCAVSTerminalAsync(
+CcavsTerminalAsync(
     Models.V1TransactionsCcAvsOnlyTerminalRequest body)
 ```
 
@@ -11884,7 +11835,7 @@ CCAVSTerminalAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionProcessing>`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionProcessing](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -11900,13 +11851,11 @@ V1TransactionsCcAvsOnlyTerminalRequest body = new V1TransactionsCcAvsOnlyTermina
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -11939,7 +11888,6 @@ V1TransactionsCcAvsOnlyTerminalRequest body = new V1TransactionsCcAvsOnlyTermina
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -11949,25 +11897,23 @@ V1TransactionsCcAvsOnlyTerminalRequest body = new V1TransactionsCcAvsOnlyTermina
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EFormat = EFormatEnum.Magnesafe,
 };
 
 try
 {
-    ResponseTransactionProcessing result = await transactionsCreditCardController.CCAVSTerminalAsync(body);
+    ApiResponse<ResponseTransactionProcessing> result = await transactionsCreditCardController.CcavsTerminalAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -11994,18 +11940,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Ticket
+# CCAVS-Ticket
 
 Create a new ticket Credit Card AVS only transaction
 
 ```csharp
-CCAVSTicketAsync(
+CcavsTicketAsync(
     Models.V1TransactionsCcAvsOnlyTicketRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -12013,11 +11959,11 @@ CCAVSTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyTicketRequest`](../../doc/models/v1-transactions-cc-avs-only-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -12032,13 +11978,11 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -12073,7 +12017,6 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -12083,7 +12026,6 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -12094,14 +12036,14 @@ V1TransactionsCcAvsOnlyTicketRequest body = new V1TransactionsCcAvsOnlyTicketReq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAVSTicketAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcavsTicketAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -13161,18 +13103,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Tokenized
+# CCAVS-Tokenized
 
 Create a new tokenized Credit Card AVS only transaction
 
 ```csharp
-CCAVSTokenizedAsync(
+CcavsTokenizedAsync(
     Models.V1TransactionsCcAvsOnlyTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -13180,11 +13122,11 @@ CCAVSTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyTokenRequest`](../../doc/models/v1-transactions-cc-avs-only-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -13198,13 +13140,11 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -13239,7 +13179,6 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -13249,7 +13188,6 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -13261,14 +13199,14 @@ V1TransactionsCcAvsOnlyTokenRequest body = new V1TransactionsCcAvsOnlyTokenReque
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAVSTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcavsTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -14328,18 +14266,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC AVS - Wallet
+# CCAVS-Wallet
 
 Create a new Wallet Credit Card AVS only transaction
 
 ```csharp
-CCAVSWalletAsync(
+CcavsWalletAsync(
     Models.V1TransactionsCcAvsOnlyWalletRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -14347,11 +14285,11 @@ CCAVSWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcAvsOnlyWalletRequest`](../../doc/models/v1-transactions-cc-avs-only-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -14359,7 +14297,7 @@ CCAVSWalletAsync(
 V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletRequest
 {
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
     ClerkNumber = "AE1234",
@@ -14367,13 +14305,11 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -14408,7 +14344,6 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -14418,7 +14353,6 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -14430,14 +14364,14 @@ V1TransactionsCcAvsOnlyWalletRequest body = new V1TransactionsCcAvsOnlyWalletReq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCAVSWalletAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcavsWalletAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -15497,7 +15431,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -15506,9 +15440,9 @@ catch (ApiException e)
 Create a new keyed Credit Card balance inquiry transaction
 
 ```csharp
-CCBalanceInquiryAsync(
+CcBalanceInquiryAsync(
     Models.V1TransactionsCcBalanceInquiryKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -15516,11 +15450,11 @@ CCBalanceInquiryAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryKeyedRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -15536,13 +15470,11 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -15577,7 +15509,6 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -15587,14 +15518,12 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -15602,14 +15531,14 @@ V1TransactionsCcBalanceInquiryKeyedRequest body = new V1TransactionsCcBalanceInq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCBalanceInquiryAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcBalanceInquiryAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -16669,18 +16598,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Previous Transaction
+# CC Balance Inquiry-Previous Transaction
 
 Create a new Credit Card balance inquiry transaction using previous transaction id
 
 ```csharp
-CCBalanceInquiryPreviousTransactionAsync(
+CcBalanceInquiryPreviousTransactionAsync(
     Models.V1TransactionsCcBalanceInquiryPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -16688,11 +16617,11 @@ CCBalanceInquiryPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryPrevTrxnRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -16706,13 +16635,11 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -16747,7 +16674,6 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -16757,7 +16683,6 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -16769,14 +16694,14 @@ V1TransactionsCcBalanceInquiryPrevTrxnRequest body = new V1TransactionsCcBalance
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCBalanceInquiryPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcBalanceInquiryPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -17836,18 +17761,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Swiped
+# CC Balance Inquiry-Swiped
 
 Create a new swiped Credit Card balance inquiry transaction
 
 ```csharp
-CCBalanceInquirySwipedAsync(
+CcBalanceInquirySwipedAsync(
     Models.V1TransactionsCcBalanceInquirySwipedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -17855,11 +17780,11 @@ CCBalanceInquirySwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquirySwipedRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -17874,13 +17799,11 @@ V1TransactionsCcBalanceInquirySwipedRequest body = new V1TransactionsCcBalanceIn
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -17915,7 +17838,6 @@ V1TransactionsCcBalanceInquirySwipedRequest body = new V1TransactionsCcBalanceIn
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -17925,26 +17847,24 @@ V1TransactionsCcBalanceInquirySwipedRequest body = new V1TransactionsCcBalanceIn
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EntryModeId = EntryModeIdEnum.K,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCBalanceInquirySwipedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcBalanceInquirySwipedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -19004,16 +18924,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Terminal
+# CC Balance Inquiry-Terminal
 
 Create a new terminal Credit Card balance inquiry transaction
 
 ```csharp
-CCBalanceInquiryTerminalAsync(
+CcBalanceInquiryTerminalAsync(
     Models.V1TransactionsCcBalanceInquiryTerminalRequest body)
 ```
 
@@ -19025,7 +18945,7 @@ CCBalanceInquiryTerminalAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionProcessing>`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionProcessing](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -19041,13 +18961,11 @@ V1TransactionsCcBalanceInquiryTerminalRequest body = new V1TransactionsCcBalance
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -19080,7 +18998,6 @@ V1TransactionsCcBalanceInquiryTerminalRequest body = new V1TransactionsCcBalance
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -19090,25 +19007,23 @@ V1TransactionsCcBalanceInquiryTerminalRequest body = new V1TransactionsCcBalance
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EFormat = EFormatEnum.Magnesafe,
 };
 
 try
 {
-    ResponseTransactionProcessing result = await transactionsCreditCardController.CCBalanceInquiryTerminalAsync(body);
+    ApiResponse<ResponseTransactionProcessing> result = await transactionsCreditCardController.CcBalanceInquiryTerminalAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -19135,18 +19050,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Ticket
+# CC Balance Inquiry-Ticket
 
 Create a new Ticket Credit Card balance inquiry transaction
 
 ```csharp
-CCBalanceInquiryTicketAsync(
+CcBalanceInquiryTicketAsync(
     Models.V1TransactionsCcBalanceInquiryTicketRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -19154,11 +19069,11 @@ CCBalanceInquiryTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryTicketRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -19173,13 +19088,11 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -19214,7 +19127,6 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -19224,7 +19136,6 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -19235,14 +19146,14 @@ V1TransactionsCcBalanceInquiryTicketRequest body = new V1TransactionsCcBalanceIn
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCBalanceInquiryTicketAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcBalanceInquiryTicketAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -20302,18 +20213,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Tokenized
+# CC Balance Inquiry-Tokenized
 
 Create a new tokenized Credit Card balance inquiry transaction
 
 ```csharp
-CCBalanceInquiryTokenizedAsync(
+CcBalanceInquiryTokenizedAsync(
     Models.V1TransactionsCcBalanceInquiryTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -20321,11 +20232,11 @@ CCBalanceInquiryTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryTokenRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -20339,13 +20250,11 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -20380,7 +20289,6 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -20390,7 +20298,6 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -20402,14 +20309,14 @@ V1TransactionsCcBalanceInquiryTokenRequest body = new V1TransactionsCcBalanceInq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCBalanceInquiryTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcBalanceInquiryTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -21469,18 +21376,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Balance Inquiry - Wallet
+# CC Balance Inquiry-Wallet
 
 Create a new Wallet Credit Card balance inquiry transaction
 
 ```csharp
-CCBalanceInquiryWalletAsync(
+CcBalanceInquiryWalletAsync(
     Models.V1TransactionsCcBalanceInquiryWalletRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -21488,11 +21395,11 @@ CCBalanceInquiryWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcBalanceInquiryWalletRequest`](../../doc/models/v1-transactions-cc-balance-inquiry-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -21500,7 +21407,7 @@ CCBalanceInquiryWalletAsync(
 V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceInquiryWalletRequest
 {
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
     ClerkNumber = "AE1234",
@@ -21508,13 +21415,11 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -21549,7 +21454,6 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -21559,7 +21463,6 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -21571,14 +21474,14 @@ V1TransactionsCcBalanceInquiryWalletRequest body = new V1TransactionsCcBalanceIn
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCBalanceInquiryWalletAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcBalanceInquiryWalletAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -22638,7 +22541,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -22647,9 +22550,9 @@ catch (ApiException e)
 Create a new keyed Credit Card force transaction
 
 ```csharp
-CCForceAsync(
+CcForceAsync(
     Models.V1TransactionsCcForceKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -22657,11 +22560,11 @@ CCForceAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceKeyedRequest`](../../doc/models/v1-transactions-cc-force-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -22678,13 +22581,11 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -22719,7 +22620,6 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -22729,14 +22629,12 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -22745,14 +22643,14 @@ V1TransactionsCcForceKeyedRequest body = new V1TransactionsCcForceKeyedRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCForceAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcForceAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -23812,18 +23710,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Previous Transaction
+# CC Force-Previous Transaction
 
 Create a new Credit Card force transaction using previous transaction id
 
 ```csharp
-CCForcePreviousTransactionAsync(
+CcForcePreviousTransactionAsync(
     Models.V1TransactionsCcForcePrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -23831,11 +23729,11 @@ CCForcePreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForcePrevTrxnRequest`](../../doc/models/v1-transactions-cc-force-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -23850,13 +23748,11 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -23891,7 +23787,6 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -23901,7 +23796,6 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -23914,14 +23808,14 @@ V1TransactionsCcForcePrevTrxnRequest body = new V1TransactionsCcForcePrevTrxnReq
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCForcePreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcForcePreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -24981,18 +24875,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Swiped
+# CC Force-Swiped
 
 Create a new swiped Credit Card force transaction
 
 ```csharp
-CCForceSwipedAsync(
+CcForceSwipedAsync(
     Models.V1TransactionsCcForceSwipedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -25000,11 +24894,11 @@ CCForceSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceSwipedRequest`](../../doc/models/v1-transactions-cc-force-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -25020,13 +24914,11 @@ V1TransactionsCcForceSwipedRequest body = new V1TransactionsCcForceSwipedRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -25061,7 +24953,6 @@ V1TransactionsCcForceSwipedRequest body = new V1TransactionsCcForceSwipedRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -25071,26 +24962,24 @@ V1TransactionsCcForceSwipedRequest body = new V1TransactionsCcForceSwipedRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EntryModeId = EntryModeIdEnum.K,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCForceSwipedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcForceSwipedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -26150,18 +26039,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Ticket
+# CC Force-Ticket
 
 Create a new ticket Credit Card force transaction
 
 ```csharp
-CCForceTicketAsync(
+CcForceTicketAsync(
     Models.V1TransactionsCcForceTicketRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -26169,11 +26058,11 @@ CCForceTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceTicketRequest`](../../doc/models/v1-transactions-cc-force-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -26189,13 +26078,11 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -26230,7 +26117,6 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -26240,7 +26126,6 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -26252,14 +26137,14 @@ V1TransactionsCcForceTicketRequest body = new V1TransactionsCcForceTicketRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCForceTicketAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcForceTicketAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -27319,18 +27204,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Tokenized
+# CC Force-Tokenized
 
 Create a new tokenized Credit Card force transaction
 
 ```csharp
-CCForceTokenizedAsync(
+CcForceTokenizedAsync(
     Models.V1TransactionsCcForceTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -27338,11 +27223,11 @@ CCForceTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceTokenRequest`](../../doc/models/v1-transactions-cc-force-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -27357,13 +27242,11 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -27398,7 +27281,6 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -27408,7 +27290,6 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -27421,14 +27302,14 @@ V1TransactionsCcForceTokenRequest body = new V1TransactionsCcForceTokenRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCForceTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcForceTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -28488,18 +28369,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Force - Wallet
+# CC Force-Wallet
 
 Create a new Wallet Credit Card force transaction
 
 ```csharp
-CCForceWalletAsync(
+CcForceWalletAsync(
     Models.V1TransactionsCcForceWalletRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -28507,11 +28388,11 @@ CCForceWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcForceWalletRequest`](../../doc/models/v1-transactions-cc-force-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -28519,7 +28400,7 @@ CCForceWalletAsync(
 V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
 {
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     AuthCode = "abc123",
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
@@ -28528,13 +28409,11 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -28569,7 +28448,6 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -28579,7 +28457,6 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -28592,14 +28469,14 @@ V1TransactionsCcForceWalletRequest body = new V1TransactionsCcForceWalletRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCForceWalletAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcForceWalletAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -29659,7 +29536,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -29668,9 +29545,9 @@ catch (ApiException e)
 Create a new keyed Credit Card refund transaction
 
 ```csharp
-CCRefundAsync(
+CcRefundAsync(
     Models.V1TransactionsCcRefundKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -29678,11 +29555,11 @@ CCRefundAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundKeyedRequest`](../../doc/models/v1-transactions-cc-refund-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -29697,13 +29574,11 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -29737,7 +29612,6 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -29747,14 +29621,12 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -29763,14 +29635,14 @@ V1TransactionsCcRefundKeyedRequest body = new V1TransactionsCcRefundKeyedRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -30830,18 +30702,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Previous Transaction
+# CC Refund-Previous Transaction
 
 Create a new Credit Card refund transaction using previous transaction id
 
 ```csharp
-CCRefundPreviousTransactionAsync(
+CcRefundPreviousTransactionAsync(
     Models.V1TransactionsCcRefundPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -30849,11 +30721,11 @@ CCRefundPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundPrevTrxnRequest`](../../doc/models/v1-transactions-cc-refund-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -30867,13 +30739,11 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -30908,7 +30778,6 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -30918,7 +30787,6 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -30930,14 +30798,14 @@ V1TransactionsCcRefundPrevTrxnRequest body = new V1TransactionsCcRefundPrevTrxnR
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -31997,18 +31865,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Swiped
+# CC Refund-Swiped
 
 Create a new swiped Credit Card refund transaction
 
 ```csharp
-CCRefundSwipedAsync(
+CcRefundSwipedAsync(
     Models.V1TransactionsCcRefundSwipedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -32016,11 +31884,11 @@ CCRefundSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundSwipedRequest`](../../doc/models/v1-transactions-cc-refund-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -32036,13 +31904,11 @@ V1TransactionsCcRefundSwipedRequest body = new V1TransactionsCcRefundSwipedReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -32076,7 +31942,6 @@ V1TransactionsCcRefundSwipedRequest body = new V1TransactionsCcRefundSwipedReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -32086,26 +31951,24 @@ V1TransactionsCcRefundSwipedRequest body = new V1TransactionsCcRefundSwipedReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EntryModeId = EntryModeIdEnum.K,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundSwipedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundSwipedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -33165,18 +33028,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Tap to Pay
+# CC Refund-Tap to Pay
 
 Create a new Tap To Pay Credit Card refund transaction
 
 ```csharp
-CCRefundTapToPayAsync(
+CcRefundTapToPayAsync(
     Models.V1TransactionsCcRefundTaptopayRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -33184,11 +33047,11 @@ CCRefundTapToPayAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundTaptopayRequest`](../../doc/models/v1-transactions-cc-refund-taptopay-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -33204,13 +33067,11 @@ V1TransactionsCcRefundTaptopayRequest body = new V1TransactionsCcRefundTaptopayR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -33245,13 +33106,11 @@ V1TransactionsCcRefundTaptopayRequest body = new V1TransactionsCcRefundTaptopayR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
     SecureDirectoryServerTransactionId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     TerminalSerialNumber = "1234567890",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -33262,14 +33121,14 @@ V1TransactionsCcRefundTaptopayRequest body = new V1TransactionsCcRefundTaptopayR
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundTapToPayAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundTapToPayAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -34329,16 +34188,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Terminal
+# CC Refund-Terminal
 
 Create a new terminal Credit Card refund transaction
 
 ```csharp
-CCRefundTerminalAsync(
+CcRefundTerminalAsync(
     Models.V1TransactionsCcRefundTerminalRequest body)
 ```
 
@@ -34350,7 +34209,7 @@ CCRefundTerminalAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionProcessing>`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionProcessing](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -34367,13 +34226,11 @@ V1TransactionsCcRefundTerminalRequest body = new V1TransactionsCcRefundTerminalR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -34405,7 +34262,6 @@ V1TransactionsCcRefundTerminalRequest body = new V1TransactionsCcRefundTerminalR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -34415,25 +34271,23 @@ V1TransactionsCcRefundTerminalRequest body = new V1TransactionsCcRefundTerminalR
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EFormat = EFormatEnum.Magnesafe,
 };
 
 try
 {
-    ResponseTransactionProcessing result = await transactionsCreditCardController.CCRefundTerminalAsync(body);
+    ApiResponse<ResponseTransactionProcessing> result = await transactionsCreditCardController.CcRefundTerminalAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -34460,18 +34314,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Ticket
+# CC Refund-Ticket
 
 Create a new ticket Credit Card refund transaction
 
 ```csharp
-CCRefundTicketAsync(
+CcRefundTicketAsync(
     Models.V1TransactionsCcRefundTicketRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -34479,11 +34333,11 @@ CCRefundTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundTicketRequest`](../../doc/models/v1-transactions-cc-refund-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -34499,13 +34353,11 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -34539,7 +34391,6 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -34549,7 +34400,6 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -34560,14 +34410,14 @@ V1TransactionsCcRefundTicketRequest body = new V1TransactionsCcRefundTicketReque
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundTicketAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundTicketAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -35627,18 +35477,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Tokenized
+# CC Refund-Tokenized
 
 Create a new tokenized Credit Card refund transaction
 
 ```csharp
-CCRefundTokenizedAsync(
+CcRefundTokenizedAsync(
     Models.V1TransactionsCcRefundTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -35646,11 +35496,11 @@ CCRefundTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundTokenRequest`](../../doc/models/v1-transactions-cc-refund-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -35665,13 +35515,11 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -35705,7 +35553,6 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -35715,7 +35562,6 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -35727,14 +35573,14 @@ V1TransactionsCcRefundTokenRequest body = new V1TransactionsCcRefundTokenRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -36794,18 +36640,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Refund - Wallet
+# CC Refund-Wallet
 
 Create a new Wallet Credit Card refund transaction
 
 ```csharp
-CCRefundWalletAsync(
+CcRefundWalletAsync(
     Models.V1TransactionsCcRefundWalletRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -36813,11 +36659,11 @@ CCRefundWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcRefundWalletRequest`](../../doc/models/v1-transactions-cc-refund-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -36826,7 +36672,7 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
 {
     TransactionAmount = 1,
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
     ClerkNumber = "AE1234",
@@ -36834,13 +36680,11 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -36874,7 +36718,6 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -36884,7 +36727,6 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -36896,14 +36738,14 @@ V1TransactionsCcRefundWalletRequest body = new V1TransactionsCcRefundWalletReque
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCRefundWalletAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcRefundWalletAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -37963,7 +37805,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -37972,9 +37814,9 @@ catch (ApiException e)
 Create a new keyed Credit Card sale transaction with a non hosted card form. This is an in PCI Scope endpoint and requires PCI compliance verification.
 
 ```csharp
-CCSaleAsync(
+CcSaleAsync(
     Models.V1TransactionsCcSaleKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -37982,11 +37824,11 @@ CCSaleAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleKeyedRequest`](../../doc/models/v1-transactions-cc-sale-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -38003,13 +37845,11 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -38043,7 +37883,6 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -38053,14 +37892,12 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
     AccountHolderName = "smith",
-    EntryModeId = EntryModeIdEnum.K,
     TrackData = "T051904524T 741025349520O 8520748520963",
     Pin = "1234",
     Ksn = "1234",
@@ -38068,14 +37905,14 @@ V1TransactionsCcSaleKeyedRequest body = new V1TransactionsCcSaleKeyedRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSaleAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSaleAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -39135,18 +38972,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Previous Transaction
+# CC Sale-Previous Transaction
 
 Create a new Credit Card sale transaction using previous transaction id
 
 ```csharp
-CCSalePreviousTransactionAsync(
+CcSalePreviousTransactionAsync(
     Models.V1TransactionsCcSalePrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -39154,11 +38991,11 @@ CCSalePreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSalePrevTrxnRequest`](../../doc/models/v1-transactions-cc-sale-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -39172,13 +39009,11 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -39213,7 +39048,6 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -39223,7 +39057,6 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -39235,14 +39068,14 @@ V1TransactionsCcSalePrevTrxnRequest body = new V1TransactionsCcSalePrevTrxnReque
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSalePreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSalePreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -40302,18 +40135,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Swiped
+# CC Sale-Swiped
 
 Create a new swiped Credit Card sale transaction
 
 ```csharp
-CCSaleSwipedAsync(
+CcSaleSwipedAsync(
     Models.V1TransactionsCcSaleSwipedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -40321,11 +40154,11 @@ CCSaleSwipedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleSwipedRequest`](../../doc/models/v1-transactions-cc-sale-swiped-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -40341,13 +40174,11 @@ V1TransactionsCcSaleSwipedRequest body = new V1TransactionsCcSaleSwipedRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -40381,7 +40212,6 @@ V1TransactionsCcSaleSwipedRequest body = new V1TransactionsCcSaleSwipedRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -40391,26 +40221,24 @@ V1TransactionsCcSaleSwipedRequest body = new V1TransactionsCcSaleSwipedRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EntryModeId = EntryModeIdEnum.K,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSaleSwipedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSaleSwipedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -41470,18 +41298,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Tap to Pay
+# CC Sale-Tap to Pay
 
 Create a new Tap To Pay Credit card sale transaction. Only supported on native iOS integrations.
 
 ```csharp
-CCSaleTapToPayAsync(
+CcSaleTapToPayAsync(
     Models.V1TransactionsCcSaleTaptopayRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -41489,11 +41317,11 @@ CCSaleTapToPayAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleTaptopayRequest`](../../doc/models/v1-transactions-cc-sale-taptopay-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -41509,13 +41337,11 @@ V1TransactionsCcSaleTaptopayRequest body = new V1TransactionsCcSaleTaptopayReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -41550,13 +41376,11 @@ V1TransactionsCcSaleTaptopayRequest body = new V1TransactionsCcSaleTaptopayReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
     SecureDirectoryServerTransactionId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     TerminalSerialNumber = "1234567890",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -41566,14 +41390,14 @@ V1TransactionsCcSaleTaptopayRequest body = new V1TransactionsCcSaleTaptopayReque
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSaleTapToPayAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSaleTapToPayAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -42633,16 +42457,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Terminal
+# CC Sale-Terminal
 
 Create a new Credit Card Sale for card present EMV transactions using any of the Certified terminals.
 
 ```csharp
-CCSaleTerminalAsync(
+CcSaleTerminalAsync(
     Models.V1TransactionsCcSaleTerminalRequest body)
 ```
 
@@ -42654,7 +42478,7 @@ CCSaleTerminalAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionProcessing>`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionProcessing](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -42671,13 +42495,11 @@ V1TransactionsCcSaleTerminalRequest body = new V1TransactionsCcSaleTerminalReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -42709,7 +42531,6 @@ V1TransactionsCcSaleTerminalRequest body = new V1TransactionsCcSaleTerminalReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -42719,25 +42540,23 @@ V1TransactionsCcSaleTerminalRequest body = new V1TransactionsCcSaleTerminalReque
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
     EbtFoodEligibleAmount = 0,
     EbtCashEligibleAmount = 0,
-    EFormat = EFormatEnum.Magnesafe,
 };
 
 try
 {
-    ResponseTransactionProcessing result = await transactionsCreditCardController.CCSaleTerminalAsync(body);
+    ApiResponse<ResponseTransactionProcessing> result = await transactionsCreditCardController.CcSaleTerminalAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -42764,18 +42583,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Ticket
+# CC Sale-Ticket
 
 Create a new Credit Card Sale using the Ticket_id obtained from the Elements form submission done event.
 
 ```csharp
-CCSaleTicketAsync(
+CcSaleTicketAsync(
     Models.V1TransactionsCcSaleTicketRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -42783,11 +42602,11 @@ CCSaleTicketAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleTicketRequest`](../../doc/models/v1-transactions-cc-sale-ticket-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -42803,13 +42622,11 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -42843,7 +42660,6 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -42853,7 +42669,6 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -42864,14 +42679,14 @@ V1TransactionsCcSaleTicketRequest body = new V1TransactionsCcSaleTicketRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSaleTicketAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSaleTicketAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -43931,18 +43746,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Tokenized
+# CC Sale-Tokenized
 
 Create a new Credit Card Sale with a previously created token_id.
 
 ```csharp
-CCSaleTokenizedAsync(
+CcSaleTokenizedAsync(
     Models.V1TransactionsCcSaleTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -43950,11 +43765,11 @@ CCSaleTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleTokenRequest`](../../doc/models/v1-transactions-cc-sale-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -43969,13 +43784,11 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -44009,7 +43822,6 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -44019,7 +43831,6 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -44031,14 +43842,14 @@ V1TransactionsCcSaleTokenRequest body = new V1TransactionsCcSaleTokenRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSaleTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSaleTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -45098,18 +44909,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# CC Sale - Wallet
+# CC Sale-Wallet
 
 Create a new Wallet Credit Card sale transaction
 
 ```csharp
-CCSaleWalletAsync(
+CcSaleWalletAsync(
     Models.V1TransactionsCcSaleWalletRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -45117,11 +44928,11 @@ CCSaleWalletAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsCcSaleWalletRequest`](../../doc/models/v1-transactions-cc-sale-wallet-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -45130,7 +44941,7 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest
 {
     TransactionAmount = 1,
     WalletData = "wallet_data2",
-    WalletProvider = WalletProviderEnum.GooglePay,
+    WalletProvider = WalletProvider.GooglePay,
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
     ClerkNumber = "AE1234",
@@ -45138,13 +44949,11 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -45178,7 +44987,6 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     SecureAuthData = "vVwL7UNHCf8W8M2LAfvRChNHN7c%3D",
     SecureProtocolVersion = 2,
     SecureCryptogram = "ZVVEVDJITHpTNE9yNlNHMUh0R0E=",
@@ -45188,7 +44996,6 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest
     ThreeDsServerTransId = "d65e93c3-35ab-41ba-b307-767bfc19eae",
     ClerkId = "1234",
     VoucherNumber = "1234",
-    InitiationType = InitiationTypeEnum.M103,
     BillPayment = true,
     DelayCharge = true,
     DeferredAuth = true,
@@ -45200,14 +45007,14 @@ V1TransactionsCcSaleWalletRequest body = new V1TransactionsCcSaleWalletRequest
 
 try
 {
-    ResponseTransaction result = await transactionsCreditCardController.CCSaleWalletAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCreditCardController.CcSaleWalletAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -46267,6 +46074,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

@@ -1,6 +1,8 @@
 
 # V1 Recurrings Request
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `V1RecurringsRequest`
@@ -20,15 +22,15 @@
 | `EndDate` | `string` | Optional | End date<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
 | `InstallmentTotalCount` | `int?` | Optional | Installment Total Count<br><br>**Constraints**: `>= 1`, `<= 999` |
 | `Interval` | `int` | Required | Interval<br><br>**Constraints**: `>= 0`, `<= 365` |
-| `IntervalType` | [`IntervalTypeEnum`](../../doc/models/interval-type-enum.md) | Required | Interval Type |
+| `IntervalType` | [`IntervalType`](../../doc/models/interval-type.md) | Required | - |
 | `LocationId` | `string` | Required | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `NotificationDays` | `int?` | Optional | Notification Days<br><br>**Constraints**: `>= 0`, `<= 365` |
-| `PaymentMethod` | [`PaymentMethod1Enum?`](../../doc/models/payment-method-1-enum.md) | Optional | Payment Method |
+| `PaymentMethod` | `object` | Optional | - |
 | `ProductTransactionId` | `string` | Optional | Product Transaction ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `RecurringId` | `string` | Optional | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `RecurringApiId` | `string` | Optional | Recurring Api ID<br><br>**Constraints**: *Maximum Length*: `64` |
 | `StartDate` | `string` | Required | Start date<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
-| `Status` | [`StatusEnum?`](../../doc/models/status-enum.md) | Optional | Status |
+| `Status` | `object` | Optional | - |
 | `TransactionAmount` | `int` | Required | Transaction amount |
 | `TermsAgree` | `bool?` | Optional | Terms Agree |
 | `TermsAgreeIp` | `string` | Optional | Terms Agree Ip |
@@ -38,6 +40,7 @@
 | `SendToProcAsRecur` | `bool?` | Optional | Send To Proc As Recur |
 | `Tags` | `List<string>` | Optional | Tags |
 | `SecondaryAmount` | `int?` | Optional | Retained Amount |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -53,15 +56,13 @@
   "end_date": "2021-12-01",
   "installment_total_count": 20,
   "interval": 1,
-  "interval_type": "d",
+  "interval_type": "m",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
   "notification_days": 2,
-  "payment_method": "cc",
   "product_transaction_id": "11e95f8ec39de8fbdb0a4f1a",
   "recurring_id": "11e95f8ec39de8fbdb0a4f1a",
   "recurring_api_id": "recurring1234abcd",
   "start_date": "2021-12-01",
-  "status": "active",
   "transaction_amount": 300,
   "terms_agree": true,
   "terms_agree_ip": "192.168.0.10",
@@ -69,7 +70,11 @@
   "recurring_c2": "recurring custom data 2",
   "recurring_c3": "recurring custom data 3",
   "send_to_proc_as_recur": true,
-  "secondary_amount": 100
+  "secondary_amount": 100,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

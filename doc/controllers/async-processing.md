@@ -26,7 +26,7 @@ StatusCheckAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseAsyncStatus>`](../../doc/models/response-async-status.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseAsyncStatus](../../doc/models/response-async-status.md).
 
 ## Example Usage
 
@@ -34,14 +34,14 @@ StatusCheckAsync(
 Guid statusCode = new Guid("406c66c3-21cb-47fb-80fc-843bc42507fb");
 try
 {
-    ResponseAsyncStatus result = await asyncProcessingController.StatusCheckAsync(statusCode);
+    ApiResponse<ResponseAsyncStatus> result = await asyncProcessingController.StatusCheckAsync(statusCode);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -66,5 +66,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

@@ -18,12 +18,12 @@ To configure the SDK to use a proxy server, initialize the proxy configuration d
 ## Usage Example
 
 ```csharp
-using FortisAPI.Standard;
-using FortisAPI.Standard.Http.Client.Proxy;
+using FortisApi.Standard;
+using FortisApi.Standard.Http.Client.Proxy;
 
 namespace ConsoleApp;
 
-var client = new FortisAPIClient.Builder()
+var client = new FortisApiClient.Builder()
 .HttpClientConfig(config => config
     .Proxy(new ProxyConfigurationBuilder("http://localhost")
             .Port(8080)

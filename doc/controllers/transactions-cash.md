@@ -31,7 +31,7 @@ CashRefundAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -46,13 +46,11 @@ V1TransactionsCashRefundRequest body = new V1TransactionsCashRefundRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -86,21 +84,20 @@ V1TransactionsCashRefundRequest body = new V1TransactionsCashRefundRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     PreviousTransactionId = "11e95f8ec39de8fbdb0a4f1a",
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCashController.CashRefundAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCashController.CashRefundAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1160,7 +1157,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -1181,7 +1178,7 @@ CashSaleAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1196,13 +1193,11 @@ V1TransactionsCashSaleRequest body = new V1TransactionsCashSaleRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -1236,20 +1231,19 @@ V1TransactionsCashSaleRequest body = new V1TransactionsCashSaleRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AccountHolderName = "smith",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsCashController.CashSaleAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsCashController.CashSaleAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2309,6 +2303,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

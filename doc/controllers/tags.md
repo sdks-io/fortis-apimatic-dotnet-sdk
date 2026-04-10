@@ -10,19 +10,19 @@ TagsController tagsController = client.TagsController;
 
 ## Methods
 
-* [Create a New Tag](../../doc/controllers/tags.md#create-a-new-tag)
-* [List All Tags Related](../../doc/controllers/tags.md#list-all-tags-related)
-* [Delete Tag Record](../../doc/controllers/tags.md#delete-tag-record)
-* [View Single Tags Record](../../doc/controllers/tags.md#view-single-tags-record)
-* [Update Tag Record](../../doc/controllers/tags.md#update-tag-record)
+* [Createanewtag](../../doc/controllers/tags.md#createanewtag)
+* [Listalltagsrelated](../../doc/controllers/tags.md#listalltagsrelated)
+* [Deletetagrecord](../../doc/controllers/tags.md#deletetagrecord)
+* [Viewsingletagsrecord](../../doc/controllers/tags.md#viewsingletagsrecord)
+* [Updatetagrecord](../../doc/controllers/tags.md#updatetagrecord)
 
 
-# Create a New Tag
+# Createanewtag
 
 ```csharp
-CreateANewTagAsync(
+CreateanewtagAsync(
     Models.V1TagsRequest body,
-    List<Models.Expand37Enum> expand = null)
+    List<Models.Expand37> expand = null)
 ```
 
 ## Parameters
@@ -30,11 +30,11 @@ CreateANewTagAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TagsRequest`](../../doc/models/v1-tags-request.md) | Body, Required | - |
-| `expand` | [`List<Expand37Enum>`](../../doc/models/expand-37-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand37>`](../../doc/models/expand-37.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTag>`](../../doc/models/response-tag.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTag](../../doc/models/response-tag.md).
 
 ## Example Usage
 
@@ -47,14 +47,14 @@ V1TagsRequest body = new V1TagsRequest
 
 try
 {
-    ResponseTag result = await tagsController.CreateANewTagAsync(body);
+    ApiResponse<ResponseTag> result = await tagsController.CreateanewtagAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -116,43 +116,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Tags Related
+# Listalltagsrelated
 
 ```csharp
-ListAllTagsRelatedAsync(
-    Models.Page page = null,
+ListalltagsrelatedAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand37Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand37> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field47Enum> fields = null)
+    List<Models.Field47> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand37Enum>`](../../doc/models/expand-37-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand37>`](../../doc/models/expand-37.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field47Enum>`](../../doc/models/field-47-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field47>`](../../doc/models/field-47.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseTagsCollection>`](../../doc/models/response-tags-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTagsCollection](../../doc/models/response-tags-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -163,7 +163,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -172,7 +172,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -181,7 +181,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseTagsCollection result = await tagsController.ListAllTagsRelatedAsync(
+    ApiResponse<ResponseTagsCollection> result = await tagsController.ListalltagsrelatedAsync(
         page,
         order,
         filterBy
@@ -190,9 +190,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -275,13 +275,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Delete Tag Record
+# Deletetagrecord
 
 ```csharp
-DeleteTagRecordAsync(
+DeletetagrecordAsync(
     string tagId)
 ```
 
@@ -293,7 +293,7 @@ DeleteTagRecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTag>`](../../doc/models/response-tag.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTag](../../doc/models/response-tag.md).
 
 ## Example Usage
 
@@ -301,14 +301,14 @@ DeleteTagRecordAsync(
 string tagId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseTag result = await tagsController.DeleteTagRecordAsync(tagId);
+    ApiResponse<ResponseTag> result = await tagsController.DeletetagrecordAsync(tagId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -366,16 +366,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Tags Record
+# Viewsingletagsrecord
 
 ```csharp
-ViewSingleTagsRecordAsync(
+ViewsingletagsrecordAsync(
     string tagId,
-    List<Models.Expand37Enum> expand = null,
-    List<Models.Field47Enum> fields = null)
+    List<Models.Expand37> expand = null,
+    List<Models.Field47> fields = null)
 ```
 
 ## Parameters
@@ -383,12 +383,12 @@ ViewSingleTagsRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `tagId` | `string` | Template, Required | Tag ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand37Enum>`](../../doc/models/expand-37-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field47Enum>`](../../doc/models/field-47-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand37>`](../../doc/models/expand-37.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field47>`](../../doc/models/field-47.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseTag>`](../../doc/models/response-tag.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTag](../../doc/models/response-tag.md).
 
 ## Example Usage
 
@@ -396,14 +396,14 @@ ViewSingleTagsRecordAsync(
 string tagId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseTag result = await tagsController.ViewSingleTagsRecordAsync(tagId);
+    ApiResponse<ResponseTag> result = await tagsController.ViewsingletagsrecordAsync(tagId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -461,13 +461,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Tag Record
+# Updatetagrecord
 
 ```csharp
-UpdateTagRecordAsync(
+UpdatetagrecordAsync(
     string tagId,
     Models.V1TagsRequest1 body)
 ```
@@ -481,7 +481,7 @@ UpdateTagRecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTag>`](../../doc/models/response-tag.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTag](../../doc/models/response-tag.md).
 
 ## Example Usage
 
@@ -495,7 +495,7 @@ V1TagsRequest1 body = new V1TagsRequest1
 
 try
 {
-    ResponseTag result = await tagsController.UpdateTagRecordAsync(
+    ApiResponse<ResponseTag> result = await tagsController.UpdatetagrecordAsync(
         tagId,
         body
     );
@@ -503,9 +503,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -567,6 +567,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

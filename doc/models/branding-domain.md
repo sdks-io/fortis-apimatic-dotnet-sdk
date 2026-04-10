@@ -3,6 +3,8 @@
 
 Branding domain array
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `BrandingDomain`
@@ -18,7 +20,7 @@ Branding domain array
 | `AllowContactSignup` | `bool?` | Optional | Allow Contact Signup. |
 | `AllowContactRegistration` | `bool?` | Optional | Allow Contact Registration. |
 | `AllowContactLogin` | `bool?` | Optional | Allow Contact Login. |
-| `RegistrationFields` | [`List<RegistrationFieldEnum>`](../../doc/models/registration-field-enum.md) | Optional | Registration Fields |
+| `RegistrationFields` | [`List<RegistrationField>`](../../doc/models/registration-field.md) | Optional | Registration Fields |
 | `CompanyName` | `string` | Optional | Company Name.<br><br>**Constraints**: *Maximum Length*: `32` |
 | `NavColor` | `string` | Optional | Nav Color.<br><br>**Constraints**: *Maximum Length*: `7` |
 | `ButtonPrimaryColor` | `string` | Optional | Button Primary Color.<br><br>**Constraints**: *Maximum Length*: `7` |
@@ -38,12 +40,13 @@ Branding domain array
 | `CustomJavascript` | `string` | Optional | Custom Javascript.<br><br>**Constraints**: *Maximum Length*: `2048`, *Pattern*: `^<script\b[^>]*>([\s\S]*?)<\/script>$` |
 | `CustomTheme` | `string` | Optional | Custom Theme<br><br>**Constraints**: *Maximum Length*: `48` |
 | `CustomCss` | `string` | Optional | Custom CSS<br><br>**Constraints**: *Maximum Length*: `2048` |
-| `ContactUserDefaultEntryPage` | [`ContactUserDefaultEntryPageEnum?`](../../doc/models/contact-user-default-entry-page-enum.md) | Optional | Contact User Default Entry Page |
+| `ContactUserDefaultEntryPage` | `object` | Optional | - |
 | `ContactUserDefaultAuthRoles` | `object` | Optional | Contact User Default Auth Role |
 | `CustomStylesheetUrl` | `string` | Optional | Custom Stylesheet URL<br><br>**Constraints**: *Maximum Length*: `256` |
 | `Id` | `string` | Optional | Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -61,12 +64,15 @@ Branding domain array
   ],
   "email_reply_to": "email@domain.com",
   "email": "email@domain.com",
-  "contact_user_default_entry_page": "dashboard",
   "custom_stylesheet_url": "https://127.0.0.1/receiver",
   "id": "11e95f8ec39de8fbdb0a4f1a",
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
-  "logo": "logo6"
+  "logo": "logo6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -26,7 +26,7 @@ MerchantDetailsAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseMerchantDetails>`](../../doc/models/response-merchant-details.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseMerchantDetails](../../doc/models/response-merchant-details.md).
 
 ## Example Usage
 
@@ -38,14 +38,14 @@ V1WalletProviderMerchantDetailsRequest body = new V1WalletProviderMerchantDetail
 
 try
 {
-    ResponseMerchantDetails result = await merchantDetailsController.MerchantDetailsAsync(body);
+    ApiResponse<ResponseMerchantDetails> result = await merchantDetailsController.MerchantDetailsAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -77,6 +77,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

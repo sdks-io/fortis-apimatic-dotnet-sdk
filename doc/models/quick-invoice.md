@@ -3,6 +3,8 @@
 
 Quick Invoice Information on `expand`
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `QuickInvoice`
@@ -33,8 +35,8 @@ Quick Invoice Information on `expand`
 | `ItemFooter` | `string` | Optional | Item footer<br><br>**Constraints**: *Maximum Length*: `250` |
 | `AmountDue` | `double?` | Optional | Amount Due |
 | `NotificationEmail` | `string` | Optional | Notification email<br><br>**Constraints**: *Maximum Length*: `640` |
-| `StatusId` | [`StatusIdEnum?`](../../doc/models/status-id-enum.md) | Optional | (DEPRECATED) Status Id |
-| `StatusCode` | [`StatusCode14Enum?`](../../doc/models/status-code-14-enum.md) | Optional | Status Code |
+| `StatusId` | `object` | Optional | - |
+| `StatusCode` | `object` | Optional | - |
 | `Note` | `string` | Optional | Note<br><br>**Constraints**: *Maximum Length*: `200` |
 | `NotificationDaysBeforeDueDate` | `int?` | Optional | Notification days before due date<br><br>**Constraints**: `>= 0`, `<= 99` |
 | `NotificationDaysAfterDueDate` | `int?` | Optional | Notification days after due date<br><br>**Constraints**: `>= 0`, `<= 99` |
@@ -58,6 +60,7 @@ Quick Invoice Information on `expand`
 | `Active` | `bool?` | Optional | Active status |
 | `PaymentStatusId` | `int?` | Optional | Payment Status Id<br><br>**Constraints**: `>= 1`, `<= 3` |
 | `IsActive` | `bool?` | Optional | Register is active |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -84,8 +87,6 @@ Quick Invoice Information on `expand`
   "item_footer": "Thank you",
   "amount_due": 245.36,
   "notification_email": "email@domain.com",
-  "status_id": 1,
-  "status_code": 1,
   "note": "some note",
   "notification_days_before_due_date": 3,
   "notification_days_after_due_date": 7,
@@ -106,7 +107,11 @@ Quick Invoice Information on `expand`
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "active": true,
   "payment_status_id": 1,
-  "is_active": true
+  "is_active": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

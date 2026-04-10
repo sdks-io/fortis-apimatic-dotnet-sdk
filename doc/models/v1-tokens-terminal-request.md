@@ -1,6 +1,8 @@
 
 # V1 Tokens Terminal Request
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `V1TokensTerminalRequest`
@@ -18,11 +20,11 @@
 | `TokenC1` | `string` | Optional | Custom field 1 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `TokenC2` | `string` | Optional | Custom field 2 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
 | `TokenC3` | `string` | Optional | Custom field 3 for API users to store custom data<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `128` |
-| `AchSecCode` | [`AchSecCode3Enum?`](../../doc/models/ach-sec-code-3-enum.md) | Optional | SEC code for the account |
-| `BillingAddress` | [`BillingAddress`](../../doc/models/billing-address.md) | Optional | Billing Address Object |
+| `AchSecCode` | `object` | Optional | - |
+| `BillingAddress` | [`BillingAddress7`](../../doc/models/billing-address-7.md) | Optional | - |
 | `ContactId` | `string` | Optional | Used to associate the Token with a Contact.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `CustomerId` | `string` | Optional | Used to store a customer identification number.<br><br>**Constraints**: *Minimum Length*: `1`, *Maximum Length*: `50` |
-| `IdentityVerification` | [`IdentityVerification2`](../../doc/models/identity-verification-2.md) | Optional | Identity verification |
+| `IdentityVerification` | [`IdentityVerification5`](../../doc/models/identity-verification-5.md) | Optional | - |
 | `LocationId` | `string` | Required | A valid Location Id associated with the Contact for this Token<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `PreviousAccountVaultApiId` | `string` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` |
 | `PreviousTokenApiId` | `string` | Optional | Can be used to pull payment info from a previous token api id.<br><br>**Constraints**: *Maximum Length*: `64` |
@@ -43,6 +45,7 @@
 | `Joi` | [`Joi4`](../../doc/models/joi-4.md) | Optional | - |
 | `Action` | `string` | Required, Constant | Used for the Create Terminal endpoint. Valid value 'store'<br><br>**Value**: `"store"` |
 | `TerminalId` | `string` | Required | Terminal ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -57,7 +60,6 @@
   "token_c1": "token custom 1",
   "token_c2": "token custom 2",
   "token_c3": "token custom 3",
-  "ach_sec_code": "WEB",
   "contact_id": "11e95f8ec39de8fbdb0a4f1a",
   "customer_id": "123456",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
@@ -77,7 +79,11 @@
   "three_ds_server_trans_id": "d65e93c3-35ab-41ba-b307-767bfc19eae",
   "acs_transaction_id": "13c701a3-5a88-4c45-89e9-ef65e50a8bf9",
   "action": "store",
-  "terminal_id": "11e95f8ec39de8fbdb0a4f1a"
+  "terminal_id": "11e95f8ec39de8fbdb0a4f1a",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -1,6 +1,8 @@
 
 # Response Onboarding
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ResponseOnboarding`
@@ -9,8 +11,9 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type52Enum?`](../../doc/models/type-52-enum.md) | Optional | Resource Type<br><br>**Default**: `Type52Enum.Onboarding` |
+| `Type` | [`Type52?`](../../doc/models/type-52.md) | Optional | - |
 | `Data` | [`Data15`](../../doc/models/data-15.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -24,11 +27,23 @@
       "last_name": "last_name4",
       "middle_name": "middle_name6",
       "title": "title2",
-      "date_of_birth": "date_of_birth2"
+      "date_of_birth": "date_of_birth2",
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "template_code": "template_code0",
     "email": "email6",
-    "dba_name": "dba_name8"
+    "dba_name": "dba_name8",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

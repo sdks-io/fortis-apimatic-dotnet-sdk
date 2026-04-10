@@ -17,23 +17,23 @@ RecurringController recurringController = client.RecurringController;
 
 ## Methods
 
-* [Create a New Recurring Record](../../doc/controllers/recurring.md#create-a-new-recurring-record)
-* [List All Recurring Record](../../doc/controllers/recurring.md#list-all-recurring-record)
-* [Delete Recurring Record](../../doc/controllers/recurring.md#delete-recurring-record)
-* [View Single Recurring Record](../../doc/controllers/recurring.md#view-single-recurring-record)
-* [Update Recurring Payment](../../doc/controllers/recurring.md#update-recurring-payment)
-* [Activate Recurring Payment](../../doc/controllers/recurring.md#activate-recurring-payment)
-* [Defer Recurring Payment](../../doc/controllers/recurring.md#defer-recurring-payment)
-* [Place on Hold Recurring Payment](../../doc/controllers/recurring.md#place-on-hold-recurring-payment)
-* [Skip Recurring Payment](../../doc/controllers/recurring.md#skip-recurring-payment)
+* [Createanewrecurringrecord](../../doc/controllers/recurring.md#createanewrecurringrecord)
+* [Listallrecurringrecord](../../doc/controllers/recurring.md#listallrecurringrecord)
+* [Deleterecurringrecord](../../doc/controllers/recurring.md#deleterecurringrecord)
+* [Viewsinglerecurringrecord](../../doc/controllers/recurring.md#viewsinglerecurringrecord)
+* [Updaterecurringpayment](../../doc/controllers/recurring.md#updaterecurringpayment)
+* [Activaterecurringpayment](../../doc/controllers/recurring.md#activaterecurringpayment)
+* [Deferrecurringpayment](../../doc/controllers/recurring.md#deferrecurringpayment)
+* [Placeonholdrecurringpayment](../../doc/controllers/recurring.md#placeonholdrecurringpayment)
+* [Skiprecurringpayment](../../doc/controllers/recurring.md#skiprecurringpayment)
 
 
-# Create a New Recurring Record
+# Createanewrecurringrecord
 
 ```csharp
-CreateANewRecurringRecordAsync(
+CreateanewrecurringrecordAsync(
     Models.V1RecurringsRequest body,
-    List<Models.Expand26Enum> expand = null)
+    List<Models.Expand26> expand = null)
 ```
 
 ## Parameters
@@ -41,11 +41,11 @@ CreateANewRecurringRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1RecurringsRequest`](../../doc/models/v1-recurrings-request.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -53,7 +53,7 @@ CreateANewRecurringRecordAsync(
 V1RecurringsRequest body = new V1RecurringsRequest
 {
     Interval = 1,
-    IntervalType = IntervalTypeEnum.D,
+    IntervalType = IntervalType.M,
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     StartDate = "2021-12-01",
     TransactionAmount = 300,
@@ -67,11 +67,9 @@ V1RecurringsRequest body = new V1RecurringsRequest
     EndDate = "2021-12-01",
     InstallmentTotalCount = 20,
     NotificationDays = 2,
-    PaymentMethod = PaymentMethod1Enum.Cc,
     ProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
     RecurringId = "11e95f8ec39de8fbdb0a4f1a",
     RecurringApiId = "recurring1234abcd",
-    Status = StatusEnum.Active,
     TermsAgree = true,
     TermsAgreeIp = "192.168.0.10",
     RecurringC1 = "recurring custom data 1",
@@ -83,14 +81,14 @@ V1RecurringsRequest body = new V1RecurringsRequest
 
 try
 {
-    ResponseRecurring result = await recurringController.CreateANewRecurringRecordAsync(body);
+    ApiResponse<ResponseRecurring> result = await recurringController.CreateanewrecurringrecordAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -561,43 +559,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Recurring Record
+# Listallrecurringrecord
 
 ```csharp
-ListAllRecurringRecordAsync(
-    Models.Page page = null,
+ListallrecurringrecordAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand26Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand26> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field43Enum> fields = null)
+    List<Models.Field43> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field43Enum>`](../../doc/models/field-43-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field43>`](../../doc/models/field-43.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurringsCollection>`](../../doc/models/response-recurrings-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurringsCollection](../../doc/models/response-recurrings-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -608,7 +606,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -617,7 +615,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -626,7 +624,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseRecurringsCollection result = await recurringController.ListAllRecurringRecordAsync(
+    ApiResponse<ResponseRecurringsCollection> result = await recurringController.ListallrecurringrecordAsync(
         page,
         order,
         filterBy
@@ -635,9 +633,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1129,13 +1127,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Delete Recurring Record
+# Deleterecurringrecord
 
 ```csharp
-DeleteRecurringRecordAsync(
+DeleterecurringrecordAsync(
     string recurringId)
 ```
 
@@ -1147,7 +1145,7 @@ DeleteRecurringRecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -1155,14 +1153,14 @@ DeleteRecurringRecordAsync(
 string recurringId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseRecurring result = await recurringController.DeleteRecurringRecordAsync(recurringId);
+    ApiResponse<ResponseRecurring> result = await recurringController.DeleterecurringrecordAsync(recurringId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1629,16 +1627,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Recurring Record
+# Viewsinglerecurringrecord
 
 ```csharp
-ViewSingleRecurringRecordAsync(
+ViewsinglerecurringrecordAsync(
     string recurringId,
-    List<Models.Expand26Enum> expand = null,
-    List<Models.Field43Enum> fields = null)
+    List<Models.Expand26> expand = null,
+    List<Models.Field43> fields = null)
 ```
 
 ## Parameters
@@ -1646,12 +1644,12 @@ ViewSingleRecurringRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `recurringId` | `string` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field43Enum>`](../../doc/models/field-43-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field43>`](../../doc/models/field-43.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -1659,14 +1657,14 @@ ViewSingleRecurringRecordAsync(
 string recurringId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseRecurring result = await recurringController.ViewSingleRecurringRecordAsync(recurringId);
+    ApiResponse<ResponseRecurring> result = await recurringController.ViewsinglerecurringrecordAsync(recurringId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -2133,16 +2131,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Recurring Payment
+# Updaterecurringpayment
 
 ```csharp
-UpdateRecurringPaymentAsync(
+UpdaterecurringpaymentAsync(
     string recurringId,
     Models.V1RecurringsRequest1 body,
-    List<Models.Expand26Enum> expand = null)
+    List<Models.Expand26> expand = null)
 ```
 
 ## Parameters
@@ -2151,11 +2149,11 @@ UpdateRecurringPaymentAsync(
 |  --- | --- | --- | --- |
 | `recurringId` | `string` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1RecurringsRequest1`](../../doc/models/v1-recurrings-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -2171,15 +2169,12 @@ V1RecurringsRequest1 body = new V1RecurringsRequest1
     EndDate = "2021-12-01",
     InstallmentTotalCount = 20,
     Interval = 1,
-    IntervalType = IntervalTypeEnum.D,
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     NotificationDays = 2,
-    PaymentMethod = PaymentMethod1Enum.Cc,
     ProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
     RecurringId = "11e95f8ec39de8fbdb0a4f1a",
     RecurringApiId = "recurring1234abcd",
     StartDate = "2021-12-01",
-    Status = StatusEnum.Active,
     TransactionAmount = 300,
     TermsAgree = true,
     TermsAgreeIp = "192.168.0.10",
@@ -2192,7 +2187,7 @@ V1RecurringsRequest1 body = new V1RecurringsRequest1
 
 try
 {
-    ResponseRecurring result = await recurringController.UpdateRecurringPaymentAsync(
+    ApiResponse<ResponseRecurring> result = await recurringController.UpdaterecurringpaymentAsync(
         recurringId,
         body
     );
@@ -2200,9 +2195,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2673,16 +2668,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Activate Recurring Payment
+# Activaterecurringpayment
 
 ```csharp
-ActivateRecurringPaymentAsync(
+ActivaterecurringpaymentAsync(
     string recurringId,
-    List<Models.Expand26Enum> expand = null)
+    List<Models.Expand26> expand = null)
 ```
 
 ## Parameters
@@ -2690,11 +2685,11 @@ ActivateRecurringPaymentAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `recurringId` | `string` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -2702,14 +2697,14 @@ ActivateRecurringPaymentAsync(
 string recurringId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseRecurring result = await recurringController.ActivateRecurringPaymentAsync(recurringId);
+    ApiResponse<ResponseRecurring> result = await recurringController.ActivaterecurringpaymentAsync(recurringId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -3176,16 +3171,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Defer Recurring Payment
+# Deferrecurringpayment
 
 ```csharp
-DeferRecurringPaymentAsync(
+DeferrecurringpaymentAsync(
     string recurringId,
     Models.V1RecurringsDeferPaymentRequest body,
-    List<Models.Expand26Enum> expand = null)
+    List<Models.Expand26> expand = null)
 ```
 
 ## Parameters
@@ -3194,11 +3189,11 @@ DeferRecurringPaymentAsync(
 |  --- | --- | --- | --- |
 | `recurringId` | `string` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1RecurringsDeferPaymentRequest`](../../doc/models/v1-recurrings-defer-payment-request.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -3211,7 +3206,7 @@ V1RecurringsDeferPaymentRequest body = new V1RecurringsDeferPaymentRequest
 
 try
 {
-    ResponseRecurring result = await recurringController.DeferRecurringPaymentAsync(
+    ApiResponse<ResponseRecurring> result = await recurringController.DeferrecurringpaymentAsync(
         recurringId,
         body
     );
@@ -3219,9 +3214,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -3692,16 +3687,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# Place on Hold Recurring Payment
+# Placeonholdrecurringpayment
 
 ```csharp
-PlaceOnHoldRecurringPaymentAsync(
+PlaceonholdrecurringpaymentAsync(
     string recurringId,
-    List<Models.Expand26Enum> expand = null)
+    List<Models.Expand26> expand = null)
 ```
 
 ## Parameters
@@ -3709,11 +3704,11 @@ PlaceOnHoldRecurringPaymentAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `recurringId` | `string` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -3721,14 +3716,14 @@ PlaceOnHoldRecurringPaymentAsync(
 string recurringId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseRecurring result = await recurringController.PlaceOnHoldRecurringPaymentAsync(recurringId);
+    ApiResponse<ResponseRecurring> result = await recurringController.PlaceonholdrecurringpaymentAsync(recurringId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -4195,16 +4190,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Skip Recurring Payment
+# Skiprecurringpayment
 
 ```csharp
-SkipRecurringPaymentAsync(
+SkiprecurringpaymentAsync(
     string recurringId,
     Models.V1RecurringsSkipPaymentRequest body,
-    List<Models.Expand26Enum> expand = null)
+    List<Models.Expand26> expand = null)
 ```
 
 ## Parameters
@@ -4213,11 +4208,11 @@ SkipRecurringPaymentAsync(
 |  --- | --- | --- | --- |
 | `recurringId` | `string` | Template, Required | Recurring ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1RecurringsSkipPaymentRequest`](../../doc/models/v1-recurrings-skip-payment-request.md) | Body, Required | - |
-| `expand` | [`List<Expand26Enum>`](../../doc/models/expand-26-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand26>`](../../doc/models/expand-26.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseRecurring>`](../../doc/models/response-recurring.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRecurring](../../doc/models/response-recurring.md).
 
 ## Example Usage
 
@@ -4230,7 +4225,7 @@ V1RecurringsSkipPaymentRequest body = new V1RecurringsSkipPaymentRequest
 
 try
 {
-    ResponseRecurring result = await recurringController.SkipRecurringPaymentAsync(
+    ApiResponse<ResponseRecurring> result = await recurringController.SkiprecurringpaymentAsync(
         recurringId,
         body
     );
@@ -4238,9 +4233,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -4711,6 +4706,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

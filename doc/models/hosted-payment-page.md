@@ -3,6 +3,8 @@
 
 Hosted Payment Page Information on `expand`
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `HostedPaymentPage`
@@ -21,7 +23,7 @@ Hosted Payment Page Information on `expand`
 | `MaxPaymentAmount` | `long?` | Optional | Max Payment Amount<br><br>**Default**: `9999999999L`<br><br>**Constraints**: `<= 9999999999` |
 | `RedirectUrlOnApprove` | `string` | Optional | Redirect Url On Approval |
 | `RedirectUrlOnDecline` | `string` | Optional | Redirect Url On Decline |
-| `FieldConfiguration` | [`FieldConfiguration`](../../doc/models/field-configuration.md) | Optional | field_configuration |
+| `FieldConfiguration` | [`FieldConfiguration2`](../../doc/models/field-configuration-2.md) | Optional | - |
 | `EncryptionKey` | `string` | Optional | Encryption Key<br><br>**Constraints**: *Minimum Length*: `32`, *Maximum Length*: `32` |
 | `StylesheetUrl` | `string` | Optional | Stylesheet Url |
 | `ParentSendMessage` | `bool?` | Optional | Parent Send Message |
@@ -31,6 +33,7 @@ Hosted Payment Page Information on `expand`
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `CreatedUserId` | `string` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ModifiedUserId` | `string` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -50,7 +53,11 @@ Hosted Payment Page Information on `expand`
   "modified_ts": 1422040992,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
   "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_api_id": "location_api_id2"
+  "location_api_id": "location_api_id2",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

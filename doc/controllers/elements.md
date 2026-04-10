@@ -33,7 +33,7 @@ TicketIntentionAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTicketIntention>`](../../doc/models/response-ticket-intention.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTicketIntention](../../doc/models/response-ticket-intention.md).
 
 ## Example Usage
 
@@ -47,14 +47,14 @@ V1ElementsTicketIntentionRequest body = new V1ElementsTicketIntentionRequest
 
 try
 {
-    ResponseTicketIntention result = await elementsController.TicketIntentionAsync(body);
+    ApiResponse<ResponseTicketIntention> result = await elementsController.TicketIntentionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -102,31 +102,29 @@ TransactionIntentionAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionIntention>`](../../doc/models/response-transaction-intention.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionIntention](../../doc/models/response-transaction-intention.md).
 
 ## Example Usage
 
 ```csharp
 V1ElementsTransactionIntentionRequest body = new V1ElementsTransactionIntentionRequest
 {
-    Action = ActionEnum.Sale,
     DigitalWalletsOnly = false,
     Amount = 1099,
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     ContactId = "11e95f8ec39de8fbdb0a4f1a",
-    AchSecCode = AchSecCodeEnum.WEB,
 };
 
 try
 {
-    ResponseTransactionIntention result = await elementsController.TransactionIntentionAsync(body);
+    ApiResponse<ResponseTransactionIntention> result = await elementsController.TransactionIntentionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -161,6 +159,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

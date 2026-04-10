@@ -1,6 +1,8 @@
 
 # Message Extension
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `MessageExtension`
@@ -13,6 +15,7 @@
 | `Name` | `string` | Optional | The name of the extension data set as defined by the extension owner. Maximum length is 64 characters.<br><br>**Constraints**: *Maximum Length*: `64` |
 | `CriticalityIndicator` | `bool?` | Optional | A boolean value indicating whether the recipient must understand the contents of the extension to interpret the entire message. |
 | `Data` | `object` | Optional | The data carried in the extension as. The maximum length is 8059 characters. |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -22,6 +25,10 @@
   "name": "name0",
   "criticality_indicator": false,
   "data": {
+    "key1": "val1",
+    "key2": "val2"
+  },
+  "exampleAdditionalProperty": {
     "key1": "val1",
     "key2": "val2"
   }

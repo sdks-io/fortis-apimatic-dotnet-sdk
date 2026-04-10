@@ -1,6 +1,8 @@
 
 # V1 Paylinks Request 1
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `V1PaylinksRequest1`
@@ -21,17 +23,18 @@
 | `ExpireDate` | `string` | Optional | Expire Date of Paylink. Optional<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
 | `DisplayProductTransactionReceiptDetails` | `bool?` | Optional | Display Product Transaction Receipt Details. Show the receipt details after the successful payment |
 | `DisplayBillingFields` | `bool?` | Optional | Display Billing Fields to show the billing field inputs in the paylink form |
-| `DeliveryMethod` | [`DeliveryMethodEnum?`](../../doc/models/delivery-method-enum.md) | Optional | Delivery Method<br><br>> 0 - Do not send, use the expand parameter of payment_url in the create paylink request to obtain the payment_url to embed into your messaging system.<br>> <br>> 1 - Email. Will send an email to the provided address in the email field.<br>> <br>> 2 - SMS. Text message the Paylink. Check with sales rep for cost.<br>> <br>> 3 - Both |
+| `DeliveryMethod` | `object` | Optional | - |
 | `CellPhone` | `string` | Optional | Required if delivery_method is set to 2[SMS], 3[Both email and sms], this will be the recipient of the SMS<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `10`, *Pattern*: `^\d{1,10}$` |
 | `Description` | `string` | Optional | Add a Description for reporting purposes<br><br>**Constraints**: *Maximum Length*: `64` |
 | `StoreToken` | `bool?` | Optional | Store Token to create a token_id(account_vault_id) to be used for future payment types(CC Sale Tokenized, ACH Debit Tokenized) |
 | `StoreTokenTitle` | `string` | Optional | Store Token Title can be used to set the name of the token, sucha John Smith<br><br>**Constraints**: *Maximum Length*: `16` |
-| `PaylinkAction` | [`PaylinkActionEnum?`](../../doc/models/paylink-action-enum.md) | Optional | the action that will be used by the form when making the payment possible values: sale, auth-only |
+| `PaylinkAction` | `object` | Optional | - |
 | `BankFundedOnlyOverride` | `bool?` | Optional | Bank Funded Only Override |
 | `Tags` | `List<string>` | Optional | Used to apply tags to a paylink. |
 | `RedirectUrlDelay` | `double?` | Optional | Redirect URL Delay in seconds<br><br>**Constraints**: `<= 15` |
 | `RedirectUrlOnApprove` | `string` | Optional | Redirect URL On Approved transactions |
 | `RedirectUrlOnDecline` | `string` | Optional | Redirect URL On Declined transactions |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -46,14 +49,17 @@
   "expire_date": "2021-12-01",
   "display_product_transaction_receipt_details": true,
   "display_billing_fields": true,
-  "delivery_method": 0,
   "cell_phone": "3339998822",
   "description": "Description",
   "store_token": false,
   "store_token_title": "John Account",
   "bank_funded_only_override": false,
   "redirect_url_delay": 15,
-  "location_api_id": "location_api_id4"
+  "location_api_id": "location_api_id4",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

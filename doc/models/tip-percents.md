@@ -3,6 +3,8 @@
 
 A JSON of tip percents the JSON MUST contain only these three fields: percent_1, percent_2, percent_3
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `TipPercents`
@@ -14,6 +16,7 @@ A JSON of tip percents the JSON MUST contain only these three fields: percent_1,
 | `Percent1` | `int?` | Optional | field can only contain a value from 0 to 99, if 1 field is NULL, all fields must be null.<br><br>**Constraints**: `>= 0`, `<= 99` |
 | `Percent2` | `int?` | Optional | field can only contain a value from 0 to 99, if 1 field is NULL, all fields must be null.<br><br>**Constraints**: `>= 0`, `<= 99` |
 | `Percent3` | `int?` | Optional | field can only contain a value from 0 to 99, if 1 field is NULL, all fields must be null.<br><br>**Constraints**: `>= 0`, `<= 99` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -21,7 +24,11 @@ A JSON of tip percents the JSON MUST contain only these three fields: percent_1,
 {
   "percent_1": 0,
   "percent_2": 2,
-  "percent_3": 99
+  "percent_3": 99,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

@@ -3,6 +3,8 @@
 
 Modified User Information on `expand`
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `ModifiedUser`
@@ -30,20 +32,20 @@ Modified User Information on `expand`
 | `RequiresNewPassword` | `string` | Optional | Requires New Password<br><br>**Constraints**: *Maximum Length*: `1` |
 | `TermsConditionCode` | `string` | Optional | Terms Condition (This field is required when updating your own password). |
 | `Tz` | `string` | Optional | Time zone<br><br>**Constraints**: *Maximum Length*: `30` |
-| `UiPrefs` | [`UiPrefs`](../../doc/models/ui-prefs.md) | Optional | Ui Prefs |
+| `UiPrefs` | [`UiPrefs1`](../../doc/models/ui-prefs-1.md) | Optional | - |
 | `Username` | `string` | Optional | Username<br><br>**Constraints**: *Minimum Length*: `2`, *Maximum Length*: `64` |
 | `UserApiKey` | `string` | Optional | User Api Key<br><br>**Constraints**: *Minimum Length*: `16`, *Maximum Length*: `64` |
 | `UserHashKey` | `string` | Optional | User Hash Key<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` |
-| `UserTypeCode` | [`UserTypeCodeEnum?`](../../doc/models/user-type-code-enum.md) | Optional | User Type |
+| `UserTypeCode` | [`UserTypeCode?`](../../doc/models/user-type-code.md) | Optional | - |
 | `Password` | `string` | Optional | Password<br><br>**Constraints**: *Minimum Length*: `8`, *Maximum Length*: `128`, *Pattern*: ``^(?=.*[`!@#$%^&*()_+\-=\[\]{};':"\\\|,.<>\/?~])(?=.*[0-9])(?=.*[a-zA-Z]).*$`` |
 | `Zip` | `string` | Optional | Zip<br><br>**Constraints**: *Minimum Length*: `3`, *Maximum Length*: `10`, *Pattern*: `^[a-zA-Z0-9\-\s]+$` |
 | `LocationId` | `string` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ContactApiId` | `string` | Optional | ContactApi Id |
 | `PrimaryLocationApiId` | `string` | Optional | Primary LocationApi ID |
-| `StatusCode` | [`StatusCodeEnum?`](../../doc/models/status-code-enum.md) | Optional | Status Code |
+| `StatusCode` | `object` | Optional | - |
 | `ApiOnly` | `bool?` | Optional | API Only |
 | `IsInvitation` | `bool?` | Optional | Is Invitation |
-| `Address` | [`Address2`](../../doc/models/address-2.md) | Optional | Address |
+| `Address` | [`Address3`](../../doc/models/address-3.md) | Optional | - |
 | `Id` | `string` | Optional | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `Status` | `bool?` | Optional | Status |
 | `LoginAttempts` | `int?` | Optional | Login Attempts |
@@ -58,6 +60,7 @@ Modified User Information on `expand`
 | `CurrentLogin` | `int?` | Optional | Current Login Timestamp |
 | `SftpAccess` | `bool?` | Optional | SFTP Access |
 | `LogApiResponseBodyTs` | `int?` | Optional | Log Api Response Body |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -83,10 +86,8 @@ Modified User Information on `expand`
   "tz": "America/New_York",
   "username": "{user_name}",
   "user_api_key": "234bas8dfn8238f923w2",
-  "user_type_code": 100,
   "zip": "48375",
   "location_id": "11e95f8ec39de8fbdb0a4f1a",
-  "status_code": 1,
   "api_only": false,
   "is_invitation": false,
   "id": "11e95f8ec39de8fbdb0a4f1a",
@@ -99,7 +100,11 @@ Modified User Information on `expand`
   "terms_accepted_ts": 1422040992,
   "terms_agree_ip": "192.168.0.10",
   "current_login": 1422040992,
-  "log_api_response_body_ts": 1422040992
+  "log_api_response_body_ts": 1422040992,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

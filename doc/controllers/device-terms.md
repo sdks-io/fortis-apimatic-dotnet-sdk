@@ -10,15 +10,15 @@ DeviceTermsController deviceTermsController = client.DeviceTermsController;
 
 ## Methods
 
-* [Create a New Device Term](../../doc/controllers/device-terms.md#create-a-new-device-term)
-* [List All Device Terms Related](../../doc/controllers/device-terms.md#list-all-device-terms-related)
-* [View Single Device Term Record](../../doc/controllers/device-terms.md#view-single-device-term-record)
+* [Createanewdeviceterm](../../doc/controllers/device-terms.md#createanewdeviceterm)
+* [Listalldevicetermsrelated](../../doc/controllers/device-terms.md#listalldevicetermsrelated)
+* [Viewsingledevicetermrecord](../../doc/controllers/device-terms.md#viewsingledevicetermrecord)
 
 
-# Create a New Device Term
+# Createanewdeviceterm
 
 ```csharp
-CreateANewDeviceTermAsync(
+CreateanewdevicetermAsync(
     Models.V1DeviceTermsRequest body)
 ```
 
@@ -30,7 +30,7 @@ CreateANewDeviceTermAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseTransactionProcessing>`](../../doc/models/response-transaction-processing.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransactionProcessing](../../doc/models/response-transaction-processing.md).
 
 ## Example Usage
 
@@ -46,14 +46,14 @@ V1DeviceTermsRequest body = new V1DeviceTermsRequest
 
 try
 {
-    ResponseTransactionProcessing result = await deviceTermsController.CreateANewDeviceTermAsync(body);
+    ApiResponse<ResponseTransactionProcessing> result = await deviceTermsController.CreateanewdevicetermAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -80,43 +80,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Device Terms Related
+# Listalldevicetermsrelated
 
 ```csharp
-ListAllDeviceTermsRelatedAsync(
-    Models.Page page = null,
+ListalldevicetermsrelatedAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand8Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand8> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field31Enum> fields = null)
+    List<Models.Field31> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand8Enum>`](../../doc/models/expand-8-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand8>`](../../doc/models/expand-8.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field31Enum>`](../../doc/models/field-31-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field31>`](../../doc/models/field-31.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseDeviceTermsCollection>`](../../doc/models/response-device-terms-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeviceTermsCollection](../../doc/models/response-device-terms-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -127,7 +127,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -136,7 +136,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -145,7 +145,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseDeviceTermsCollection result = await deviceTermsController.ListAllDeviceTermsRelatedAsync(
+    ApiResponse<ResponseDeviceTermsCollection> result = await deviceTermsController.ListalldevicetermsrelatedAsync(
         page,
         order,
         filterBy
@@ -154,9 +154,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -395,16 +395,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Device Term Record
+# Viewsingledevicetermrecord
 
 ```csharp
-ViewSingleDeviceTermRecordAsync(
+ViewsingledevicetermrecordAsync(
     string deviceTermsId,
-    List<Models.Expand8Enum> expand = null,
-    List<Models.Field31Enum> fields = null)
+    List<Models.Expand8> expand = null,
+    List<Models.Field31> fields = null)
 ```
 
 ## Parameters
@@ -412,12 +412,12 @@ ViewSingleDeviceTermRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `deviceTermsId` | `string` | Template, Required | Device term ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand8Enum>`](../../doc/models/expand-8-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field31Enum>`](../../doc/models/field-31-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand8>`](../../doc/models/expand-8.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field31>`](../../doc/models/field-31.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseDeviceTerm>`](../../doc/models/response-device-term.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseDeviceTerm](../../doc/models/response-device-term.md).
 
 ## Example Usage
 
@@ -425,14 +425,14 @@ ViewSingleDeviceTermRecordAsync(
 string deviceTermsId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseDeviceTerm result = await deviceTermsController.ViewSingleDeviceTermRecordAsync(deviceTermsId);
+    ApiResponse<ResponseDeviceTerm> result = await deviceTermsController.ViewsingledevicetermrecordAsync(deviceTermsId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -646,5 +646,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

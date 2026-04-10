@@ -9,5 +9,5 @@
 
 | Type | Factory Method |
 |  --- | --- |
-| [`Operator1Enum`](../../../doc/models/operator-1-enum.md) | FilterByOperator.FromOperator1(Operator1Enum operator1) |
+| [`Operator1`](../../../doc/models/operator-1.md) | FilterByOperator.FromOperator1(Operator1 operator1) |
 

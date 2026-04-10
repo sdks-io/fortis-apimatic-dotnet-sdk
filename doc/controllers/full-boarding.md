@@ -26,7 +26,7 @@ MerchantBoardingFullAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseFullboarding>`](../../doc/models/response-fullboarding.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseFullboarding](../../doc/models/response-fullboarding.md).
 
 ## Example Usage
 
@@ -36,7 +36,7 @@ V1FullboardingRequest body = new V1FullboardingRequest
     Email = "email@domain.com",
     DbaName = "Discount Home Goods",
     PhoneNumber = "5555551234",
-    OwnershipType = OwnershipTypeEnum.Llp,
+    OwnershipType = OwnershipType.Np,
     FedTaxId = "0000000000",
     AverageTicket = 15,
     HighTicket = 150,
@@ -57,7 +57,7 @@ V1FullboardingRequest body = new V1FullboardingRequest
             StateProvince = "TX",
             PostalCode = "75087",
             CountryCode = "US",
-            AddressType = AddressTypeEnum.Location,
+            AddressType = AddressType.Corporate,
             AddressLine2 = "Apt 707",
         },
     },
@@ -91,7 +91,7 @@ V1FullboardingRequest body = new V1FullboardingRequest
             AccountHolderName = "James Bond",
             RoutingNumber = "111111111",
             AccountNumber = "1234567",
-            AccountType = AccountType12Enum.Checking,
+            AccountType = AccountType12.Checking,
             IsPrimary = true,
         },
     },
@@ -100,20 +100,19 @@ V1FullboardingRequest body = new V1FullboardingRequest
     LegalName = "Total Home Goods, LLP",
     Website = "http://www.example.com",
     EcMonthlyVolume = 22,
-    PreferredLanguage = PreferredLanguageEnum.FrCA,
     SignerIp = "192.168.0.10",
 };
 
 try
 {
-    ResponseFullboarding result = await fullBoardingController.MerchantBoardingFullAsync(body);
+    ApiResponse<ResponseFullboarding> result = await fullBoardingController.MerchantBoardingFullAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -144,6 +143,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

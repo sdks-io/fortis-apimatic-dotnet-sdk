@@ -1,6 +1,8 @@
 
 # List 6
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `List6`
@@ -13,7 +15,7 @@
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `AccountNumber` | `string` | Optional | Account number<br><br>**Constraints**: *Maximum Length*: `32`, *Pattern*: `^[a-zA-Z0-9\-_]+$` |
-| `Address` | [`Address1`](../../doc/models/address-1.md) | Optional | Address |
+| `Address` | [`Address6`](../../doc/models/address-6.md) | Optional | - |
 | `BrandingDomainId` | `string` | Optional | GUID for Branding Domain<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ContactEmailTrxReceiptDefault` | `bool?` | Optional | If true, will email contact receipt for any transaction |
 | `DefaultAch` | `string` | Optional | GUID for Location's default ACH Product Transaction<br><br>**Constraints**: *Minimum Length*: `24`, *Maximum Length*: `36` |
@@ -33,29 +35,30 @@
 | `ShowContactNotes` | `bool?` | Optional | If set to true will show 'Notes' tab on Contact |
 | `ShowContactFiles` | `bool?` | Optional | If set to true will show 'Files' tab on Contact |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `LocationType` | [`LocationTypeEnum?`](../../doc/models/location-type-enum.md) | Optional | Location Type |
+| `LocationType` | `object` | Optional | - |
 | `ParentName` | `string` | Optional | Name of the parent location |
 | `TicketHashKey` | `string` | Optional | Ticket Hash Key<br><br>**Constraints**: *Maximum Length*: `36` |
 | `AdditionalAccess` | [`AdditionalAccess`](../../doc/models/additional-access.md) | Optional | - |
-| `Parent` | [`Parent3`](../../doc/models/parent-3.md) | Optional | Parent Information on `expand` |
+| `Parent` | [`AccountVaultCauProductTransaction`](../../doc/models/account-vault-cau-product-transaction.md) | Optional | - |
 | `Users` | [`List<User9>`](../../doc/models/user-9.md) | Optional | User Information on `expand` |
 | `IsDeletable` | `bool?` | Optional | Is Deletable Information on `expand` |
 | `Terminals` | [`List<Terminal2>`](../../doc/models/terminal-2.md) | Optional | Terminal Information on `expand` |
-| `BrandingDomain` | [`BrandingDomain1`](../../doc/models/branding-domain-1.md) | Optional | Branding Domain Information on `expand` |
-| `ProductInvoice` | [`ProductInvoice`](../../doc/models/product-invoice.md) | Optional | Product Invoice Information on `expand` |
+| `BrandingDomain` | [`BrandingDomain2`](../../doc/models/branding-domain-2.md) | Optional | - |
+| `ProductInvoice` | [`ProductInvoice1`](../../doc/models/product-invoice-1.md) | Optional | - |
 | `ProductFiles` | [`List<ProductFile1>`](../../doc/models/product-file-1.md) | Optional | Product File Information on `expand` |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` |
 | `ProductTransactions` | [`List<ProductTransaction1>`](../../doc/models/product-transaction-1.md) | Optional | Product Transaction Information on `expand` |
 | `TerminalRouters` | [`List<TerminalRouter>`](../../doc/models/terminal-router.md) | Optional | Terminal Router Information on `expand` |
-| `DeveloperCompany` | [`DeveloperCompany`](../../doc/models/developer-company.md) | Optional | Developer Company Information on `expand` |
+| `DeveloperCompany` | [`DeveloperCompany1`](../../doc/models/developer-company-1.md) | Optional | - |
 | `DeveloperCompanyId` | `string` | Optional | Developer Company Id Information on `expand` |
 | `Helppages` | [`List<Helppage>`](../../doc/models/helppage.md) | Optional | Helppage Information on `expand` |
-| `QuickInvoiceSetting` | [`QuickInvoiceSetting`](../../doc/models/quick-invoice-setting.md) | Optional | Quick Invoice Setting Information on `expand` |
+| `QuickInvoiceSetting` | [`QuickInvoiceSetting1`](../../doc/models/quick-invoice-setting-1.md) | Optional | - |
 | `LocationBillingAccounts` | [`List<LocationBillingAccount>`](../../doc/models/location-billing-account.md) | Optional | Location Billing Account Information on `expand` |
 | `Marketplaces` | [`List<Marketplace>`](../../doc/models/marketplace.md) | Optional | Marketplace Information on `expand` |
 | `Locationmarketplaces` | [`List<Locationmarketplace>`](../../doc/models/locationmarketplace.md) | Optional | Locationmarketplaces Information on `expand` |
 | `Addons` | [`List<Addon>`](../../doc/models/addon.md) | Optional | Addons Information on `expand` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -84,7 +87,6 @@
   "show_contact_notes": true,
   "show_contact_files": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "location_type": "merchant",
   "ticket_hash_key": "A5F443CADF4AE34BBCAADF4",
   "is_deletable": true,
   "developer_company_id": "sample developer company id",
@@ -92,8 +94,19 @@
     "city": "city6",
     "state": "state2",
     "postal_code": "postal_code8",
-    "country": "US",
-    "street": "street6"
+    "country": {
+      "key1": "val1",
+      "key2": "val2"
+    },
+    "street": "street6",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

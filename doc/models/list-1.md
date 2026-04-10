@@ -1,6 +1,8 @@
 
 # List 1
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `List1`
@@ -16,7 +18,7 @@
 | `LastName` | `string` | Optional | Last Name<br><br>**Constraints**: *Maximum Length*: `64` |
 | `CellPhone` | `string` | Optional | Cell phone of contact<br><br>**Constraints**: *Minimum Length*: `10`, *Maximum Length*: `10`, *Pattern*: `^\d{10}$` |
 | `Balance` | `double?` | Optional | Balance<br><br>**Constraints**: `>= -99999999.99`, `<= 99999999.99` |
-| `Address` | [`Address`](../../doc/models/address.md) | Optional | Address of contact |
+| `Address` | [`Address4`](../../doc/models/address-4.md) | Optional | - |
 | `CompanyName` | `string` | Optional | Company Name<br><br>**Constraints**: *Maximum Length*: `64` |
 | `HeaderMessage` | `string` | Optional | Header Message<br><br>**Constraints**: *Maximum Length*: `250` |
 | `DateOfBirth` | `string` | Optional | Contacts DOB, Format: yyyy-MM-dd<br><br>**Constraints**: *Maximum Length*: `10`, *Pattern*: `^[\d]{4}-[\d]{2}-[\d]{2}$` |
@@ -28,7 +30,7 @@
 | `OfficePhoneCountryCode` | `string` | Optional | Office phone country code<br><br>**Constraints**: *Maximum Length*: `6`, *Pattern*: `^\+([\d]+)$` |
 | `CellPhoneCountryCode` | `string` | Optional | Cell phone country code<br><br>**Constraints**: *Maximum Length*: `6`, *Pattern*: `^\+([\d]+)$` |
 | `HeaderMessageType` | `int?` | Optional | Header Message Type<br><br>**Constraints**: `>= 0`, `<= 4` |
-| `UpdateIfExists` | [`UpdateIfExistsEnum?`](../../doc/models/update-if-exists-enum.md) | Optional | Update If Exists |
+| `UpdateIfExists` | `object` | Optional | - |
 | `ContactC1` | `string` | Optional | Custom field 1 for api users to store custom data<br><br>**Constraints**: *Maximum Length*: `128` |
 | `ContactC2` | `string` | Optional | Custom field 2 for api users to store custom data<br><br>**Constraints**: *Maximum Length*: `128` |
 | `ContactC3` | `string` | Optional | Custom field 3 for api users to store custom data<br><br>**Constraints**: *Maximum Length*: `128` |
@@ -42,16 +44,17 @@
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ReceivedEmails` | [`List<ReceivedEmail>`](../../doc/models/received-email.md) | Optional | Received Email Information on `expand` |
 | `IsDeletable` | `bool?` | Optional | Is Deletable Information on `expand` |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` |
-| `User` | [`User1`](../../doc/models/user-1.md) | Optional | User Information on `expand` |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - |
+| `User` | [`User9`](../../doc/models/user-9.md) | Optional | - |
 | `Recurrings` | [`List<Recurring>`](../../doc/models/recurring.md) | Optional | Recurring Information on `expand` |
-| `EmailBlacklist` | [`EmailBlacklist`](../../doc/models/email-blacklist.md) | Optional | Email Blacklist Information on `expand` |
-| `SmsBlacklist` | [`SmsBlacklist`](../../doc/models/sms-blacklist.md) | Optional | Sms Blacklist Information on `expand` |
+| `EmailBlacklist` | [`EmailBlacklist1`](../../doc/models/email-blacklist-1.md) | Optional | - |
+| `SmsBlacklist` | [`SmsBlacklist1`](../../doc/models/sms-blacklist-1.md) | Optional | - |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` |
 | `PostbackLogs` | [`List<PostbackLog>`](../../doc/models/postback-log.md) | Optional | Postback Log Information on `expand` |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` |
-| `Parent` | [`Parent`](../../doc/models/parent.md) | Optional | Parent Information on `expand` |
-| `Children` | [`Children`](../../doc/models/children.md) | Optional | Children Information on `expand` |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
+| `Parent` | [`Parent5`](../../doc/models/parent-5.md) | Optional | - |
+| `Children` | [`Children1`](../../doc/models/children-1.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -75,7 +78,6 @@
   "office_phone_country_code": "+1",
   "cell_phone_country_code": "+1",
   "header_message_type": 0,
-  "update_if_exists": 1,
   "contact_c1": "any",
   "contact_c2": "anything",
   "contact_c3": "something",
@@ -87,7 +89,11 @@
   "modified_ts": 1422040992,
   "active": true,
   "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
-  "is_deletable": true
+  "is_deletable": true,
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

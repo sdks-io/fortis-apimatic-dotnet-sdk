@@ -3,6 +3,8 @@
 
 Pagination info
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Pagination`
@@ -11,21 +13,26 @@ Pagination info
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `Type` | [`Type3Enum?`](../../doc/models/type-3-enum.md) | Optional | Object type |
+| `Type` | [`Type3?`](../../doc/models/type-3.md) | Optional | - |
 | `TotalCount` | `int?` | Optional | Total records count |
 | `PageCount` | `int?` | Optional | Total page count |
 | `PageNumber` | `int?` | Optional | Current page |
 | `PageSize` | `int?` | Optional | Page size |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
-  "type": "Pagination",
   "total_count": 423,
   "page_count": 42,
   "page_number": 6,
-  "page_size": 10
+  "page_size": 10,
+  "type": "Pagination",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

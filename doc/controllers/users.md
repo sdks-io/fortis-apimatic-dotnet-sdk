@@ -10,23 +10,23 @@ UsersController usersController = client.UsersController;
 
 ## Methods
 
-* [Create a New API Key](../../doc/controllers/users.md#create-a-new-api-key)
-* [Create a New User](../../doc/controllers/users.md#create-a-new-user)
-* [List All User](../../doc/controllers/users.md#list-all-user)
-* [Delete a User Record](../../doc/controllers/users.md#delete-a-user-record)
-* [View Single User Record](../../doc/controllers/users.md#view-single-user-record)
-* [Update a User Record](../../doc/controllers/users.md#update-a-user-record)
-* [View Self Record](../../doc/controllers/users.md#view-self-record)
-* [Remove Verification](../../doc/controllers/users.md#remove-verification)
-* [Send Verification](../../doc/controllers/users.md#send-verification)
+* [Createanew AP Ikey](../../doc/controllers/users.md#createanew-ap-ikey)
+* [Createanewuser](../../doc/controllers/users.md#createanewuser)
+* [Listall User](../../doc/controllers/users.md#listall-user)
+* [Deleteauserrecord](../../doc/controllers/users.md#deleteauserrecord)
+* [Viewsingleuserrecord](../../doc/controllers/users.md#viewsingleuserrecord)
+* [Updateauserrecord](../../doc/controllers/users.md#updateauserrecord)
+* [Viewselfrecord](../../doc/controllers/users.md#viewselfrecord)
+* [Removeverification](../../doc/controllers/users.md#removeverification)
+* [Sendverification](../../doc/controllers/users.md#sendverification)
 
 
-# Create a New API Key
+# Createanew AP Ikey
 
 ```csharp
-CreateANewAPIKeyAsync(
+CreateanewApIkeyAsync(
     string userId,
-    List<Models.Expand117Enum> expand = null)
+    List<Models.Expand117> expand = null)
 ```
 
 ## Parameters
@@ -34,11 +34,11 @@ CreateANewAPIKeyAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `userId` | `string` | Template, Required | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseUserApiKey>`](../../doc/models/response-user-api-key.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUserApiKey](../../doc/models/response-user-api-key.md).
 
 ## Example Usage
 
@@ -46,14 +46,14 @@ CreateANewAPIKeyAsync(
 string userId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseUserApiKey result = await usersController.CreateANewAPIKeyAsync(userId);
+    ApiResponse<ResponseUserApiKey> result = await usersController.CreateanewApIkeyAsync(userId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -73,15 +73,15 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Create a New User
+# Createanewuser
 
 ```csharp
-CreateANewUserAsync(
+CreateanewuserAsync(
     Models.V1UsersRequest body,
-    List<Models.Expand117Enum> expand = null)
+    List<Models.Expand117> expand = null)
 ```
 
 ## Parameters
@@ -89,11 +89,11 @@ CreateANewUserAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1UsersRequest`](../../doc/models/v1-users-request.md) | Body, Required | - |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseUser>`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUser](../../doc/models/response-user.md).
 
 ## Example Usage
 
@@ -104,7 +104,7 @@ V1UsersRequest body = new V1UsersRequest
     LastName = "Smith",
     PrimaryLocationId = "11e95f8ec39de8fbdb0a4f1a",
     Username = "{user_name}",
-    UserTypeCode = UserTypeCodeEnum.Enum100,
+    UserTypeCode = UserTypeCode.Enum600,
     AccountNumber = "5454545454545454",
     BrandingDomainUrl = "{branding_domain_url}",
     CellPhone = "3339998822",
@@ -123,21 +123,20 @@ V1UsersRequest body = new V1UsersRequest
     UserApiKey = "234bas8dfn8238f923w2",
     Zip = "48375",
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
-    StatusCode = StatusCodeEnum.Enum1,
     ApiOnly = false,
     IsInvitation = false,
 };
 
 try
 {
-    ResponseUser result = await usersController.CreateANewUserAsync(body);
+    ApiResponse<ResponseUser> result = await usersController.CreateanewuserAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -534,43 +533,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All User
+# Listall User
 
 ```csharp
-ListAllUserAsync(
-    Models.Page page = null,
+ListallUserAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand117Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand117> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field60Enum> fields = null)
+    List<Models.Field60> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field60Enum>`](../../doc/models/field-60-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field60>`](../../doc/models/field-60.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseUsersCollection>`](../../doc/models/response-users-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUsersCollection](../../doc/models/response-users-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -581,7 +580,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -590,7 +589,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -599,7 +598,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseUsersCollection result = await usersController.ListAllUserAsync(
+    ApiResponse<ResponseUsersCollection> result = await usersController.ListallUserAsync(
         page,
         order,
         filterBy
@@ -608,9 +607,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1028,13 +1027,13 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Delete a User Record
+# Deleteauserrecord
 
 ```csharp
-DeleteAUserRecordAsync(
+DeleteauserrecordAsync(
     string userId)
 ```
 
@@ -1046,7 +1045,7 @@ DeleteAUserRecordAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseUser>`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUser](../../doc/models/response-user.md).
 
 ## Example Usage
 
@@ -1054,14 +1053,14 @@ DeleteAUserRecordAsync(
 string userId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseUser result = await usersController.DeleteAUserRecordAsync(userId);
+    ApiResponse<ResponseUser> result = await usersController.DeleteauserrecordAsync(userId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1454,16 +1453,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single User Record
+# Viewsingleuserrecord
 
 ```csharp
-ViewSingleUserRecordAsync(
+ViewsingleuserrecordAsync(
     string userId,
-    List<Models.Expand117Enum> expand = null,
-    List<Models.Field60Enum> fields = null)
+    List<Models.Expand117> expand = null,
+    List<Models.Field60> fields = null)
 ```
 
 ## Parameters
@@ -1471,12 +1470,12 @@ ViewSingleUserRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `userId` | `string` | Template, Required | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field60Enum>`](../../doc/models/field-60-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field60>`](../../doc/models/field-60.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseUser>`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUser](../../doc/models/response-user.md).
 
 ## Example Usage
 
@@ -1484,14 +1483,14 @@ ViewSingleUserRecordAsync(
 string userId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseUser result = await usersController.ViewSingleUserRecordAsync(userId);
+    ApiResponse<ResponseUser> result = await usersController.ViewsingleuserrecordAsync(userId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -1884,16 +1883,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update a User Record
+# Updateauserrecord
 
 ```csharp
-UpdateAUserRecordAsync(
+UpdateauserrecordAsync(
     string userId,
     Models.V1UsersRequest1 body,
-    List<Models.Expand117Enum> expand = null)
+    List<Models.Expand117> expand = null)
 ```
 
 ## Parameters
@@ -1902,11 +1901,11 @@ UpdateAUserRecordAsync(
 |  --- | --- | --- | --- |
 | `userId` | `string` | Template, Required | User ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1UsersRequest1`](../../doc/models/v1-users-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseUser>`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUser](../../doc/models/response-user.md).
 
 ## Example Usage
 
@@ -1934,17 +1933,15 @@ V1UsersRequest1 body = new V1UsersRequest1
     Tz = "America/New_York",
     Username = "{user_name}",
     UserApiKey = "234bas8dfn8238f923w2",
-    UserTypeCode = UserTypeCodeEnum.Enum100,
     Zip = "48375",
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
-    StatusCode = StatusCodeEnum.Enum1,
     ApiOnly = false,
     IsInvitation = false,
 };
 
 try
 {
-    ResponseUser result = await usersController.UpdateAUserRecordAsync(
+    ApiResponse<ResponseUser> result = await usersController.UpdateauserrecordAsync(
         userId,
         body
     );
@@ -1952,9 +1949,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2351,42 +2348,42 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# View Self Record
+# Viewselfrecord
 
 ```csharp
-ViewSelfRecordAsync(
-    List<Models.Expand117Enum> expand = null,
-    List<Models.Field60Enum> fields = null)
+ViewselfrecordAsync(
+    List<Models.Expand117> expand = null,
+    List<Models.Field60> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `expand` | [`List<Expand117Enum>`](../../doc/models/expand-117-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field60Enum>`](../../doc/models/field-60-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand117>`](../../doc/models/expand-117.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field60>`](../../doc/models/field-60.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseUser>`](../../doc/models/response-user.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseUser](../../doc/models/response-user.md).
 
 ## Example Usage
 
 ```csharp
 try
 {
-    ResponseUser result = await usersController.ViewSelfRecordAsync();
+    ApiResponse<ResponseUser> result = await usersController.ViewselfrecordAsync();
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -2779,15 +2776,15 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Remove Verification
+# Removeverification
 
 Remove the pending user
 
 ```csharp
-RemoveVerificationAsync(
+RemoveverificationAsync(
     string userId)
 ```
 
@@ -2799,7 +2796,7 @@ RemoveVerificationAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseRemoveVerification>`](../../doc/models/response-remove-verification.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseRemoveVerification](../../doc/models/response-remove-verification.md).
 
 ## Example Usage
 
@@ -2807,14 +2804,14 @@ RemoveVerificationAsync(
 string userId = "user_id8";
 try
 {
-    ResponseRemoveVerification result = await usersController.RemoveVerificationAsync(userId);
+    ApiResponse<ResponseRemoveVerification> result = await usersController.RemoveverificationAsync(userId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -2837,15 +2834,15 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Send Verification
+# Sendverification
 
 Send an verification email to the pending user
 
 ```csharp
-SendVerificationAsync(
+SendverificationAsync(
     string userId)
 ```
 
@@ -2857,7 +2854,7 @@ SendVerificationAsync(
 
 ## Response Type
 
-[`Task<Models.ResponseSendVerification>`](../../doc/models/response-send-verification.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseSendVerification](../../doc/models/response-send-verification.md).
 
 ## Example Usage
 
@@ -2865,14 +2862,14 @@ SendVerificationAsync(
 string userId = "user_id8";
 try
 {
-    ResponseSendVerification result = await usersController.SendVerificationAsync(userId);
+    ApiResponse<ResponseSendVerification> result = await usersController.SendverificationAsync(userId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -2895,5 +2892,5 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 

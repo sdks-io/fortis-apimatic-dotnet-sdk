@@ -1,6 +1,8 @@
 
 # Data 24
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Data24`
@@ -13,7 +15,7 @@
 | `ExpDate` | `string` | Optional | The Expiration Date for the credit card. |
 | `Cvv` | `string` | Optional | CVV<br><br>**Constraints**: *Maximum Length*: `4` |
 | `AccountNumber` | `string` | Optional | Account number<br><br>> A credit card number. Length 13-19.<br><br>**Constraints**: *Minimum Length*: `4`, *Maximum Length*: `19`, *Pattern*: `^[\d]+$` |
-| `BillingAddress` | [`BillingAddress5`](../../doc/models/billing-address-5.md) | Optional | Billing Address Object |
+| `BillingAddress` | [`BillingAddress9`](../../doc/models/billing-address-9.md) | Optional | - |
 | `ContactId` | `string` | Optional | Used to associate the Ticket with a Contact.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ContactApiId` | `string` | Optional | Used to associate the Ticket with a Contact. |
 | `LocationId` | [`Data24LocationId`](../../doc/models/containers/data-24-location-id.md) | Optional | This is a container for any-of cases. |
@@ -21,6 +23,7 @@
 | `Id` | `string` | Optional | A unique, system-generated identifier for the Ticket.<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -36,7 +39,15 @@
   "cvv": "cvv0",
   "billing_address": {
     "postal_code": "postal_code0",
-    "street": "street8"
+    "street": "street8",
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

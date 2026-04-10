@@ -1,22 +1,22 @@
 # Transactions-ACH
 
 ```csharp
-TransactionsACHController transactionsACHController = client.TransactionsACHController;
+TransactionsAchController transactionsAchController = client.TransactionsAchController;
 ```
 
 ## Class Name
 
-`TransactionsACHController`
+`TransactionsAchController`
 
 ## Methods
 
 * [ACH Credit](../../doc/controllers/transactions-ach.md#ach-credit)
-* [ACH Credit - Previous Transaction](../../doc/controllers/transactions-ach.md#ach-credit---previous-transaction)
-* [ACH Credit - Tokenized](../../doc/controllers/transactions-ach.md#ach-credit---tokenized)
+* [ACH Credit-Previous Transaction](../../doc/controllers/transactions-ach.md#ach-credit-previous-transaction)
+* [ACH Credit-Tokenized](../../doc/controllers/transactions-ach.md#ach-credit-tokenized)
 * [ACH Debit](../../doc/controllers/transactions-ach.md#ach-debit)
-* [ACH Debit - Previous Transaction](../../doc/controllers/transactions-ach.md#ach-debit---previous-transaction)
-* [ACH Debit - Tokenized](../../doc/controllers/transactions-ach.md#ach-debit---tokenized)
-* [ACH Refund - Previous Transaction](../../doc/controllers/transactions-ach.md#ach-refund---previous-transaction)
+* [ACH Debit-Previous Transaction](../../doc/controllers/transactions-ach.md#ach-debit-previous-transaction)
+* [ACH Debit-Tokenized](../../doc/controllers/transactions-ach.md#ach-debit-tokenized)
+* [ACH Refund-Previous Transaction](../../doc/controllers/transactions-ach.md#ach-refund-previous-transaction)
 
 
 # ACH Credit
@@ -24,9 +24,9 @@ TransactionsACHController transactionsACHController = client.TransactionsACHCont
 ACH Transaction that is intended for a Blind Refund, where a previous transaction id is not known. Must have Fortis approval prior to use.
 
 ```csharp
-ACHCreditAsync(
+AchCreditAsync(
     Models.V1TransactionsAchCreditKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -34,11 +34,11 @@ ACHCreditAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchCreditKeyedRequest`](../../doc/models/v1-transactions-ach-credit-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -48,7 +48,7 @@ V1TransactionsAchCreditKeyedRequest body = new V1TransactionsAchCreditKeyedReque
     TransactionAmount = 1,
     AccountHolderName = "smith",
     AccountNumber = "24345",
-    AccountType = AccountType16Enum.Checking,
+    AccountType = AccountType16.Checking,
     RoutingNumber = "051904524",
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
@@ -57,13 +57,11 @@ V1TransactionsAchCreditKeyedRequest body = new V1TransactionsAchCreditKeyedReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -97,23 +95,21 @@ V1TransactionsAchCreditKeyedRequest body = new V1TransactionsAchCreditKeyedReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     CheckNumber = "8520748520963",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHCreditAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchCreditAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1173,18 +1169,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Credit - Previous Transaction
+# ACH Credit-Previous Transaction
 
 ACH Transaction that is intended for a Blind Refund, where using a previous transaction id to re process. Must have Fortis approval prior to use.
 
 ```csharp
-ACHCreditPreviousTransactionAsync(
+AchCreditPreviousTransactionAsync(
     Models.V1TransactionsAchCreditPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -1192,11 +1188,11 @@ ACHCreditPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchCreditPrevTrxnRequest`](../../doc/models/v1-transactions-ach-credit-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -1211,13 +1207,11 @@ V1TransactionsAchCreditPrevTrxnRequest body = new V1TransactionsAchCreditPrevTrx
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -1251,9 +1245,7 @@ V1TransactionsAchCreditPrevTrxnRequest body = new V1TransactionsAchCreditPrevTrx
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     AccountHolderName = "smith",
     PreviousTransactionId = "11e95f8ec39de8fbdb0a4f1a",
@@ -1261,14 +1253,14 @@ V1TransactionsAchCreditPrevTrxnRequest body = new V1TransactionsAchCreditPrevTrx
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHCreditPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchCreditPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -2328,18 +2320,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Credit - Tokenized
+# ACH Credit-Tokenized
 
 ACH Transaction using an ACH Token_id that is intended for a Blind Refund, where a previous transaction id is not known. Must have approval prior to use.
 
 ```csharp
-ACHCreditTokenizedAsync(
+AchCreditTokenizedAsync(
     Models.V1TransactionsAchCreditTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -2347,11 +2339,11 @@ ACHCreditTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchCreditTokenRequest`](../../doc/models/v1-transactions-ach-credit-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -2366,13 +2358,11 @@ V1TransactionsAchCreditTokenRequest body = new V1TransactionsAchCreditTokenReque
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -2406,9 +2396,7 @@ V1TransactionsAchCreditTokenRequest body = new V1TransactionsAchCreditTokenReque
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     AccountHolderName = "smith",
     AccountVaultId = "11e95f8ec39de8fbdb0a4f1a",
@@ -2417,14 +2405,14 @@ V1TransactionsAchCreditTokenRequest body = new V1TransactionsAchCreditTokenReque
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHCreditTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchCreditTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -3484,7 +3472,7 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
@@ -3493,9 +3481,9 @@ catch (ApiException e)
 Creates an ACH Sale transaction to debit the customers bank account.
 
 ```csharp
-ACHDebitAsync(
+AchDebitAsync(
     Models.V1TransactionsAchDebitKeyedRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -3503,11 +3491,11 @@ ACHDebitAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchDebitKeyedRequest`](../../doc/models/v1-transactions-ach-debit-keyed-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -3517,7 +3505,7 @@ V1TransactionsAchDebitKeyedRequest body = new V1TransactionsAchDebitKeyedRequest
     TransactionAmount = 1,
     AccountHolderName = "smith",
     AccountNumber = "24345",
-    AccountType = AccountType16Enum.Checking,
+    AccountType = AccountType16.Checking,
     RoutingNumber = "051904524",
     CheckinDate = "2021-12-01",
     CheckoutDate = "2021-12-01",
@@ -3526,13 +3514,11 @@ V1TransactionsAchDebitKeyedRequest body = new V1TransactionsAchDebitKeyedRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -3566,23 +3552,21 @@ V1TransactionsAchDebitKeyedRequest body = new V1TransactionsAchDebitKeyedRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     CheckNumber = "8520748520963",
 };
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHDebitAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchDebitAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -4642,18 +4626,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Debit - Previous Transaction
+# ACH Debit-Previous Transaction
 
 Create an ACH Sale transaction with a previous ACH transaction_id.
 
 ```csharp
-ACHDebitPreviousTransactionAsync(
+AchDebitPreviousTransactionAsync(
     Models.V1TransactionsAchDebitPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -4661,11 +4645,11 @@ ACHDebitPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchDebitPrevTrxnRequest`](../../doc/models/v1-transactions-ach-debit-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -4680,13 +4664,11 @@ V1TransactionsAchDebitPrevTrxnRequest body = new V1TransactionsAchDebitPrevTrxnR
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -4720,9 +4702,7 @@ V1TransactionsAchDebitPrevTrxnRequest body = new V1TransactionsAchDebitPrevTrxnR
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     AccountHolderName = "smith",
     PreviousTransactionId = "11e95f8ec39de8fbdb0a4f1a",
@@ -4730,14 +4710,14 @@ V1TransactionsAchDebitPrevTrxnRequest body = new V1TransactionsAchDebitPrevTrxnR
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHDebitPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchDebitPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -5797,18 +5777,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Debit - Tokenized
+# ACH Debit-Tokenized
 
 Utilize an ACH Token_id previously created to process an ACH Sale transaction.
 
 ```csharp
-ACHDebitTokenizedAsync(
+AchDebitTokenizedAsync(
     Models.V1TransactionsAchDebitTokenRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -5816,11 +5796,11 @@ ACHDebitTokenizedAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchDebitTokenRequest`](../../doc/models/v1-transactions-ach-debit-token-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -5835,13 +5815,11 @@ V1TransactionsAchDebitTokenRequest body = new V1TransactionsAchDebitTokenRequest
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -5875,9 +5853,7 @@ V1TransactionsAchDebitTokenRequest body = new V1TransactionsAchDebitTokenRequest
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     AccountHolderName = "smith",
     AccountVaultId = "11e95f8ec39de8fbdb0a4f1a",
@@ -5886,14 +5862,14 @@ V1TransactionsAchDebitTokenRequest body = new V1TransactionsAchDebitTokenRequest
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHDebitTokenizedAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchDebitTokenizedAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -6953,18 +6929,18 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# ACH Refund - Previous Transaction
+# ACH Refund-Previous Transaction
 
 Create a new ACH refund transaction using previous transaction id
 
 ```csharp
-ACHRefundPreviousTransactionAsync(
+AchRefundPreviousTransactionAsync(
     Models.V1TransactionsAchRefundPrevTrxnRequest body,
-    List<Models.Expand60Enum> expand = null)
+    List<Models.Expand60> expand = null)
 ```
 
 ## Parameters
@@ -6972,11 +6948,11 @@ ACHRefundPreviousTransactionAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TransactionsAchRefundPrevTrxnRequest`](../../doc/models/v1-transactions-ach-refund-prev-trxn-request.md) | Body, Required | - |
-| `expand` | [`List<Expand60Enum>`](../../doc/models/expand-60-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand60>`](../../doc/models/expand-60.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTransaction>`](../../doc/models/response-transaction.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTransaction](../../doc/models/response-transaction.md).
 
 ## Example Usage
 
@@ -6991,13 +6967,11 @@ V1TransactionsAchRefundPrevTrxnRequest body = new V1TransactionsAchRefundPrevTrx
     CustomData = ApiHelper.JsonDeserialize<object>("{\"data1\":\"custom1\",\"data2\":\"custom2\"}"),
     CustomerId = "customerid",
     Description = "some description",
-    IiasInd = IiasIndEnum.Enum1,
     ImageFront = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     ImageBack = "U29tZVN0cmluZ09idmlvdXNseU5vdEJhc2U2NEVuY29kZWQ=",
     Installment = true,
     InstallmentNumber = 1,
     InstallmentCount = 1,
-    RecurringFlag = RecurringFlagEnum.Yes,
     InstallmentCounter = 1,
     InstallmentTotal = 1,
     Subscription = false,
@@ -7031,9 +7005,7 @@ V1TransactionsAchRefundPrevTrxnRequest body = new V1TransactionsAchRefundPrevTrx
     AutoDeclineCvvOverride = false,
     AutoDeclineStreetOverride = false,
     AutoDeclineZipOverride = false,
-    EbtType = EbtTypeEnum.FoodStamp,
     AchIdentifier = "P",
-    AchSecCode = AchSecCode31Enum.C21,
     EffectiveDate = "2021-12-01",
     AccountHolderName = "smith",
     PreviousTransactionId = "11e95f8ec39de8fbdb0a4f1a",
@@ -7041,14 +7013,14 @@ V1TransactionsAchRefundPrevTrxnRequest body = new V1TransactionsAchRefundPrevTrx
 
 try
 {
-    ResponseTransaction result = await transactionsACHController.ACHRefundPreviousTransactionAsync(body);
+    ApiResponse<ResponseTransaction> result = await transactionsAchController.AchRefundPreviousTransactionAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -8108,6 +8080,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

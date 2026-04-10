@@ -1,6 +1,8 @@
 
 # List 4
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `List4`
@@ -16,15 +18,16 @@
 | `TermsConditions` | `string` | Optional | This is the message that is displayed on the screen when prompting for a signature.<br><br>**Constraints**: *Maximum Length*: `4096` |
 | `Id` | `string` | Optional | Device term ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `ReasonCodeId` | `int?` | Optional | Reason code ID |
-| `Signature` | [`Signature`](../../doc/models/signature.md) | Optional | Signature Information on `expand` |
+| `Signature` | [`Signature1`](../../doc/models/signature-1.md) | Optional | - |
 | `CreatedTs` | `int?` | Optional | Created Time Stamp |
 | `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
 | `CreatedUserId` | `string` | Optional | System generated id for user who created record<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `CreatedUser` | [`CreatedUser`](../../doc/models/created-user.md) | Optional | User Information on `expand` |
-| `Location` | [`Location`](../../doc/models/location.md) | Optional | Location Information on `expand` |
-| `Terminal` | [`Terminal`](../../doc/models/terminal.md) | Optional | Terminal Information on `expand` |
+| `CreatedUser` | [`User9`](../../doc/models/user-9.md) | Optional | - |
+| `Location` | [`Location18`](../../doc/models/location-18.md) | Optional | - |
+| `Terminal` | [`Terminal2`](../../doc/models/terminal-2.md) | Optional | - |
 | `Changelogs` | [`List<Changelog>`](../../doc/models/changelog.md) | Optional | Changelog Information on `expand` |
-| `ReasonCode` | [`ReasonCode`](../../doc/models/reason-code.md) | Optional | Reason Code Information on `expand` |
+| `ReasonCode` | [`ReasonCode1`](../../doc/models/reason-code-1.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -39,7 +42,11 @@
   "reason_code_id": 1000,
   "created_ts": 1422040992,
   "modified_ts": 1422040992,
-  "created_user_id": "11e95f8ec39de8fbdb0a4f1a"
+  "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

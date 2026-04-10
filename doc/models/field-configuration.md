@@ -3,6 +3,8 @@
 
 field_configuration
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `FieldConfiguration`
@@ -12,22 +14,27 @@ field_configuration
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `CssMini` | `bool?` | Optional | CSS Mini |
-| `Stack` | [`StackEnum?`](../../doc/models/stack-enum.md) | Optional | Stack |
-| `Header` | [`Header`](../../doc/models/header.md) | Optional | Header |
-| `Body` | [`Body`](../../doc/models/body.md) | Optional | Body |
-| `Footer` | [`Footer`](../../doc/models/footer.md) | Optional | Footer |
+| `Stack` | [`Stack?`](../../doc/models/stack.md) | Optional | - |
+| `Header` | [`Header2`](../../doc/models/header-2.md) | Optional | - |
+| `Body` | [`Body2`](../../doc/models/body-2.md) | Optional | - |
+| `Footer` | [`Footer2`](../../doc/models/footer-2.md) | Optional | - |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
 ```json
 {
   "css_mini": true,
-  "stack": "vertical",
+  "stack": "horizontal",
   "header": {
     "settings": {
       "enabled": false,
       "columns": 202.28,
-      "rows": 235.78
+      "rows": 235.78,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "fields": [
       {
@@ -39,15 +46,27 @@ field_configuration
           "position8",
           "position9"
         ],
-        "required": false
+        "required": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "body": {
     "settings": {
       "enabled": false,
       "columns": 202.28,
-      "rows": 235.78
+      "rows": 235.78,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "fields": [
       {
@@ -59,7 +78,11 @@ field_configuration
           "position8",
           "position9"
         ],
-        "required": false
+        "required": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "id": "id8",
@@ -70,7 +93,11 @@ field_configuration
           "position8",
           "position9"
         ],
-        "required": false
+        "required": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "id": "id8",
@@ -81,15 +108,27 @@ field_configuration
           "position8",
           "position9"
         ],
-        "required": false
+        "required": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
   },
   "footer": {
     "settings": {
       "enabled": false,
       "columns": 202.28,
-      "rows": 235.78
+      "rows": 235.78,
+      "exampleAdditionalProperty": {
+        "key1": "val1",
+        "key2": "val2"
+      }
     },
     "fields": [
       {
@@ -101,7 +140,11 @@ field_configuration
           "position8",
           "position9"
         ],
-        "required": false
+        "required": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       },
       {
         "id": "id8",
@@ -112,9 +155,21 @@ field_configuration
           "position8",
           "position9"
         ],
-        "required": false
+        "required": false,
+        "exampleAdditionalProperty": {
+          "key1": "val1",
+          "key2": "val2"
+        }
       }
-    ]
+    ],
+    "exampleAdditionalProperty": {
+      "key1": "val1",
+      "key2": "val2"
+    }
+  },
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
   }
 }
 ```

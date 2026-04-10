@@ -3,6 +3,8 @@
 
 Array of merchant addresses.
 
+*This model accepts additional fields of type object.*
+
 ## Structure
 
 `Address81`
@@ -17,7 +19,8 @@ Array of merchant addresses.
 | `StateProvince` | `string` | Required | State or province of address.<br><br>**Constraints**: *Maximum Length*: `2` |
 | `PostalCode` | `string` | Required | Postal code of address.<br><br>**Constraints**: *Maximum Length*: `10` |
 | `CountryCode` | `string` | Required | Country of address.<br><br>**Constraints**: *Maximum Length*: `2` |
-| `AddressType` | [`AddressTypeEnum`](../../doc/models/address-type-enum.md) | Required | Address type of address.<br><br>**Constraints**: *Maximum Length*: `20` |
+| `AddressType` | [`AddressType`](../../doc/models/address-type.md) | Required | **Constraints**: *Maximum Length*: `20` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
 
 ## Example (as JSON)
 
@@ -29,7 +32,11 @@ Array of merchant addresses.
   "state_province": "TX",
   "postal_code": "75087",
   "country_code": "US",
-  "address_type": "location"
+  "address_type": "corporate",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
 }
 ```
 

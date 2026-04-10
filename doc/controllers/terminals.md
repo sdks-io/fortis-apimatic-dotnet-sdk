@@ -10,18 +10,18 @@ TerminalsController terminalsController = client.TerminalsController;
 
 ## Methods
 
-* [Create a New Terminal Device](../../doc/controllers/terminals.md#create-a-new-terminal-device)
-* [List All Terminals Related](../../doc/controllers/terminals.md#list-all-terminals-related)
-* [View Single Terminals Record](../../doc/controllers/terminals.md#view-single-terminals-record)
-* [Update Terminal Record](../../doc/controllers/terminals.md#update-terminal-record)
+* [Createanewterminaldevice](../../doc/controllers/terminals.md#createanewterminaldevice)
+* [Listallterminalsrelated](../../doc/controllers/terminals.md#listallterminalsrelated)
+* [Viewsingleterminalsrecord](../../doc/controllers/terminals.md#viewsingleterminalsrecord)
+* [Updateterminalrecord](../../doc/controllers/terminals.md#updateterminalrecord)
 
 
-# Create a New Terminal Device
+# Createanewterminaldevice
 
 ```csharp
-CreateANewTerminalDeviceAsync(
+CreateanewterminaldeviceAsync(
     Models.V1TerminalsRequest body,
-    List<Models.Expand40Enum> expand = null)
+    List<Models.Expand40> expand = null)
 ```
 
 ## Parameters
@@ -29,11 +29,11 @@ CreateANewTerminalDeviceAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `body` | [`V1TerminalsRequest`](../../doc/models/v1-terminals-request.md) | Body, Required | - |
-| `expand` | [`List<Expand40Enum>`](../../doc/models/expand-40-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand40>`](../../doc/models/expand-40.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTerminal>`](../../doc/models/response-terminal.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTerminal](../../doc/models/response-terminal.md).
 
 ## Example Usage
 
@@ -42,7 +42,7 @@ V1TerminalsRequest body = new V1TerminalsRequest
 {
     LocationId = "11e95f8ec39de8fbdb0a4f1a",
     TerminalApplicationId = "11e95f8ec39de8fbdb0a4f1a",
-    TerminalManufacturerCode = TerminalManufacturerCodeEnum.Enum1,
+    TerminalManufacturerCode = TerminalManufacturerCode.Enum4,
     Title = "My terminal",
     SerialNumber = "1234567890",
     Debit = false,
@@ -73,20 +73,19 @@ V1TerminalsRequest body = new V1TerminalsRequest
     IsProvisioned = false,
     TipEnable = false,
     ValidatedDecryption = false,
-    CommunicationType = CommunicationTypeEnum.Http,
     Active = true,
 };
 
 try
 {
-    ResponseTerminal result = await terminalsController.CreateANewTerminalDeviceAsync(body);
+    ApiResponse<ResponseTerminal> result = await terminalsController.CreateanewterminaldeviceAsync(body);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -326,43 +325,43 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 
 
-# List All Terminals Related
+# Listallterminalsrelated
 
 ```csharp
-ListAllTerminalsRelatedAsync(
-    Models.Page page = null,
+ListallterminalsrelatedAsync(
+    Models.Page1 page = null,
     List<Models.Order21> order = null,
     List<Models.FilterBy> filterBy = null,
-    List<Models.Expand40Enum> expand = null,
-    Models.Format1Enum? format = null,
+    List<Models.Expand40> expand = null,
+    Models.Format1? format = null,
     string typeahead = null,
-    List<Models.Field49Enum> fields = null)
+    List<Models.Field49> fields = null)
 ```
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `page` | [`Page`](../../doc/models/page.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
+| `page` | [`Page1`](../../doc/models/page-1.md) | Query, Optional | Use this field to specify paginate your results, by using page size and number. You can use one of the following methods:<br><br>> /endpoint?page={ "number": 1, "size": 50 }<br>> <br>> /endpoint?page[number]=1&page[size]=50 |
 | `order` | [`List<Order21>`](../../doc/models/order-21.md) | Query, Optional | Criteria used in query string parameters to order results.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`.  Must be encoded, or use syntax that does not require encoding.<br><br>> /endpoint?order[0][key]=created_ts&order[0][operator]=asc<br>> <br>> /endpoint?order=[{ "key": "created_ts", "operator": "asc"}]<br>> <br>> /endpoint?order=[{ "key": "balance", "operator": "desc"},{ "key": "created_ts", "operator": "asc"}]<br><br>**Constraints**: *Minimum Items*: `1` |
 | `filterBy` | [`List<FilterBy>`](../../doc/models/filter-by.md) | Query, Optional | Filter criteria that can be used in query string parameters.  Most fields from the endpoint results can be used as a `key`.  Unsupported fields or operators will return a `412`. Must be encoded, or use syntax that does not require encoding.<br><br>> ?filter_by[0][key]=first_name&filter_by[0][operator]==&filter_by[0][value]=Steve<br>> <br>> /endpoint?filter_by=[{ "key": "first_name", "operator": "=", "value": "Fred" }]<br>> <br>> /endpoint?filter_by=[{ "key": "account_type", "operator": "=", "value": "VISA" }]<br>> <br>> /endpoint?filter_by=[{ "key": "created_ts", "operator": ">=", "value": "946702799" }, { "key": "created_ts", "operator": "<=", value: "1695061891" }]<br>> <br>> /endpoint?filter_by=[{ "key": "last_name", "operator": "IN", "value": "Williams,Brown,Allman" }]<br><br>**Constraints**: *Minimum Items*: `1` |
-| `expand` | [`List<Expand40Enum>`](../../doc/models/expand-40-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `format` | [`Format1Enum?`](../../doc/models/format-1-enum.md) | Query, Optional | Reporting format, valid values: csv, tsv |
+| `expand` | [`List<Expand40>`](../../doc/models/expand-40.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `format` | [`Format1?`](../../doc/models/format-1.md) | Query, Optional | Reporting format, valid values: csv, tsv |
 | `typeahead` | `string` | Query, Optional | You can use any `field_name` from this endpoint results to order the list using the value provided as filter for the same `field_name`. It will be ordered using the following rules: 1) Exact match, 2) Starts with, 3) Contains.<br><br>> /endpoint?filter={ "field_name": "Value" }&_typeahead=field_name |
-| `fields` | [`List<Field49Enum>`](../../doc/models/field-49-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `fields` | [`List<Field49>`](../../doc/models/field-49.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseTerminalsCollection>`](../../doc/models/response-terminals-collection.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTerminalsCollection](../../doc/models/response-terminals-collection.md).
 
 ## Example Usage
 
 ```csharp
-Page page = new Page
+Page1 page = new Page1
 {
     Number = 1,
     Size = 50,
@@ -373,7 +372,7 @@ List<Order21> order = new List<Order21>
     new Order21
     {
         Key = "first_name",
-        MOperator = OperatorEnum.Asc,
+        MOperator = Operator.Asc,
     },
 };
 
@@ -382,7 +381,7 @@ List<FilterBy> filterBy = new List<FilterBy>
     new FilterBy
     {
         Key = "first_name",
-        MOperator = FilterByOperator.FromOperator1(Operator1Enum.Enum1),
+        MOperator = FilterByOperator.FromOperator1(Operator1.Enum1),
         MValue = FilterByValue.FromFilterByValueCase1(
             FilterByValueCase1.FromString("Fred")
         ),
@@ -391,7 +390,7 @@ List<FilterBy> filterBy = new List<FilterBy>
 
 try
 {
-    ResponseTerminalsCollection result = await terminalsController.ListAllTerminalsRelatedAsync(
+    ApiResponse<ResponseTerminalsCollection> result = await terminalsController.ListallterminalsrelatedAsync(
         page,
         order,
         filterBy
@@ -400,9 +399,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -663,16 +662,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# View Single Terminals Record
+# Viewsingleterminalsrecord
 
 ```csharp
-ViewSingleTerminalsRecordAsync(
+ViewsingleterminalsrecordAsync(
     string terminalId,
-    List<Models.Expand40Enum> expand = null,
-    List<Models.Field49Enum> fields = null)
+    List<Models.Expand40> expand = null,
+    List<Models.Field49> fields = null)
 ```
 
 ## Parameters
@@ -680,12 +679,12 @@ ViewSingleTerminalsRecordAsync(
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `terminalId` | `string` | Template, Required | Terminal ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
-| `expand` | [`List<Expand40Enum>`](../../doc/models/expand-40-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
-| `fields` | [`List<Field49Enum>`](../../doc/models/field-49-enum.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
+| `expand` | [`List<Expand40>`](../../doc/models/expand-40.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
+| `fields` | [`List<Field49>`](../../doc/models/field-49.md) | Query, Optional | You can use any `field_name` from this endpoint results to filter the list of fields returned on the response. |
 
 ## Response Type
 
-[`Task<Models.ResponseTerminal>`](../../doc/models/response-terminal.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTerminal](../../doc/models/response-terminal.md).
 
 ## Example Usage
 
@@ -693,14 +692,14 @@ ViewSingleTerminalsRecordAsync(
 string terminalId = "11e95f8ec39de8fbdb0a4f1a";
 try
 {
-    ResponseTerminal result = await terminalsController.ViewSingleTerminalsRecordAsync(terminalId);
+    ApiResponse<ResponseTerminal> result = await terminalsController.ViewsingleterminalsrecordAsync(terminalId);
 }
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
 }
 ```
@@ -936,16 +935,16 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 
 
-# Update Terminal Record
+# Updateterminalrecord
 
 ```csharp
-UpdateTerminalRecordAsync(
+UpdateterminalrecordAsync(
     string terminalId,
     Models.V1TerminalsRequest1 body,
-    List<Models.Expand40Enum> expand = null)
+    List<Models.Expand40> expand = null)
 ```
 
 ## Parameters
@@ -954,11 +953,11 @@ UpdateTerminalRecordAsync(
 |  --- | --- | --- | --- |
 | `terminalId` | `string` | Template, Required | Terminal ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
 | `body` | [`V1TerminalsRequest1`](../../doc/models/v1-terminals-request-1.md) | Body, Required | - |
-| `expand` | [`List<Expand40Enum>`](../../doc/models/expand-40-enum.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required*, *Pattern*: `^[\w]+$` |
+| `expand` | [`List<Expand40>`](../../doc/models/expand-40.md) | Query, Optional | Most endpoints in the API have a way to retrieve extra data related to the current record being retrieved. For example, if the API request is for the accountvaults endpoint, and the end user also needs to know which contact the token belongs to, this data can be returned in the accountvaults endpoint request.<br><br>**Constraints**: *Unique Items Required* |
 
 ## Response Type
 
-[`Task<Models.ResponseTerminal>`](../../doc/models/response-terminal.md)
+This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The `Data` property of this instance returns the response data which is of type [Models.ResponseTerminal](../../doc/models/response-terminal.md).
 
 ## Example Usage
 
@@ -970,7 +969,6 @@ V1TerminalsRequest1 body = new V1TerminalsRequest1
     DefaultProductTransactionId = "11e95f8ec39de8fbdb0a4f1a",
     TerminalApplicationId = "11e95f8ec39de8fbdb0a4f1a",
     TerminalCvmId = "11e95f8ec39de8fbdb0a4f1a",
-    TerminalManufacturerCode = TerminalManufacturerCodeEnum.Enum1,
     Title = "My terminal",
     MacAddress = "3D:F2:C9:A6:B3:4F",
     LocalIpAddress = "192.168.0.10",
@@ -999,13 +997,12 @@ V1TerminalsRequest1 body = new V1TerminalsRequest1
     IsProvisioned = false,
     TipEnable = false,
     ValidatedDecryption = false,
-    CommunicationType = CommunicationTypeEnum.Http,
     Active = true,
 };
 
 try
 {
-    ResponseTerminal result = await terminalsController.UpdateTerminalRecordAsync(
+    ApiResponse<ResponseTerminal> result = await terminalsController.UpdateterminalrecordAsync(
         terminalId,
         body
     );
@@ -1013,9 +1010,9 @@ try
 catch (ApiException e)
 {
     Console.WriteLine(e.Message);
-    if (e is Response401tokenException)
+    if (e is Response401TokenException)
     {
-       // TODO: Handle Response401tokenException exception here
+       // TODO: Handle Response401TokenException exception here
     }
     if (e is Response412Exception)
     {
@@ -1255,6 +1252,6 @@ catch (ApiException e)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 401 | Unauthorized | [`Response401tokenException`](../../doc/models/response-401-token-exception.md) |
+| 401 | Unauthorized | [`Response401TokenException`](../../doc/models/response-401-token-exception.md) |
 | 412 | Precondition Failed | [`Response412Exception`](../../doc/models/response-412-exception.md) |
 

@@ -1,0 +1,73 @@
+
+# Product Invoice 1
+
+*This model accepts additional fields of type object.*
+
+## Structure
+
+`ProductInvoice1`
+
+## Fields
+
+| Name | Type | Tags | Description |
+|  --- | --- | --- | --- |
+| `Title` | `string` | Optional | Title<br><br>**Constraints**: *Maximum Length*: `36` |
+| `QuoteNumberFormat` | `string` | Optional | Quote Number Format<br><br>**Constraints**: *Maximum Length*: `36` |
+| `QuoteNumberStart` | `double?` | Optional | Quote Number Start<br><br>**Constraints**: `>= 1`, `<= 999999999` |
+| `QuoteNumberIncrement` | `double?` | Optional | Quote Number Increment<br><br>**Constraints**: `>= 1`, `<= 999999999` |
+| `QuoteNumberCurrent` | `double?` | Optional | Quote Number Current |
+| `InvoiceNumberFormat` | `string` | Optional | Invoice Number Format<br><br>**Constraints**: *Maximum Length*: `36` |
+| `InvoiceNumberStart` | `double?` | Optional | Invoice Number Start<br><br>**Constraints**: `>= 1`, `<= 999999999` |
+| `InvoiceNumberIncrement` | `double?` | Optional | Invoice Number Increment<br><br>**Constraints**: `>= 1`, `<= 999999999` |
+| `InvoiceNumberCurrent` | `double?` | Optional | Invoice Number Current |
+| `TaxRate` | `double?` | Optional | Tax Rate<br><br>**Constraints**: `>= 0`, `<= 99.99` |
+| `TaxFee` | `int?` | Optional | Tax Fee<br><br>**Constraints**: `<= 999999999999` |
+| `MonthlyFee` | `int?` | Optional | Monthly Fees<br><br>**Constraints**: `>= 0`, `<= 99999` |
+| `PerInvoiceFee` | `int?` | Optional | Per Invoice Fee<br><br>**Constraints**: `>= 0`, `<= 99999` |
+| `PerQuoteFee` | `int?` | Optional | Per Quote fee<br><br>**Constraints**: `>= 0`, `<= 99999` |
+| `RequirePayInFull` | `bool?` | Optional | Require Pay In Full |
+| `Selectable` | `double?` | Optional | Selectable |
+| `Reportable` | `double?` | Optional | Reportable |
+| `PortfolioId` | `string` | Optional | Portfolio Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `LocationId` | `string` | Optional | Location ID<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `Id` | `string` | Optional | Product Invoice Id<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `CreatedTs` | `int?` | Optional | Created Time Stamp |
+| `ModifiedTs` | `int?` | Optional | Modified Time Stamp |
+| `CreatedUserId` | `string` | Optional | User ID Created the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `ModifiedUserId` | `string` | Optional | Last User ID that updated the register<br><br>**Constraints**: *Pattern*: `^(([0-9a-fA-F\-]{24,36})\|(([0-9a-fA-F]{8})-(([0-9a-fA-F]{4}\-){3})([0-9a-fA-F]{12})))$` |
+| `AdditionalProperties` | `object this[string key]` | Optional | - |
+
+## Example (as JSON)
+
+```json
+{
+  "title": "Sample title",
+  "quote_number_start": 1.0,
+  "quote_number_increment": 1.0,
+  "quote_number_current": 1.0,
+  "invoice_number_start": 1,
+  "invoice_number_increment": 1,
+  "invoice_number_current": 1,
+  "tax_rate": 0,
+  "tax_fee": 0,
+  "monthly_fee": 0,
+  "per_invoice_fee": 0,
+  "per_quote_fee": 0,
+  "require_pay_in_full": true,
+  "selectable": 1,
+  "reportable": 1,
+  "portfolio_id": "11e95f8ec39de8fbdb0a4f1a",
+  "location_id": "11e95f8ec39de8fbdb0a4f1a",
+  "id": "11e95f8ec39de8fbdb0a4f1a",
+  "created_ts": 1422040992,
+  "modified_ts": 1422040992,
+  "created_user_id": "11e95f8ec39de8fbdb0a4f1a",
+  "modified_user_id": "11e95f8ec39de8fbdb0a4f1a",
+  "quote_number_format": "quote_number_format6",
+  "exampleAdditionalProperty": {
+    "key1": "val1",
+    "key2": "val2"
+  }
+}
+```
+
