@@ -43,7 +43,7 @@ namespace FortisApi.Standard
 
         private readonly GlobalConfiguration globalConfiguration;
         private SdkLoggingConfiguration sdkLoggingConfiguration;
-        private const string userAgent = "DotNet SDK, Version: 1.0.3, on OS {os-info}";
+        private const string userAgent = "DotNet SDK, Version: 1.0.5, on OS {os-info}";
         private readonly HttpCallback httpCallback;
         private readonly Lazy<AsyncProcessingController> asyncProcessing;
         private readonly Lazy<BatchesController> batches;
